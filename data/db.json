@@ -1,0 +1,3839 @@
+{
+  "users": [
+    {
+      "id": "user-admin-1",
+      "email": "admin@smkn1ujungbatu.sch.id",
+      "name": "Administrator SMKN 1 Ujung Batu",
+      "password": "admin123",
+      "role": "admin",
+      "createdAt": "2026-10-11T22:06:29.596Z"
+    },
+    {
+      "id": "user-admin-2",
+      "email": "nairuxza@gmail.com",
+      "name": "Admin Utama (Nairuxza)",
+      "password": "admin123",
+      "role": "admin",
+      "createdAt": "2026-10-11T22:06:29.596Z"
+    }
+  ],
+  "news": [
+    {
+      "id": "news-1791756402281",
+      "title": "Peresmian Bengkel Teaching Factory Baru SMKN 1 Ujung Batu",
+      "slug": "peresmian-bengkel-teaching-factory-baru-smkn-1-ujung-batu-101",
+      "category": "Kegiatan Sekolah",
+      "date": "11 Oktober 2026",
+      "author": "Admin Humas SMKN 1",
+      "excerpt": "Peresmian Bengkel Teaching Factory Baru SMKN 1 Ujung Batu...",
+      "content": "Fasilitas bengkel baru resmi dibuka untuk melayani masyarakat umum dan servis berkala.",
+      "image": "/images/berita/c480ef3b9d1d9b347a75170a33d3423d.jpg",
+      "createdAt": "2026-10-11T22:06:42.326Z",
+      "updatedAt": "2026-10-16T05:18:15.235Z"
+    },
+    {
+      "id": "news-1",
+      "title": "Siswa Teknik Otomotif SMKN 1 Ujung Batu Raih Juara 1 LKS Tingkat Kabupaten Rokan Hulu",
+      "slug": "juara-1-lks-otomotif-rohul",
+      "category": "LKS & Prestasi",
+      "date": "14 Agustus 2025",
+      "author": "Tim Humas SMKN 1",
+      "excerpt": "Prestasi membanggakan diraih kontingen SMK Negeri 1 Ujung Batu pada bidang Automobile Technology dalam ajang LKS SMK tingkat Kabupaten Rokan Hulu.",
+      "content": "Prestasi membanggakan kembali diukir oleh putra daerah. Siswa perwakilan Program Keahlian Teknik Otomotif (TO) SMK Negeri 1 Ujung Batu sukses menyabet Juara 1 dalam Lomba Kompetensi Siswa (LKS) SMK Tingkat Kabupaten Rokan Hulu untuk bidang lomba Automobile Technology. Perlombaan yang berlangsung sengit di Pasir Pengaraian tersebut menguji ketepatan diagnosa EFI, tune up mesin berstandar pabrikan, serta pemecahan masalah electrical fault injection. Dengan perolehan skor 94,8, wakil SMKN 1 Ujung Batu dipastikan mewakili Kabupaten Rokan Hulu ke ajang LKS Tingkat Provinsi Riau mendatang.",
+      "image": "/images/berita/bengkel-teaching-factory-baru-smkn.jpg",
+      "createdAt": "2025-08-14T10:00:00.000Z",
+      "updatedAt": "2026-10-16T05:19:48.732Z"
+    },
+    {
+      "id": "news-2",
+      "title": "Pelepasan 180 Siswa Kelas XI Mengikuti Praktik Kerja Lapangan (PKL) di 35 Perusahaan Industri Mitra",
+      "slug": "pelepasan-pkl-smkn1-ujung-batu",
+      "category": "Kegiatan PKL",
+      "date": "02 Juli 2025",
+      "author": "Pokja PKL & Humas",
+      "excerpt": "Kepala Sekolah bersama perwakilan asosiasi industri resmi melepas ratusan siswa untuk mengasah keahlian kerja nyata selama 6 bulan.",
+      "content": "Sebanyak 180 siswa kelas XI dari 6 kompetensi keahlian resmi dilepas dalam upacara pemberangkatan Praktik Kerja Lapangan (PKL) periode tahun ajaran berjalan. Para siswa akan ditempatkan di 35 Dunia Usaha dan Dunia Industri (DU/DI) yang tersebar di wilayah Rokan Hulu, Kampar, Pekanbaru, hingga Dumai. Sebelum diberangkatkan, seluruh siswa telah menjalani pembekalan intensif terkait etika kerja industri, Keselamatan dan Kesehatan Kerja (K3), serta penandatanganan pakta integritas kedisiplinan.",
+      "image": "/images/berita/ilustrasi-ppdb-foto-wisnu-indra-kusumajpnncom-ijwb9-hkt5.jpg",
+      "createdAt": "2025-07-02T08:30:00.000Z",
+      "updatedAt": "2026-10-16T05:20:55.532Z"
+    },
+    {
+      "id": "news-3",
+      "title": "Kunjungan Industri Jurusan TKJ & Broadcasting ke Data Center & Stasiun Televisi di Pekanbaru",
+      "slug": "kunjungan-industri-tkj-broadcasting",
+      "category": "Kunjungan Industri",
+      "date": "20 Mei 2025",
+      "author": "Koordinator Jurusan TKJ & BP",
+      "excerpt": "Mengenal teknologi server backbone fiber optic dan proses produksi siaran televisi digital secara langsung.",
+      "content": "Rombongan siswa program keahlian TKJ dan Broadcasting dan Perfilman SMKN 1 Ujung Batu melaksanakan Kunjungan Industri (KI) ke fasilitas data center penyedia layanan internet terkemuka dan stasiun penyiaran publik di Kota Pekanbaru. Dalam kunjungan edukatif ini, siswa TKJ diajak melihat arsitektur rack server berskala enterprise, konfigurasi redundant fiber optic, dan sistem pengamanan cybersecurity. Sementara siswa Broadcasting mendalami tata kelola ruang kendali switcher studio siaran langsung.",
+      "image": "/images/berita/e705b2eff1abad7f1fa066022d733570.jpg",
+      "createdAt": "2025-05-20T09:15:00.000Z",
+      "updatedAt": "2026-10-16T05:48:15.363Z"
+    },
+    {
+      "id": "news-4",
+      "title": "Bursa Kerja Khusus (BKK) Gelar Rekrutmen Kampus Bersama PT. Sentosa Ritel Gemilang",
+      "slug": "rekrutmen-bkk-kampus-smkn1",
+      "category": "Kegiatan Sekolah",
+      "date": "10 September 2025",
+      "author": "Tim BKK SMKN 1",
+      "excerpt": "Lebih dari 60 alumni dan siswa tingkat akhir mengikuti psikotes dan wawancara kerja langsung di Aula Utama SMKN 1 Ujung Batu.",
+      "content": "Bursa Kerja Khusus (BKK) SMK Negeri 1 Ujung Batu memfasilitasi pelaksanaan walk-in interview dan tes seleksi kerja langsung oleh HRD salah satu perusahaan ritel terkemuka di Sumatera. Dari seleksi tahap pertama yang meliputi tes ketelitian, logika dasar, dan wawancara kompetensi, sebanyak 32 peserta berhasil lolos ke tahap penandatanganan kontrak kerja.",
+      "image": "/images/berita/portrait-of-asian-female-student-2023-11-27-05-24-31-utc_11zon.jpg",
+      "createdAt": "2025-09-10T11:00:00.000Z",
+      "updatedAt": "2026-10-16T05:48:50.259Z"
+    }
+  ],
+  "announcements": [
+    {
+      "id": "ann-1",
+      "title": "Pelaksanaan Asesmen Sumatif Akhir Semester (SAS) Ganjil Tahun Ajaran 2025/2026",
+      "targetAudience": "Siswa",
+      "date": "24 November 2025",
+      "important": true,
+      "content": "Diberitahukan kepada seluruh peserta didik kelas X, XI, dan XII bahwa Asesmen Sumatif Akhir Semester (SAS) Ganjil akan diselenggarakan pada tanggal 1 - 10 Desember 2025 berbasis Computer Based Test (CBT) di laboratorium komputer sekolah. Harap mempersiapkan kartu ujian dan nomor registrasi masing-masing.",
+      "createdAt": "2025-11-24T08:00:00.000Z"
+    },
+    {
+      "id": "ann-2",
+      "title": "Undangan Rapat Pleno Komite Sekolah & Sosialisasi Program PKL Kelas XI",
+      "targetAudience": "Orang Tua",
+      "date": "08 November 2025",
+      "important": false,
+      "content": "Mengharap kehadiran Bapak/Ibu orang tua/wali siswa kelas XI pada hari Sabtu, 15 November 2025, pukul 08.30 WIB di Aula SMKN 1 Ujung Batu dalam rangka musyawarah program sekolah dan pembiayaan asuransi PKL industri siswa.",
+      "createdAt": "2025-11-08T09:00:00.000Z"
+    },
+    {
+      "id": "ann-3",
+      "title": "Informasi Penyaluran Lowongan Kerja BKK & Beasiswa Kuliah Vokasi SNBP",
+      "targetAudience": "Alumni & DU/DI",
+      "date": "01 November 2025",
+      "important": true,
+      "content": "Pendaftaran penelusuran tamatan dan jalur Seleksi Nasional Masuk Perguruan Tinggi Vokasi / Politeknik Negeri untuk alumni SMKN 1 Ujung Batu telah dibuka. Silakan hubungi koordinator BK & BKK sekolah untuk pengurusan surat rekomendasi kepala sekolah.",
+      "createdAt": "2025-11-01T10:30:00.000Z"
+    },
+    {
+      "id": "ann-4",
+      "title": "Jadwal Uji Kompetensi Keahlian (UKK) Mandiri Bersama Asesor BNSP",
+      "targetAudience": "Guru & Tendik",
+      "date": "18 Oktober 2025",
+      "important": true,
+      "content": "Diberitahukan kepada seluruh Ketua Program Keahlian dan instruktur bengkel/lab bahwa verifikasi Tempat Uji Kompetensi (TUK) oleh asesor LSP P-1 Nasional akan dijadwalkan pada akhir semester ganjil. Mohon kelengkapan alat dan bahan disiapkan sesuai standar SKKNI.",
+      "createdAt": "2025-10-18T07:45:00.000Z"
+    }
+  ],
+  "messages": [
+    {
+      "id": "msg-1791762524616",
+      "name": "Budi Santoso",
+      "email": "budi@example.com",
+      "phone": "08123456789",
+      "subject": "Pertanyaan Program Vokasi & 6 Kejuruan",
+      "message": "Mohon info jadwal pendaftaran dan program PKL jurusan TKJ.",
+      "createdAt": "2026-10-11T23:48:44.616Z",
+      "status": "Baru"
+    },
+    {
+      "id": "msg-seed-1",
+      "name": "Bpk. Hendrawan (Mitra PT. Sawit Rokan)",
+      "email": "hendrawan@sawit-rohul.co.id",
+      "phone": "081267891234",
+      "subject": "Kerjasama Industri & PKL",
+      "message": "Selamat pagi Bapak/Ibu pimpinan SMKN 1 Ujung Batu. Kami dari PT. Sawit Rokan Perdana ingin mengajukan permohonan kuota siswa magang PKL untuk jurusan Teknik Otomotif dan Elektronika Industri periode tahun ini sebanyak 8 orang. Mohon informasi kontak tindak lanjut.",
+      "createdAt": "2025-10-10T09:30:00.000Z",
+      "status": "Baru"
+    }
+  ],
+  "emails": [
+    {
+      "id": "email-notif-1791762524616",
+      "to": "smkn1_uba@yahoo.com",
+      "subject": "[Pesan Baru Website] Dari: Budi Santoso (Pertanyaan Program Vokasi & 6 Kejuruan)",
+      "body": "Pesan baru masuk dari formulir kontak website SMKN 1 Ujung Batu:\n\nPengirim: Budi Santoso\nEmail: budi@example.com\nTelepon: 08123456789\nKategori: Pertanyaan Program Vokasi & 6 Kejuruan\n\nIsi Pesan:\nMohon info jadwal pendaftaran dan program PKL jurusan TKJ.\n\nWaktu: 11/10/2026, 23.48.44",
+      "sender": "website@smkn1ujungbatu.sch.id",
+      "sentAt": "2026-10-11T23:48:44.623Z",
+      "status": "Terkirim"
+    },
+    {
+      "id": "email-1791756398521-s7as0",
+      "to": "smkn1_uba@yahoo.com",
+      "subject": "Tes Kirim Email",
+      "body": "Ini adalah uji coba endpoint pengiriman email sekolah.",
+      "sender": "sistem@smkn1ujungbatu.sch.id",
+      "sentAt": "2026-10-11T22:06:38.521Z",
+      "status": "Terkirim"
+    },
+    {
+      "id": "em-seed-1",
+      "to": "smkn1_uba@yahoo.com",
+      "subject": "Konfirmasi Jadwal Sosialisasi Industri",
+      "body": "Pemberitahuan bahwa jadwal kunjungan perwakilan DU/DI telah dijadwalkan.",
+      "sender": "sistem@smkn1ujungbatu.sch.id",
+      "sentAt": "2025-10-10T10:00:00.000Z",
+      "status": "Terkirim"
+    }
+  ],
+  "staff": [
+    {
+      "id": "staff-1",
+      "name": "Drs. H. Sabaruddin, M.M.",
+      "nip": "NIP. 19690815 199501 1 002",
+      "role": "Kepala Sekolah",
+      "category": "Pimpinan",
+      "majorOrSubject": "Manajemen Pendidikan Kejuruan",
+      "photo": "/images/guru/guru4.jpg",
+      "phone": "081267890101",
+      "email": "kepsek@smkn1ujungbatu.sch.id",
+      "education": "S2 Manajemen Pendidikan",
+      "statusKepegawaian": "PNS",
+      "createdAt": "2025-01-10T08:00:00.000Z",
+      "updatedAt": "2026-10-16T07:45:19.763Z"
+    },
+    {
+      "id": "staff-2",
+      "name": "Dra. Hj. Nuraini, M.Pd.",
+      "nip": "NIP. 19750214 200212 2 003",
+      "role": "Wakil Kepala Sekolah Bid. Kurikulum",
+      "category": "Pimpinan",
+      "majorOrSubject": "Kurikulum Merdeka & Penguatan Vokasi",
+      "photo": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=500",
+      "phone": "081267890102",
+      "email": "kurikulum@smkn1ujungbatu.sch.id",
+      "education": "S2 Pendidikan Bahasa & Vokasi",
+      "statusKepegawaian": "PNS",
+      "createdAt": "2025-01-10T08:00:00.000Z"
+    },
+    {
+      "id": "staff-3",
+      "name": "Bambang Irawan, S.Pd.",
+      "nip": "NIP. 19780905 200501 1 008",
+      "role": "Wakil Kepala Sekolah Bid. Kesiswaan",
+      "category": "Pimpinan",
+      "majorOrSubject": "Karakter & Kedisiplinan Taruna Siswa",
+      "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=500",
+      "phone": "081267890103",
+      "email": "kesiswaan@smkn1ujungbatu.sch.id",
+      "education": "S1 Pendidikan Jasmani & Kepemimpinan",
+      "statusKepegawaian": "PNS",
+      "createdAt": "2025-01-10T08:00:00.000Z"
+    },
+    {
+      "id": "staff-4",
+      "name": "Ir. Hendra Wijaya, S.T., M.Kom.",
+      "nip": "NIP. 19830719 200902 1 004",
+      "role": "Waka Hubungan Industri (Hubin) & BKK",
+      "category": "Pimpinan",
+      "majorOrSubject": "Kemitraan Industri, PKL & Penyaluran Karir",
+      "photo": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=500",
+      "phone": "081267890104",
+      "email": "hubin@smkn1ujungbatu.sch.id",
+      "education": "S2 Magister Teknik Informatika",
+      "statusKepegawaian": "PNS",
+      "createdAt": "2025-01-10T08:00:00.000Z"
+    },
+    {
+      "id": "staff-5",
+      "name": "Supriyadi, S.T.",
+      "nip": "NIP. 19840618 200902 1 005",
+      "role": "Ketua Program Keahlian Teknik Otomotif",
+      "category": "Produktif",
+      "majorOrSubject": "Teknik Otomotif & Diagnostik EFI",
+      "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=500",
+      "phone": "081267890105",
+      "email": "otomotif@smkn1ujungbatu.sch.id",
+      "education": "S1 Teknik Mesin Otomotif",
+      "statusKepegawaian": "PNS",
+      "createdAt": "2025-01-10T08:00:00.000Z"
+    },
+    {
+      "id": "staff-6",
+      "name": "Rina Kartika, S.Pd.",
+      "nip": "NIP. 19910415 201701 2 006",
+      "role": "Ketua Program Keahlian Bisnis Daring & Pemasaran",
+      "category": "Produktif",
+      "majorOrSubject": "Digital Marketing & Manajemen Ritel",
+      "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=500",
+      "phone": "081267890106",
+      "email": "bdp@smkn1ujungbatu.sch.id",
+      "education": "S1 Pendidikan Tata Niaga",
+      "statusKepegawaian": "PPPK",
+      "createdAt": "2025-01-10T08:00:00.000Z"
+    },
+    {
+      "id": "staff-7",
+      "name": "Bagus Pradana, S.Sn.",
+      "nip": "NIP. 19930829 201903 1 007",
+      "role": "Ketua Program Keahlian Broadcasting & Perfilman",
+      "category": "Produktif",
+      "majorOrSubject": "Sinematografi & Produksi Siaran TV",
+      "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=500",
+      "phone": "081267890107",
+      "email": "broadcasting@smkn1ujungbatu.sch.id",
+      "education": "S1 Seni Media Rekam / Televisi",
+      "statusKepegawaian": "PPPK",
+      "createdAt": "2025-01-10T08:00:00.000Z"
+    },
+    {
+      "id": "staff-8",
+      "name": "Siti Aminah, S.Pd., Kons.",
+      "nip": "NIP. 19861104 201101 2 018",
+      "role": "Koordinator Bimbingan Konseling (BK)",
+      "category": "Normatif Adaptif",
+      "majorOrSubject": "Konseling Karir & Kesiapan Mental Industri",
+      "photo": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&q=80&w=500",
+      "phone": "081267890108",
+      "email": "bk@smkn1ujungbatu.sch.id",
+      "education": "S1 Bimbingan dan Konseling",
+      "statusKepegawaian": "PNS",
+      "createdAt": "2025-01-10T08:00:00.000Z"
+    }
+  ],
+  "schedules": [
+    {
+      "majorId": "tkj",
+      "majorCode": "TKJ",
+      "majorName": "Teknik Komputer & Jaringan",
+      "grade": "10",
+      "className": "X TKJ 1",
+      "homeroomTeacher": {
+        "name": "Dini Fitriani, S.Kom.",
+        "nip": "19920120 201903 2 005"
+      },
+      "totalStudents": 36,
+      "classroom": "Gedung A - R.101",
+      "schedules": [
+        {
+          "id": "10-TKJ-mon-1",
+          "day": "Senin",
+          "period": 1,
+          "time": "07.15 - 08.00",
+          "subject": "Upacara Bendera & Apel Kedisiplinan Taruna",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Utama"
+        },
+        {
+          "id": "10-TKJ-mon-2",
+          "day": "Senin",
+          "period": 2,
+          "time": "08.00 - 09.30",
+          "subject": "Pendidikan Agama & Budi Pekerti",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-TKJ-mon-3",
+          "day": "Senin",
+          "period": 3,
+          "time": "09.45 - 11.45",
+          "subject": "Dasar Program Keahlian TKJ",
+          "teacherId": "t-tkj-1",
+          "teacherName": "Hendra Wijaya, S.Kom., M.T.",
+          "teacherCode": "HW",
+          "roomOrLab": "Lab Komputer & Jaringan 1"
+        },
+        {
+          "id": "10-TKJ-mon-4",
+          "day": "Senin",
+          "period": 4,
+          "time": "12.30 - 15.00",
+          "subject": "Praktik Laboratorium / Bengkel Keahlian TKJ",
+          "teacherId": "t-tkj-1",
+          "teacherName": "Hendra Wijaya, S.Kom., M.T.",
+          "teacherCode": "HW",
+          "roomOrLab": "Lab Komputer & Jaringan 1"
+        },
+        {
+          "id": "10-TKJ-tue-1",
+          "day": "Selasa",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Matematika Terapan Vokasi",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-TKJ-tue-2",
+          "day": "Selasa",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Dasar-Dasar TKJ & Pemrograman Perangkat Keras",
+          "teacherId": "t-tkj-3",
+          "teacherName": "Dini Fitriani, S.Kom.",
+          "teacherCode": "DF",
+          "roomOrLab": "Lab Komputer 2"
+        },
+        {
+          "id": "10-TKJ-tue-3",
+          "day": "Selasa",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Bahasa Inggris Vokasi (Technical English)",
+          "teacherId": "t-umum-4",
+          "teacherName": "David Sihombing, S.Pd., M.Hum.",
+          "teacherCode": "DS",
+          "roomOrLab": "Lab Bahasa & Multimedia"
+        },
+        {
+          "id": "10-TKJ-wed-1",
+          "day": "Rabu",
+          "period": 1,
+          "time": "07.15 - 09.45",
+          "subject": "Informatika & Literasi Digital",
+          "teacherId": "t-tkj-1",
+          "teacherName": "Hendra Wijaya, S.Kom., M.T.",
+          "teacherCode": "HW",
+          "roomOrLab": "Lab Komputer & Jaringan 1"
+        },
+        {
+          "id": "10-TKJ-wed-2",
+          "day": "Rabu",
+          "period": 2,
+          "time": "10.00 - 12.00",
+          "subject": "Bahasa Indonesia & Komunikasi Teknis",
+          "teacherId": "t-umum-1",
+          "teacherName": "Dra. Hj. Nuraini, M.Pd.",
+          "teacherCode": "NR",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-TKJ-wed-3",
+          "day": "Rabu",
+          "period": 3,
+          "time": "12.45 - 15.00",
+          "subject": "Praktik Kejuruan Lanjutan",
+          "teacherId": "t-tkj-3",
+          "teacherName": "Dini Fitriani, S.Kom.",
+          "teacherCode": "DF",
+          "roomOrLab": "Lab Komputer 2"
+        },
+        {
+          "id": "10-TKJ-thu-1",
+          "day": "Kamis",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Pendidikan Jasmani, Olahraga & Kesehatan (PJOK)",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Olahraga & Senam"
+        },
+        {
+          "id": "10-TKJ-thu-2",
+          "day": "Kamis",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pendidikan Pancasila & Kewarganegaraan (PPKn)",
+          "teacherId": "t-umum-6",
+          "teacherName": "Yuli Hastuti, S.Pd.",
+          "teacherCode": "YH",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-TKJ-thu-3",
+          "day": "Kamis",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Projek Penguatan Profil Pelajar Pancasila (P5) / TEFA",
+          "teacherId": "t-tkj-1",
+          "teacherName": "Hendra Wijaya, S.Kom., M.T.",
+          "teacherCode": "HW",
+          "roomOrLab": "Workshop Teaching Factory"
+        },
+        {
+          "id": "10-TKJ-fri-1",
+          "day": "Jumat",
+          "period": 1,
+          "time": "07.15 - 08.15",
+          "subject": "Senam Pagi Kesegaran Jasmani & Rohani Islam (Imtaq)",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Lapangan / Masjid Sekolah"
+        },
+        {
+          "id": "10-TKJ-fri-2",
+          "day": "Jumat",
+          "period": 2,
+          "time": "08.15 - 10.00",
+          "subject": "Konseling Karir, Penelusuran Minat & Bimbingan PKL",
+          "teacherId": "t-umum-7",
+          "teacherName": "Siti Aminah, S.Pd., Kons.",
+          "teacherCode": "SA",
+          "roomOrLab": "Ruang Bimbingan Konseling"
+        },
+        {
+          "id": "10-TKJ-fri-3",
+          "day": "Jumat",
+          "period": 3,
+          "time": "10.00 - 11.30",
+          "subject": "Evaluasi Pembelajaran Mingguan & Pemeliharaan Lab 5R",
+          "teacherId": "t-tkj-3",
+          "teacherName": "Dini Fitriani, S.Kom.",
+          "teacherCode": "DF",
+          "roomOrLab": "Lab Komputer 2"
+        }
+      ]
+    },
+    {
+      "majorId": "tkj",
+      "majorCode": "TKJ",
+      "majorName": "Teknik Komputer & Jaringan",
+      "grade": "11",
+      "className": "XI TKJ 1",
+      "homeroomTeacher": {
+        "name": "Ahmad Fauzan, S.T.",
+        "nip": "19880412 201402 1 003"
+      },
+      "totalStudents": 35,
+      "classroom": "Gedung A - R.201",
+      "schedules": [
+        {
+          "id": "11-TKJ-mon-1",
+          "day": "Senin",
+          "period": 1,
+          "time": "07.15 - 08.00",
+          "subject": "Upacara Bendera & Apel Kedisiplinan Taruna",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Utama"
+        },
+        {
+          "id": "11-TKJ-mon-2",
+          "day": "Senin",
+          "period": 2,
+          "time": "08.00 - 09.30",
+          "subject": "Matematika Terapan Kejuruan",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-TKJ-mon-3",
+          "day": "Senin",
+          "period": 3,
+          "time": "09.45 - 11.45",
+          "subject": "Praktik Kejuruan Produktif Inti",
+          "teacherId": "t-tkj-1",
+          "teacherName": "Hendra Wijaya, S.Kom., M.T.",
+          "teacherCode": "HW",
+          "roomOrLab": "Lab Komputer & Jaringan 1"
+        },
+        {
+          "id": "11-TKJ-mon-4",
+          "day": "Senin",
+          "period": 4,
+          "time": "12.30 - 15.00",
+          "subject": "Praktik Laboratorium / Bengkel Keahlian TKJ",
+          "teacherId": "t-tkj-1",
+          "teacherName": "Hendra Wijaya, S.Kom., M.T.",
+          "teacherCode": "HW",
+          "roomOrLab": "Lab Komputer & Jaringan 1"
+        },
+        {
+          "id": "11-TKJ-tue-1",
+          "day": "Selasa",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Matematika Terapan Vokasi",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-TKJ-tue-2",
+          "day": "Selasa",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Teknologi Jaringan Berbasis Luas (WAN) & Fiber Optik",
+          "teacherId": "t-tkj-2",
+          "teacherName": "Ahmad Fauzan, S.T.",
+          "teacherCode": "AF",
+          "roomOrLab": "Lab Fiber Optic Splicing"
+        },
+        {
+          "id": "11-TKJ-tue-3",
+          "day": "Selasa",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Bahasa Inggris Vokasi (Technical English)",
+          "teacherId": "t-umum-4",
+          "teacherName": "David Sihombing, S.Pd., M.Hum.",
+          "teacherCode": "DS",
+          "roomOrLab": "Lab Bahasa & Multimedia"
+        },
+        {
+          "id": "11-TKJ-wed-1",
+          "day": "Rabu",
+          "period": 1,
+          "time": "07.15 - 09.45",
+          "subject": "Administrasi Infrastruktur Jaringan & Keamanan Siber",
+          "teacherId": "t-tkj-1",
+          "teacherName": "Hendra Wijaya, S.Kom., M.T.",
+          "teacherCode": "HW",
+          "roomOrLab": "Lab Komputer & Jaringan 1"
+        },
+        {
+          "id": "11-TKJ-wed-2",
+          "day": "Rabu",
+          "period": 2,
+          "time": "10.00 - 12.00",
+          "subject": "Bahasa Indonesia & Komunikasi Teknis",
+          "teacherId": "t-umum-1",
+          "teacherName": "Dra. Hj. Nuraini, M.Pd.",
+          "teacherCode": "NR",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-TKJ-wed-3",
+          "day": "Rabu",
+          "period": 3,
+          "time": "12.45 - 15.00",
+          "subject": "Praktik Kejuruan Lanjutan",
+          "teacherId": "t-tkj-2",
+          "teacherName": "Ahmad Fauzan, S.T.",
+          "teacherCode": "AF",
+          "roomOrLab": "Lab Fiber Optic Splicing"
+        },
+        {
+          "id": "11-TKJ-thu-1",
+          "day": "Kamis",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Pendidikan Jasmani, Olahraga & Kesehatan (PJOK)",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Olahraga & Senam"
+        },
+        {
+          "id": "11-TKJ-thu-2",
+          "day": "Kamis",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pendidikan Pancasila & Kewarganegaraan (PPKn)",
+          "teacherId": "t-umum-6",
+          "teacherName": "Yuli Hastuti, S.Pd.",
+          "teacherCode": "YH",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-TKJ-thu-3",
+          "day": "Kamis",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Projek Penguatan Profil Pelajar Pancasila (P5) / TEFA",
+          "teacherId": "t-tkj-1",
+          "teacherName": "Hendra Wijaya, S.Kom., M.T.",
+          "teacherCode": "HW",
+          "roomOrLab": "Workshop Teaching Factory"
+        },
+        {
+          "id": "11-TKJ-fri-1",
+          "day": "Jumat",
+          "period": 1,
+          "time": "07.15 - 08.15",
+          "subject": "Senam Pagi Kesegaran Jasmani & Rohani Islam (Imtaq)",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Lapangan / Masjid Sekolah"
+        },
+        {
+          "id": "11-TKJ-fri-2",
+          "day": "Jumat",
+          "period": 2,
+          "time": "08.15 - 10.00",
+          "subject": "Konseling Karir, Penelusuran Minat & Bimbingan PKL",
+          "teacherId": "t-umum-7",
+          "teacherName": "Siti Aminah, S.Pd., Kons.",
+          "teacherCode": "SA",
+          "roomOrLab": "Ruang Bimbingan Konseling"
+        },
+        {
+          "id": "11-TKJ-fri-3",
+          "day": "Jumat",
+          "period": 3,
+          "time": "10.00 - 11.30",
+          "subject": "Evaluasi Pembelajaran Mingguan & Pemeliharaan Lab 5R",
+          "teacherId": "t-tkj-2",
+          "teacherName": "Ahmad Fauzan, S.T.",
+          "teacherCode": "AF",
+          "roomOrLab": "Lab Fiber Optic Splicing"
+        }
+      ]
+    },
+    {
+      "majorId": "tkj",
+      "majorCode": "TKJ",
+      "majorName": "Teknik Komputer & Jaringan",
+      "grade": "12",
+      "className": "XII TKJ 1",
+      "homeroomTeacher": {
+        "name": "Hendra Wijaya, S.Kom., M.T.",
+        "nip": "19830719 200902 1 004"
+      },
+      "totalStudents": 34,
+      "classroom": "Gedung A - R.301",
+      "schedules": [
+        {
+          "id": "12-TKJ-mon-1",
+          "day": "Senin",
+          "period": 1,
+          "time": "07.15 - 08.00",
+          "subject": "Upacara Bendera & Apel Kedisiplinan Taruna",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Utama"
+        },
+        {
+          "id": "12-TKJ-mon-2",
+          "day": "Senin",
+          "period": 2,
+          "time": "08.00 - 09.30",
+          "subject": "Matematika Terapan Kejuruan",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-TKJ-mon-3",
+          "day": "Senin",
+          "period": 3,
+          "time": "09.45 - 11.45",
+          "subject": "Praktik Kejuruan Produktif Inti",
+          "teacherId": "t-tkj-1",
+          "teacherName": "Hendra Wijaya, S.Kom., M.T.",
+          "teacherCode": "HW",
+          "roomOrLab": "Lab Komputer & Jaringan 1"
+        },
+        {
+          "id": "12-TKJ-mon-4",
+          "day": "Senin",
+          "period": 4,
+          "time": "12.30 - 15.00",
+          "subject": "Praktik Laboratorium / Bengkel Keahlian TKJ",
+          "teacherId": "t-tkj-1",
+          "teacherName": "Hendra Wijaya, S.Kom., M.T.",
+          "teacherCode": "HW",
+          "roomOrLab": "Lab Komputer & Jaringan 1"
+        },
+        {
+          "id": "12-TKJ-tue-1",
+          "day": "Selasa",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Matematika Terapan Vokasi",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-TKJ-tue-2",
+          "day": "Selasa",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Projek Kreatif & Kewirausahaan (PKK)",
+          "teacherId": "t-tkj-2",
+          "teacherName": "Ahmad Fauzan, S.T.",
+          "teacherCode": "AF",
+          "roomOrLab": "Lab Fiber Optic Splicing"
+        },
+        {
+          "id": "12-TKJ-tue-3",
+          "day": "Selasa",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Bahasa Inggris Vokasi (Technical English)",
+          "teacherId": "t-umum-4",
+          "teacherName": "David Sihombing, S.Pd., M.Hum.",
+          "teacherCode": "DS",
+          "roomOrLab": "Lab Bahasa & Multimedia"
+        },
+        {
+          "id": "12-TKJ-wed-1",
+          "day": "Rabu",
+          "period": 1,
+          "time": "07.15 - 09.45",
+          "subject": "Administrasi Infrastruktur Jaringan & Keamanan Siber",
+          "teacherId": "t-tkj-1",
+          "teacherName": "Hendra Wijaya, S.Kom., M.T.",
+          "teacherCode": "HW",
+          "roomOrLab": "Lab Komputer & Jaringan 1"
+        },
+        {
+          "id": "12-TKJ-wed-2",
+          "day": "Rabu",
+          "period": 2,
+          "time": "10.00 - 12.00",
+          "subject": "Bahasa Indonesia & Komunikasi Teknis",
+          "teacherId": "t-umum-1",
+          "teacherName": "Dra. Hj. Nuraini, M.Pd.",
+          "teacherCode": "NR",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-TKJ-wed-3",
+          "day": "Rabu",
+          "period": 3,
+          "time": "12.45 - 15.00",
+          "subject": "Uji Kompetensi Keahlian (UKK) & Standar LSP",
+          "teacherId": "t-tkj-2",
+          "teacherName": "Ahmad Fauzan, S.T.",
+          "teacherCode": "AF",
+          "roomOrLab": "Lab Fiber Optic Splicing"
+        },
+        {
+          "id": "12-TKJ-thu-1",
+          "day": "Kamis",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Pendidikan Jasmani, Olahraga & Kesehatan (PJOK)",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Olahraga & Senam"
+        },
+        {
+          "id": "12-TKJ-thu-2",
+          "day": "Kamis",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pendidikan Pancasila & Kewarganegaraan (PPKn)",
+          "teacherId": "t-umum-6",
+          "teacherName": "Yuli Hastuti, S.Pd.",
+          "teacherCode": "YH",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-TKJ-thu-3",
+          "day": "Kamis",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Projek Penguatan Profil Pelajar Pancasila (P5) / TEFA",
+          "teacherId": "t-tkj-1",
+          "teacherName": "Hendra Wijaya, S.Kom., M.T.",
+          "teacherCode": "HW",
+          "roomOrLab": "Workshop Teaching Factory"
+        },
+        {
+          "id": "12-TKJ-fri-1",
+          "day": "Jumat",
+          "period": 1,
+          "time": "07.15 - 08.15",
+          "subject": "Senam Pagi Kesegaran Jasmani & Rohani Islam (Imtaq)",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Lapangan / Masjid Sekolah"
+        },
+        {
+          "id": "12-TKJ-fri-2",
+          "day": "Jumat",
+          "period": 2,
+          "time": "08.15 - 10.00",
+          "subject": "Konseling Karir, Penelusuran Minat & Bimbingan PKL",
+          "teacherId": "t-umum-7",
+          "teacherName": "Siti Aminah, S.Pd., Kons.",
+          "teacherCode": "SA",
+          "roomOrLab": "Ruang Bimbingan Konseling"
+        },
+        {
+          "id": "12-TKJ-fri-3",
+          "day": "Jumat",
+          "period": 3,
+          "time": "10.00 - 11.30",
+          "subject": "Evaluasi Pembelajaran Mingguan & Pemeliharaan Lab 5R",
+          "teacherId": "t-tkj-2",
+          "teacherName": "Ahmad Fauzan, S.T.",
+          "teacherCode": "AF",
+          "roomOrLab": "Lab Fiber Optic Splicing"
+        }
+      ]
+    },
+    {
+      "majorId": "to",
+      "majorCode": "TO",
+      "majorName": "Teknik Otomotif",
+      "grade": "10",
+      "className": "X TO 1",
+      "homeroomTeacher": {
+        "name": "Eko Wahyudi, S.T.",
+        "nip": "19900914 201602 1 008"
+      },
+      "totalStudents": 36,
+      "classroom": "Gedung B - R.102",
+      "schedules": [
+        {
+          "id": "10-TO-mon-1",
+          "day": "Senin",
+          "period": 1,
+          "time": "07.15 - 08.00",
+          "subject": "Upacara Bendera & Apel Kedisiplinan Taruna",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Utama"
+        },
+        {
+          "id": "10-TO-mon-2",
+          "day": "Senin",
+          "period": 2,
+          "time": "08.00 - 09.30",
+          "subject": "Pendidikan Agama & Budi Pekerti",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-TO-mon-3",
+          "day": "Senin",
+          "period": 3,
+          "time": "09.45 - 11.45",
+          "subject": "Dasar Program Keahlian TO",
+          "teacherId": "t-to-1",
+          "teacherName": "Supriyadi, S.T.",
+          "teacherCode": "SP",
+          "roomOrLab": "Bengkel Otomotif Utama"
+        },
+        {
+          "id": "10-TO-mon-4",
+          "day": "Senin",
+          "period": 4,
+          "time": "12.30 - 15.00",
+          "subject": "Praktik Laboratorium / Bengkel Keahlian TO",
+          "teacherId": "t-to-1",
+          "teacherName": "Supriyadi, S.T.",
+          "teacherCode": "SP",
+          "roomOrLab": "Bengkel Otomotif Utama"
+        },
+        {
+          "id": "10-TO-tue-1",
+          "day": "Selasa",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Matematika Terapan Vokasi",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-TO-tue-2",
+          "day": "Selasa",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pemeliharaan Sasis & Pemindah Tenaga (Chassis & Power Train)",
+          "teacherId": "t-to-3",
+          "teacherName": "Eko Wahyudi, S.T.",
+          "teacherCode": "EW",
+          "roomOrLab": "Bengkel Car Lift & Spooring"
+        },
+        {
+          "id": "10-TO-tue-3",
+          "day": "Selasa",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Bahasa Inggris Vokasi (Technical English)",
+          "teacherId": "t-umum-4",
+          "teacherName": "David Sihombing, S.Pd., M.Hum.",
+          "teacherCode": "DS",
+          "roomOrLab": "Lab Bahasa & Multimedia"
+        },
+        {
+          "id": "10-TO-wed-1",
+          "day": "Rabu",
+          "period": 1,
+          "time": "07.15 - 09.45",
+          "subject": "Informatika & Literasi Digital",
+          "teacherId": "t-to-1",
+          "teacherName": "Supriyadi, S.T.",
+          "teacherCode": "SP",
+          "roomOrLab": "Bengkel Otomotif Utama"
+        },
+        {
+          "id": "10-TO-wed-2",
+          "day": "Rabu",
+          "period": 2,
+          "time": "10.00 - 12.00",
+          "subject": "Bahasa Indonesia & Komunikasi Teknis",
+          "teacherId": "t-umum-1",
+          "teacherName": "Dra. Hj. Nuraini, M.Pd.",
+          "teacherCode": "NR",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-TO-wed-3",
+          "day": "Rabu",
+          "period": 3,
+          "time": "12.45 - 15.00",
+          "subject": "Praktik Kejuruan Lanjutan",
+          "teacherId": "t-to-3",
+          "teacherName": "Eko Wahyudi, S.T.",
+          "teacherCode": "EW",
+          "roomOrLab": "Bengkel Car Lift & Spooring"
+        },
+        {
+          "id": "10-TO-thu-1",
+          "day": "Kamis",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Pendidikan Jasmani, Olahraga & Kesehatan (PJOK)",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Olahraga & Senam"
+        },
+        {
+          "id": "10-TO-thu-2",
+          "day": "Kamis",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pendidikan Pancasila & Kewarganegaraan (PPKn)",
+          "teacherId": "t-umum-6",
+          "teacherName": "Yuli Hastuti, S.Pd.",
+          "teacherCode": "YH",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-TO-thu-3",
+          "day": "Kamis",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Projek Penguatan Profil Pelajar Pancasila (P5) / TEFA",
+          "teacherId": "t-to-1",
+          "teacherName": "Supriyadi, S.T.",
+          "teacherCode": "SP",
+          "roomOrLab": "Workshop Teaching Factory"
+        },
+        {
+          "id": "10-TO-fri-1",
+          "day": "Jumat",
+          "period": 1,
+          "time": "07.15 - 08.15",
+          "subject": "Senam Pagi Kesegaran Jasmani & Rohani Islam (Imtaq)",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Lapangan / Masjid Sekolah"
+        },
+        {
+          "id": "10-TO-fri-2",
+          "day": "Jumat",
+          "period": 2,
+          "time": "08.15 - 10.00",
+          "subject": "Konseling Karir, Penelusuran Minat & Bimbingan PKL",
+          "teacherId": "t-umum-7",
+          "teacherName": "Siti Aminah, S.Pd., Kons.",
+          "teacherCode": "SA",
+          "roomOrLab": "Ruang Bimbingan Konseling"
+        },
+        {
+          "id": "10-TO-fri-3",
+          "day": "Jumat",
+          "period": 3,
+          "time": "10.00 - 11.30",
+          "subject": "Evaluasi Pembelajaran Mingguan & Pemeliharaan Lab 5R",
+          "teacherId": "t-to-3",
+          "teacherName": "Eko Wahyudi, S.T.",
+          "teacherCode": "EW",
+          "roomOrLab": "Bengkel Car Lift & Spooring"
+        }
+      ]
+    },
+    {
+      "majorId": "to",
+      "majorCode": "TO",
+      "majorName": "Teknik Otomotif",
+      "grade": "11",
+      "className": "XI TO 1",
+      "homeroomTeacher": {
+        "name": "Rudi Hartono, S.Pd.",
+        "nip": "19870511 201101 1 006"
+      },
+      "totalStudents": 35,
+      "classroom": "Gedung B - R.202",
+      "schedules": [
+        {
+          "id": "11-TO-mon-1",
+          "day": "Senin",
+          "period": 1,
+          "time": "07.15 - 08.00",
+          "subject": "Upacara Bendera & Apel Kedisiplinan Taruna",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Utama"
+        },
+        {
+          "id": "11-TO-mon-2",
+          "day": "Senin",
+          "period": 2,
+          "time": "08.00 - 09.30",
+          "subject": "Matematika Terapan Kejuruan",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-TO-mon-3",
+          "day": "Senin",
+          "period": 3,
+          "time": "09.45 - 11.45",
+          "subject": "Praktik Kejuruan Produktif Inti",
+          "teacherId": "t-to-1",
+          "teacherName": "Supriyadi, S.T.",
+          "teacherCode": "SP",
+          "roomOrLab": "Bengkel Otomotif Utama"
+        },
+        {
+          "id": "11-TO-mon-4",
+          "day": "Senin",
+          "period": 4,
+          "time": "12.30 - 15.00",
+          "subject": "Praktik Laboratorium / Bengkel Keahlian TO",
+          "teacherId": "t-to-1",
+          "teacherName": "Supriyadi, S.T.",
+          "teacherCode": "SP",
+          "roomOrLab": "Bengkel Otomotif Utama"
+        },
+        {
+          "id": "11-TO-tue-1",
+          "day": "Selasa",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Matematika Terapan Vokasi",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-TO-tue-2",
+          "day": "Selasa",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pemeliharaan Kelistrikan Kendaraan & Sistem AC",
+          "teacherId": "t-to-2",
+          "teacherName": "Rudi Hartono, S.Pd.",
+          "teacherCode": "RH",
+          "roomOrLab": "Lab Kelistrikan Mobil"
+        },
+        {
+          "id": "11-TO-tue-3",
+          "day": "Selasa",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Bahasa Inggris Vokasi (Technical English)",
+          "teacherId": "t-umum-4",
+          "teacherName": "David Sihombing, S.Pd., M.Hum.",
+          "teacherCode": "DS",
+          "roomOrLab": "Lab Bahasa & Multimedia"
+        },
+        {
+          "id": "11-TO-wed-1",
+          "day": "Rabu",
+          "period": 1,
+          "time": "07.15 - 09.45",
+          "subject": "Pemeliharaan Mesin Kendaraan Ringan & Sistem EFI",
+          "teacherId": "t-to-1",
+          "teacherName": "Supriyadi, S.T.",
+          "teacherCode": "SP",
+          "roomOrLab": "Bengkel Otomotif Utama"
+        },
+        {
+          "id": "11-TO-wed-2",
+          "day": "Rabu",
+          "period": 2,
+          "time": "10.00 - 12.00",
+          "subject": "Bahasa Indonesia & Komunikasi Teknis",
+          "teacherId": "t-umum-1",
+          "teacherName": "Dra. Hj. Nuraini, M.Pd.",
+          "teacherCode": "NR",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-TO-wed-3",
+          "day": "Rabu",
+          "period": 3,
+          "time": "12.45 - 15.00",
+          "subject": "Praktik Kejuruan Lanjutan",
+          "teacherId": "t-to-2",
+          "teacherName": "Rudi Hartono, S.Pd.",
+          "teacherCode": "RH",
+          "roomOrLab": "Lab Kelistrikan Mobil"
+        },
+        {
+          "id": "11-TO-thu-1",
+          "day": "Kamis",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Pendidikan Jasmani, Olahraga & Kesehatan (PJOK)",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Olahraga & Senam"
+        },
+        {
+          "id": "11-TO-thu-2",
+          "day": "Kamis",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pendidikan Pancasila & Kewarganegaraan (PPKn)",
+          "teacherId": "t-umum-6",
+          "teacherName": "Yuli Hastuti, S.Pd.",
+          "teacherCode": "YH",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-TO-thu-3",
+          "day": "Kamis",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Projek Penguatan Profil Pelajar Pancasila (P5) / TEFA",
+          "teacherId": "t-to-1",
+          "teacherName": "Supriyadi, S.T.",
+          "teacherCode": "SP",
+          "roomOrLab": "Workshop Teaching Factory"
+        },
+        {
+          "id": "11-TO-fri-1",
+          "day": "Jumat",
+          "period": 1,
+          "time": "07.15 - 08.15",
+          "subject": "Senam Pagi Kesegaran Jasmani & Rohani Islam (Imtaq)",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Lapangan / Masjid Sekolah"
+        },
+        {
+          "id": "11-TO-fri-2",
+          "day": "Jumat",
+          "period": 2,
+          "time": "08.15 - 10.00",
+          "subject": "Konseling Karir, Penelusuran Minat & Bimbingan PKL",
+          "teacherId": "t-umum-7",
+          "teacherName": "Siti Aminah, S.Pd., Kons.",
+          "teacherCode": "SA",
+          "roomOrLab": "Ruang Bimbingan Konseling"
+        },
+        {
+          "id": "11-TO-fri-3",
+          "day": "Jumat",
+          "period": 3,
+          "time": "10.00 - 11.30",
+          "subject": "Evaluasi Pembelajaran Mingguan & Pemeliharaan Lab 5R",
+          "teacherId": "t-to-2",
+          "teacherName": "Rudi Hartono, S.Pd.",
+          "teacherCode": "RH",
+          "roomOrLab": "Lab Kelistrikan Mobil"
+        }
+      ]
+    },
+    {
+      "majorId": "to",
+      "majorCode": "TO",
+      "majorName": "Teknik Otomotif",
+      "grade": "12",
+      "className": "XII TO 1",
+      "homeroomTeacher": {
+        "name": "Supriyadi, S.T.",
+        "nip": "19840618 200902 1 005"
+      },
+      "totalStudents": 34,
+      "classroom": "Gedung B - R.302",
+      "schedules": [
+        {
+          "id": "12-TO-mon-1",
+          "day": "Senin",
+          "period": 1,
+          "time": "07.15 - 08.00",
+          "subject": "Upacara Bendera & Apel Kedisiplinan Taruna",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Utama"
+        },
+        {
+          "id": "12-TO-mon-2",
+          "day": "Senin",
+          "period": 2,
+          "time": "08.00 - 09.30",
+          "subject": "Matematika Terapan Kejuruan",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-TO-mon-3",
+          "day": "Senin",
+          "period": 3,
+          "time": "09.45 - 11.45",
+          "subject": "Praktik Kejuruan Produktif Inti",
+          "teacherId": "t-to-1",
+          "teacherName": "Supriyadi, S.T.",
+          "teacherCode": "SP",
+          "roomOrLab": "Bengkel Otomotif Utama"
+        },
+        {
+          "id": "12-TO-mon-4",
+          "day": "Senin",
+          "period": 4,
+          "time": "12.30 - 15.00",
+          "subject": "Praktik Laboratorium / Bengkel Keahlian TO",
+          "teacherId": "t-to-1",
+          "teacherName": "Supriyadi, S.T.",
+          "teacherCode": "SP",
+          "roomOrLab": "Bengkel Otomotif Utama"
+        },
+        {
+          "id": "12-TO-tue-1",
+          "day": "Selasa",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Matematika Terapan Vokasi",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-TO-tue-2",
+          "day": "Selasa",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Projek Kreatif & Kewirausahaan (PKK)",
+          "teacherId": "t-to-2",
+          "teacherName": "Rudi Hartono, S.Pd.",
+          "teacherCode": "RH",
+          "roomOrLab": "Lab Kelistrikan Mobil"
+        },
+        {
+          "id": "12-TO-tue-3",
+          "day": "Selasa",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Bahasa Inggris Vokasi (Technical English)",
+          "teacherId": "t-umum-4",
+          "teacherName": "David Sihombing, S.Pd., M.Hum.",
+          "teacherCode": "DS",
+          "roomOrLab": "Lab Bahasa & Multimedia"
+        },
+        {
+          "id": "12-TO-wed-1",
+          "day": "Rabu",
+          "period": 1,
+          "time": "07.15 - 09.45",
+          "subject": "Pemeliharaan Mesin Kendaraan Ringan & Sistem EFI",
+          "teacherId": "t-to-1",
+          "teacherName": "Supriyadi, S.T.",
+          "teacherCode": "SP",
+          "roomOrLab": "Bengkel Otomotif Utama"
+        },
+        {
+          "id": "12-TO-wed-2",
+          "day": "Rabu",
+          "period": 2,
+          "time": "10.00 - 12.00",
+          "subject": "Bahasa Indonesia & Komunikasi Teknis",
+          "teacherId": "t-umum-1",
+          "teacherName": "Dra. Hj. Nuraini, M.Pd.",
+          "teacherCode": "NR",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-TO-wed-3",
+          "day": "Rabu",
+          "period": 3,
+          "time": "12.45 - 15.00",
+          "subject": "Uji Kompetensi Keahlian (UKK) & Standar LSP",
+          "teacherId": "t-to-2",
+          "teacherName": "Rudi Hartono, S.Pd.",
+          "teacherCode": "RH",
+          "roomOrLab": "Lab Kelistrikan Mobil"
+        },
+        {
+          "id": "12-TO-thu-1",
+          "day": "Kamis",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Pendidikan Jasmani, Olahraga & Kesehatan (PJOK)",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Olahraga & Senam"
+        },
+        {
+          "id": "12-TO-thu-2",
+          "day": "Kamis",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pendidikan Pancasila & Kewarganegaraan (PPKn)",
+          "teacherId": "t-umum-6",
+          "teacherName": "Yuli Hastuti, S.Pd.",
+          "teacherCode": "YH",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-TO-thu-3",
+          "day": "Kamis",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Projek Penguatan Profil Pelajar Pancasila (P5) / TEFA",
+          "teacherId": "t-to-1",
+          "teacherName": "Supriyadi, S.T.",
+          "teacherCode": "SP",
+          "roomOrLab": "Workshop Teaching Factory"
+        },
+        {
+          "id": "12-TO-fri-1",
+          "day": "Jumat",
+          "period": 1,
+          "time": "07.15 - 08.15",
+          "subject": "Senam Pagi Kesegaran Jasmani & Rohani Islam (Imtaq)",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Lapangan / Masjid Sekolah"
+        },
+        {
+          "id": "12-TO-fri-2",
+          "day": "Jumat",
+          "period": 2,
+          "time": "08.15 - 10.00",
+          "subject": "Konseling Karir, Penelusuran Minat & Bimbingan PKL",
+          "teacherId": "t-umum-7",
+          "teacherName": "Siti Aminah, S.Pd., Kons.",
+          "teacherCode": "SA",
+          "roomOrLab": "Ruang Bimbingan Konseling"
+        },
+        {
+          "id": "12-TO-fri-3",
+          "day": "Jumat",
+          "period": 3,
+          "time": "10.00 - 11.30",
+          "subject": "Evaluasi Pembelajaran Mingguan & Pemeliharaan Lab 5R",
+          "teacherId": "t-to-2",
+          "teacherName": "Rudi Hartono, S.Pd.",
+          "teacherCode": "RH",
+          "roomOrLab": "Lab Kelistrikan Mobil"
+        }
+      ]
+    },
+    {
+      "majorId": "bdp",
+      "majorCode": "BDP",
+      "majorName": "Bisnis Daring & Pemasaran",
+      "grade": "10",
+      "className": "X BDP 1",
+      "homeroomTeacher": {
+        "name": "Maya Sartika, S.E.",
+        "nip": "19890218 201503 2 007"
+      },
+      "totalStudents": 34,
+      "classroom": "Gedung C - R.103",
+      "schedules": [
+        {
+          "id": "10-BDP-mon-1",
+          "day": "Senin",
+          "period": 1,
+          "time": "07.15 - 08.00",
+          "subject": "Upacara Bendera & Apel Kedisiplinan Taruna",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Utama"
+        },
+        {
+          "id": "10-BDP-mon-2",
+          "day": "Senin",
+          "period": 2,
+          "time": "08.00 - 09.30",
+          "subject": "Pendidikan Agama & Budi Pekerti",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-BDP-mon-3",
+          "day": "Senin",
+          "period": 3,
+          "time": "09.45 - 11.45",
+          "subject": "Dasar Program Keahlian BDP",
+          "teacherId": "t-bdp-1",
+          "teacherName": "Rina Kartika, S.Pd.",
+          "teacherCode": "RK",
+          "roomOrLab": "Studio Live Streaming & BDP"
+        },
+        {
+          "id": "10-BDP-mon-4",
+          "day": "Senin",
+          "period": 4,
+          "time": "12.30 - 15.00",
+          "subject": "Praktik Laboratorium / Bengkel Keahlian BDP",
+          "teacherId": "t-bdp-1",
+          "teacherName": "Rina Kartika, S.Pd.",
+          "teacherCode": "RK",
+          "roomOrLab": "Studio Live Streaming & BDP"
+        },
+        {
+          "id": "10-BDP-tue-1",
+          "day": "Selasa",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Matematika Terapan Vokasi",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-BDP-tue-2",
+          "day": "Selasa",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pengelolaan Bisnis Ritel & Sistem Kasir POS",
+          "teacherId": "t-bdp-2",
+          "teacherName": "Maya Sartika, S.E.",
+          "teacherCode": "MS",
+          "roomOrLab": "Edumart SMKN 1"
+        },
+        {
+          "id": "10-BDP-tue-3",
+          "day": "Selasa",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Bahasa Inggris Vokasi (Technical English)",
+          "teacherId": "t-umum-4",
+          "teacherName": "David Sihombing, S.Pd., M.Hum.",
+          "teacherCode": "DS",
+          "roomOrLab": "Lab Bahasa & Multimedia"
+        },
+        {
+          "id": "10-BDP-wed-1",
+          "day": "Rabu",
+          "period": 1,
+          "time": "07.15 - 09.45",
+          "subject": "Informatika & Literasi Digital",
+          "teacherId": "t-bdp-1",
+          "teacherName": "Rina Kartika, S.Pd.",
+          "teacherCode": "RK",
+          "roomOrLab": "Studio Live Streaming & BDP"
+        },
+        {
+          "id": "10-BDP-wed-2",
+          "day": "Rabu",
+          "period": 2,
+          "time": "10.00 - 12.00",
+          "subject": "Bahasa Indonesia & Komunikasi Teknis",
+          "teacherId": "t-umum-1",
+          "teacherName": "Dra. Hj. Nuraini, M.Pd.",
+          "teacherCode": "NR",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-BDP-wed-3",
+          "day": "Rabu",
+          "period": 3,
+          "time": "12.45 - 15.00",
+          "subject": "Praktik Kejuruan Lanjutan",
+          "teacherId": "t-bdp-2",
+          "teacherName": "Maya Sartika, S.E.",
+          "teacherCode": "MS",
+          "roomOrLab": "Edumart SMKN 1"
+        },
+        {
+          "id": "10-BDP-thu-1",
+          "day": "Kamis",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Pendidikan Jasmani, Olahraga & Kesehatan (PJOK)",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Olahraga & Senam"
+        },
+        {
+          "id": "10-BDP-thu-2",
+          "day": "Kamis",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pendidikan Pancasila & Kewarganegaraan (PPKn)",
+          "teacherId": "t-umum-6",
+          "teacherName": "Yuli Hastuti, S.Pd.",
+          "teacherCode": "YH",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-BDP-thu-3",
+          "day": "Kamis",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Projek Penguatan Profil Pelajar Pancasila (P5) / TEFA",
+          "teacherId": "t-bdp-1",
+          "teacherName": "Rina Kartika, S.Pd.",
+          "teacherCode": "RK",
+          "roomOrLab": "Workshop Teaching Factory"
+        },
+        {
+          "id": "10-BDP-fri-1",
+          "day": "Jumat",
+          "period": 1,
+          "time": "07.15 - 08.15",
+          "subject": "Senam Pagi Kesegaran Jasmani & Rohani Islam (Imtaq)",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Lapangan / Masjid Sekolah"
+        },
+        {
+          "id": "10-BDP-fri-2",
+          "day": "Jumat",
+          "period": 2,
+          "time": "08.15 - 10.00",
+          "subject": "Konseling Karir, Penelusuran Minat & Bimbingan PKL",
+          "teacherId": "t-umum-7",
+          "teacherName": "Siti Aminah, S.Pd., Kons.",
+          "teacherCode": "SA",
+          "roomOrLab": "Ruang Bimbingan Konseling"
+        },
+        {
+          "id": "10-BDP-fri-3",
+          "day": "Jumat",
+          "period": 3,
+          "time": "10.00 - 11.30",
+          "subject": "Evaluasi Pembelajaran Mingguan & Pemeliharaan Lab 5R",
+          "teacherId": "t-bdp-2",
+          "teacherName": "Maya Sartika, S.E.",
+          "teacherCode": "MS",
+          "roomOrLab": "Edumart SMKN 1"
+        }
+      ]
+    },
+    {
+      "majorId": "bdp",
+      "majorCode": "BDP",
+      "majorName": "Bisnis Daring & Pemasaran",
+      "grade": "11",
+      "className": "XI BDP 1",
+      "homeroomTeacher": {
+        "name": "Rina Kartika, S.Pd.",
+        "nip": "19910415 201701 2 006"
+      },
+      "totalStudents": 33,
+      "classroom": "Gedung C - R.203",
+      "schedules": [
+        {
+          "id": "11-BDP-mon-1",
+          "day": "Senin",
+          "period": 1,
+          "time": "07.15 - 08.00",
+          "subject": "Upacara Bendera & Apel Kedisiplinan Taruna",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Utama"
+        },
+        {
+          "id": "11-BDP-mon-2",
+          "day": "Senin",
+          "period": 2,
+          "time": "08.00 - 09.30",
+          "subject": "Matematika Terapan Kejuruan",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-BDP-mon-3",
+          "day": "Senin",
+          "period": 3,
+          "time": "09.45 - 11.45",
+          "subject": "Praktik Kejuruan Produktif Inti",
+          "teacherId": "t-bdp-1",
+          "teacherName": "Rina Kartika, S.Pd.",
+          "teacherCode": "RK",
+          "roomOrLab": "Studio Live Streaming & BDP"
+        },
+        {
+          "id": "11-BDP-mon-4",
+          "day": "Senin",
+          "period": 4,
+          "time": "12.30 - 15.00",
+          "subject": "Praktik Laboratorium / Bengkel Keahlian BDP",
+          "teacherId": "t-bdp-1",
+          "teacherName": "Rina Kartika, S.Pd.",
+          "teacherCode": "RK",
+          "roomOrLab": "Studio Live Streaming & BDP"
+        },
+        {
+          "id": "11-BDP-tue-1",
+          "day": "Selasa",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Matematika Terapan Vokasi",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-BDP-tue-2",
+          "day": "Selasa",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pengelolaan Bisnis Ritel & Sistem Kasir POS",
+          "teacherId": "t-bdp-2",
+          "teacherName": "Maya Sartika, S.E.",
+          "teacherCode": "MS",
+          "roomOrLab": "Edumart SMKN 1"
+        },
+        {
+          "id": "11-BDP-tue-3",
+          "day": "Selasa",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Bahasa Inggris Vokasi (Technical English)",
+          "teacherId": "t-umum-4",
+          "teacherName": "David Sihombing, S.Pd., M.Hum.",
+          "teacherCode": "DS",
+          "roomOrLab": "Lab Bahasa & Multimedia"
+        },
+        {
+          "id": "11-BDP-wed-1",
+          "day": "Rabu",
+          "period": 1,
+          "time": "07.15 - 09.45",
+          "subject": "Digital Marketing & Content Creator E-Commerce",
+          "teacherId": "t-bdp-1",
+          "teacherName": "Rina Kartika, S.Pd.",
+          "teacherCode": "RK",
+          "roomOrLab": "Studio Live Streaming & BDP"
+        },
+        {
+          "id": "11-BDP-wed-2",
+          "day": "Rabu",
+          "period": 2,
+          "time": "10.00 - 12.00",
+          "subject": "Bahasa Indonesia & Komunikasi Teknis",
+          "teacherId": "t-umum-1",
+          "teacherName": "Dra. Hj. Nuraini, M.Pd.",
+          "teacherCode": "NR",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-BDP-wed-3",
+          "day": "Rabu",
+          "period": 3,
+          "time": "12.45 - 15.00",
+          "subject": "Praktik Kejuruan Lanjutan",
+          "teacherId": "t-bdp-2",
+          "teacherName": "Maya Sartika, S.E.",
+          "teacherCode": "MS",
+          "roomOrLab": "Edumart SMKN 1"
+        },
+        {
+          "id": "11-BDP-thu-1",
+          "day": "Kamis",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Pendidikan Jasmani, Olahraga & Kesehatan (PJOK)",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Olahraga & Senam"
+        },
+        {
+          "id": "11-BDP-thu-2",
+          "day": "Kamis",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pendidikan Pancasila & Kewarganegaraan (PPKn)",
+          "teacherId": "t-umum-6",
+          "teacherName": "Yuli Hastuti, S.Pd.",
+          "teacherCode": "YH",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-BDP-thu-3",
+          "day": "Kamis",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Projek Penguatan Profil Pelajar Pancasila (P5) / TEFA",
+          "teacherId": "t-bdp-1",
+          "teacherName": "Rina Kartika, S.Pd.",
+          "teacherCode": "RK",
+          "roomOrLab": "Workshop Teaching Factory"
+        },
+        {
+          "id": "11-BDP-fri-1",
+          "day": "Jumat",
+          "period": 1,
+          "time": "07.15 - 08.15",
+          "subject": "Senam Pagi Kesegaran Jasmani & Rohani Islam (Imtaq)",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Lapangan / Masjid Sekolah"
+        },
+        {
+          "id": "11-BDP-fri-2",
+          "day": "Jumat",
+          "period": 2,
+          "time": "08.15 - 10.00",
+          "subject": "Konseling Karir, Penelusuran Minat & Bimbingan PKL",
+          "teacherId": "t-umum-7",
+          "teacherName": "Siti Aminah, S.Pd., Kons.",
+          "teacherCode": "SA",
+          "roomOrLab": "Ruang Bimbingan Konseling"
+        },
+        {
+          "id": "11-BDP-fri-3",
+          "day": "Jumat",
+          "period": 3,
+          "time": "10.00 - 11.30",
+          "subject": "Evaluasi Pembelajaran Mingguan & Pemeliharaan Lab 5R",
+          "teacherId": "t-bdp-2",
+          "teacherName": "Maya Sartika, S.E.",
+          "teacherCode": "MS",
+          "roomOrLab": "Edumart SMKN 1"
+        }
+      ]
+    },
+    {
+      "majorId": "bdp",
+      "majorCode": "BDP",
+      "majorName": "Bisnis Daring & Pemasaran",
+      "grade": "12",
+      "className": "XII BDP 1",
+      "homeroomTeacher": {
+        "name": "David Sihombing, S.Pd., M.Hum.",
+        "nip": "19850325 201001 1 015"
+      },
+      "totalStudents": 32,
+      "classroom": "Gedung C - R.303",
+      "schedules": [
+        {
+          "id": "12-BDP-mon-1",
+          "day": "Senin",
+          "period": 1,
+          "time": "07.15 - 08.00",
+          "subject": "Upacara Bendera & Apel Kedisiplinan Taruna",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Utama"
+        },
+        {
+          "id": "12-BDP-mon-2",
+          "day": "Senin",
+          "period": 2,
+          "time": "08.00 - 09.30",
+          "subject": "Matematika Terapan Kejuruan",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-BDP-mon-3",
+          "day": "Senin",
+          "period": 3,
+          "time": "09.45 - 11.45",
+          "subject": "Praktik Kejuruan Produktif Inti",
+          "teacherId": "t-bdp-1",
+          "teacherName": "Rina Kartika, S.Pd.",
+          "teacherCode": "RK",
+          "roomOrLab": "Studio Live Streaming & BDP"
+        },
+        {
+          "id": "12-BDP-mon-4",
+          "day": "Senin",
+          "period": 4,
+          "time": "12.30 - 15.00",
+          "subject": "Praktik Laboratorium / Bengkel Keahlian BDP",
+          "teacherId": "t-bdp-1",
+          "teacherName": "Rina Kartika, S.Pd.",
+          "teacherCode": "RK",
+          "roomOrLab": "Studio Live Streaming & BDP"
+        },
+        {
+          "id": "12-BDP-tue-1",
+          "day": "Selasa",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Matematika Terapan Vokasi",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-BDP-tue-2",
+          "day": "Selasa",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Projek Kreatif & Kewirausahaan (PKK)",
+          "teacherId": "t-bdp-2",
+          "teacherName": "Maya Sartika, S.E.",
+          "teacherCode": "MS",
+          "roomOrLab": "Edumart SMKN 1"
+        },
+        {
+          "id": "12-BDP-tue-3",
+          "day": "Selasa",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Bahasa Inggris Vokasi (Technical English)",
+          "teacherId": "t-umum-4",
+          "teacherName": "David Sihombing, S.Pd., M.Hum.",
+          "teacherCode": "DS",
+          "roomOrLab": "Lab Bahasa & Multimedia"
+        },
+        {
+          "id": "12-BDP-wed-1",
+          "day": "Rabu",
+          "period": 1,
+          "time": "07.15 - 09.45",
+          "subject": "Digital Marketing & Content Creator E-Commerce",
+          "teacherId": "t-bdp-1",
+          "teacherName": "Rina Kartika, S.Pd.",
+          "teacherCode": "RK",
+          "roomOrLab": "Studio Live Streaming & BDP"
+        },
+        {
+          "id": "12-BDP-wed-2",
+          "day": "Rabu",
+          "period": 2,
+          "time": "10.00 - 12.00",
+          "subject": "Bahasa Indonesia & Komunikasi Teknis",
+          "teacherId": "t-umum-1",
+          "teacherName": "Dra. Hj. Nuraini, M.Pd.",
+          "teacherCode": "NR",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-BDP-wed-3",
+          "day": "Rabu",
+          "period": 3,
+          "time": "12.45 - 15.00",
+          "subject": "Uji Kompetensi Keahlian (UKK) & Standar LSP",
+          "teacherId": "t-bdp-2",
+          "teacherName": "Maya Sartika, S.E.",
+          "teacherCode": "MS",
+          "roomOrLab": "Edumart SMKN 1"
+        },
+        {
+          "id": "12-BDP-thu-1",
+          "day": "Kamis",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Pendidikan Jasmani, Olahraga & Kesehatan (PJOK)",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Olahraga & Senam"
+        },
+        {
+          "id": "12-BDP-thu-2",
+          "day": "Kamis",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pendidikan Pancasila & Kewarganegaraan (PPKn)",
+          "teacherId": "t-umum-6",
+          "teacherName": "Yuli Hastuti, S.Pd.",
+          "teacherCode": "YH",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-BDP-thu-3",
+          "day": "Kamis",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Projek Penguatan Profil Pelajar Pancasila (P5) / TEFA",
+          "teacherId": "t-bdp-1",
+          "teacherName": "Rina Kartika, S.Pd.",
+          "teacherCode": "RK",
+          "roomOrLab": "Workshop Teaching Factory"
+        },
+        {
+          "id": "12-BDP-fri-1",
+          "day": "Jumat",
+          "period": 1,
+          "time": "07.15 - 08.15",
+          "subject": "Senam Pagi Kesegaran Jasmani & Rohani Islam (Imtaq)",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Lapangan / Masjid Sekolah"
+        },
+        {
+          "id": "12-BDP-fri-2",
+          "day": "Jumat",
+          "period": 2,
+          "time": "08.15 - 10.00",
+          "subject": "Konseling Karir, Penelusuran Minat & Bimbingan PKL",
+          "teacherId": "t-umum-7",
+          "teacherName": "Siti Aminah, S.Pd., Kons.",
+          "teacherCode": "SA",
+          "roomOrLab": "Ruang Bimbingan Konseling"
+        },
+        {
+          "id": "12-BDP-fri-3",
+          "day": "Jumat",
+          "period": 3,
+          "time": "10.00 - 11.30",
+          "subject": "Evaluasi Pembelajaran Mingguan & Pemeliharaan Lab 5R",
+          "teacherId": "t-bdp-2",
+          "teacherName": "Maya Sartika, S.E.",
+          "teacherCode": "MS",
+          "roomOrLab": "Edumart SMKN 1"
+        }
+      ]
+    },
+    {
+      "majorId": "te",
+      "majorCode": "TE",
+      "majorName": "Teknik Elektronika",
+      "grade": "10",
+      "className": "X TE 1",
+      "homeroomTeacher": {
+        "name": "Zulfikar, S.T.",
+        "nip": "19891108 201402 1 005"
+      },
+      "totalStudents": 32,
+      "classroom": "Gedung D - R.104",
+      "schedules": [
+        {
+          "id": "10-TE-mon-1",
+          "day": "Senin",
+          "period": 1,
+          "time": "07.15 - 08.00",
+          "subject": "Upacara Bendera & Apel Kedisiplinan Taruna",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Utama"
+        },
+        {
+          "id": "10-TE-mon-2",
+          "day": "Senin",
+          "period": 2,
+          "time": "08.00 - 09.30",
+          "subject": "Pendidikan Agama & Budi Pekerti",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-TE-mon-3",
+          "day": "Senin",
+          "period": 3,
+          "time": "09.45 - 11.45",
+          "subject": "Dasar Program Keahlian TE",
+          "teacherId": "t-te-1",
+          "teacherName": "Ir. Ahmad Syafi’i, S.T.",
+          "teacherCode": "AS",
+          "roomOrLab": "Lab Otomasi Industri & PLC"
+        },
+        {
+          "id": "10-TE-mon-4",
+          "day": "Senin",
+          "period": 4,
+          "time": "12.30 - 15.00",
+          "subject": "Praktik Laboratorium / Bengkel Keahlian TE",
+          "teacherId": "t-te-1",
+          "teacherName": "Ir. Ahmad Syafi’i, S.T.",
+          "teacherCode": "AS",
+          "roomOrLab": "Lab Otomasi Industri & PLC"
+        },
+        {
+          "id": "10-TE-tue-1",
+          "day": "Selasa",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Matematika Terapan Vokasi",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-TE-tue-2",
+          "day": "Selasa",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Penerapan Rangkaian Elektronika & Soldering Presisi",
+          "teacherId": "t-te-2",
+          "teacherName": "Zulfikar, S.T.",
+          "teacherCode": "ZF",
+          "roomOrLab": "Lab Elektronika Dasar"
+        },
+        {
+          "id": "10-TE-tue-3",
+          "day": "Selasa",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Bahasa Inggris Vokasi (Technical English)",
+          "teacherId": "t-umum-4",
+          "teacherName": "David Sihombing, S.Pd., M.Hum.",
+          "teacherCode": "DS",
+          "roomOrLab": "Lab Bahasa & Multimedia"
+        },
+        {
+          "id": "10-TE-wed-1",
+          "day": "Rabu",
+          "period": 1,
+          "time": "07.15 - 09.45",
+          "subject": "Informatika & Literasi Digital",
+          "teacherId": "t-te-1",
+          "teacherName": "Ir. Ahmad Syafi’i, S.T.",
+          "teacherCode": "AS",
+          "roomOrLab": "Lab Otomasi Industri & PLC"
+        },
+        {
+          "id": "10-TE-wed-2",
+          "day": "Rabu",
+          "period": 2,
+          "time": "10.00 - 12.00",
+          "subject": "Bahasa Indonesia & Komunikasi Teknis",
+          "teacherId": "t-umum-1",
+          "teacherName": "Dra. Hj. Nuraini, M.Pd.",
+          "teacherCode": "NR",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-TE-wed-3",
+          "day": "Rabu",
+          "period": 3,
+          "time": "12.45 - 15.00",
+          "subject": "Praktik Kejuruan Lanjutan",
+          "teacherId": "t-te-2",
+          "teacherName": "Zulfikar, S.T.",
+          "teacherCode": "ZF",
+          "roomOrLab": "Lab Elektronika Dasar"
+        },
+        {
+          "id": "10-TE-thu-1",
+          "day": "Kamis",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Pendidikan Jasmani, Olahraga & Kesehatan (PJOK)",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Olahraga & Senam"
+        },
+        {
+          "id": "10-TE-thu-2",
+          "day": "Kamis",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pendidikan Pancasila & Kewarganegaraan (PPKn)",
+          "teacherId": "t-umum-6",
+          "teacherName": "Yuli Hastuti, S.Pd.",
+          "teacherCode": "YH",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-TE-thu-3",
+          "day": "Kamis",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Projek Penguatan Profil Pelajar Pancasila (P5) / TEFA",
+          "teacherId": "t-te-1",
+          "teacherName": "Ir. Ahmad Syafi’i, S.T.",
+          "teacherCode": "AS",
+          "roomOrLab": "Workshop Teaching Factory"
+        },
+        {
+          "id": "10-TE-fri-1",
+          "day": "Jumat",
+          "period": 1,
+          "time": "07.15 - 08.15",
+          "subject": "Senam Pagi Kesegaran Jasmani & Rohani Islam (Imtaq)",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Lapangan / Masjid Sekolah"
+        },
+        {
+          "id": "10-TE-fri-2",
+          "day": "Jumat",
+          "period": 2,
+          "time": "08.15 - 10.00",
+          "subject": "Konseling Karir, Penelusuran Minat & Bimbingan PKL",
+          "teacherId": "t-umum-7",
+          "teacherName": "Siti Aminah, S.Pd., Kons.",
+          "teacherCode": "SA",
+          "roomOrLab": "Ruang Bimbingan Konseling"
+        },
+        {
+          "id": "10-TE-fri-3",
+          "day": "Jumat",
+          "period": 3,
+          "time": "10.00 - 11.30",
+          "subject": "Evaluasi Pembelajaran Mingguan & Pemeliharaan Lab 5R",
+          "teacherId": "t-te-2",
+          "teacherName": "Zulfikar, S.T.",
+          "teacherCode": "ZF",
+          "roomOrLab": "Lab Elektronika Dasar"
+        }
+      ]
+    },
+    {
+      "majorId": "te",
+      "majorCode": "TE",
+      "majorName": "Teknik Elektronika",
+      "grade": "11",
+      "className": "XI TE 1",
+      "homeroomTeacher": {
+        "name": "Ir. Ahmad Syafi’i, S.T.",
+        "nip": "19810312 200604 1 002"
+      },
+      "totalStudents": 30,
+      "classroom": "Gedung D - R.204",
+      "schedules": [
+        {
+          "id": "11-TE-mon-1",
+          "day": "Senin",
+          "period": 1,
+          "time": "07.15 - 08.00",
+          "subject": "Upacara Bendera & Apel Kedisiplinan Taruna",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Utama"
+        },
+        {
+          "id": "11-TE-mon-2",
+          "day": "Senin",
+          "period": 2,
+          "time": "08.00 - 09.30",
+          "subject": "Matematika Terapan Kejuruan",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-TE-mon-3",
+          "day": "Senin",
+          "period": 3,
+          "time": "09.45 - 11.45",
+          "subject": "Praktik Kejuruan Produktif Inti",
+          "teacherId": "t-te-1",
+          "teacherName": "Ir. Ahmad Syafi’i, S.T.",
+          "teacherCode": "AS",
+          "roomOrLab": "Lab Otomasi Industri & PLC"
+        },
+        {
+          "id": "11-TE-mon-4",
+          "day": "Senin",
+          "period": 4,
+          "time": "12.30 - 15.00",
+          "subject": "Praktik Laboratorium / Bengkel Keahlian TE",
+          "teacherId": "t-te-1",
+          "teacherName": "Ir. Ahmad Syafi’i, S.T.",
+          "teacherCode": "AS",
+          "roomOrLab": "Lab Otomasi Industri & PLC"
+        },
+        {
+          "id": "11-TE-tue-1",
+          "day": "Selasa",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Matematika Terapan Vokasi",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-TE-tue-2",
+          "day": "Selasa",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Penerapan Rangkaian Elektronika & Soldering Presisi",
+          "teacherId": "t-te-2",
+          "teacherName": "Zulfikar, S.T.",
+          "teacherCode": "ZF",
+          "roomOrLab": "Lab Elektronika Dasar"
+        },
+        {
+          "id": "11-TE-tue-3",
+          "day": "Selasa",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Bahasa Inggris Vokasi (Technical English)",
+          "teacherId": "t-umum-4",
+          "teacherName": "David Sihombing, S.Pd., M.Hum.",
+          "teacherCode": "DS",
+          "roomOrLab": "Lab Bahasa & Multimedia"
+        },
+        {
+          "id": "11-TE-wed-1",
+          "day": "Rabu",
+          "period": 1,
+          "time": "07.15 - 09.45",
+          "subject": "Teknik Mekatronika, PLC & Mikrokontroler IoT",
+          "teacherId": "t-te-1",
+          "teacherName": "Ir. Ahmad Syafi’i, S.T.",
+          "teacherCode": "AS",
+          "roomOrLab": "Lab Otomasi Industri & PLC"
+        },
+        {
+          "id": "11-TE-wed-2",
+          "day": "Rabu",
+          "period": 2,
+          "time": "10.00 - 12.00",
+          "subject": "Bahasa Indonesia & Komunikasi Teknis",
+          "teacherId": "t-umum-1",
+          "teacherName": "Dra. Hj. Nuraini, M.Pd.",
+          "teacherCode": "NR",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-TE-wed-3",
+          "day": "Rabu",
+          "period": 3,
+          "time": "12.45 - 15.00",
+          "subject": "Praktik Kejuruan Lanjutan",
+          "teacherId": "t-te-2",
+          "teacherName": "Zulfikar, S.T.",
+          "teacherCode": "ZF",
+          "roomOrLab": "Lab Elektronika Dasar"
+        },
+        {
+          "id": "11-TE-thu-1",
+          "day": "Kamis",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Pendidikan Jasmani, Olahraga & Kesehatan (PJOK)",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Olahraga & Senam"
+        },
+        {
+          "id": "11-TE-thu-2",
+          "day": "Kamis",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pendidikan Pancasila & Kewarganegaraan (PPKn)",
+          "teacherId": "t-umum-6",
+          "teacherName": "Yuli Hastuti, S.Pd.",
+          "teacherCode": "YH",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-TE-thu-3",
+          "day": "Kamis",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Projek Penguatan Profil Pelajar Pancasila (P5) / TEFA",
+          "teacherId": "t-te-1",
+          "teacherName": "Ir. Ahmad Syafi’i, S.T.",
+          "teacherCode": "AS",
+          "roomOrLab": "Workshop Teaching Factory"
+        },
+        {
+          "id": "11-TE-fri-1",
+          "day": "Jumat",
+          "period": 1,
+          "time": "07.15 - 08.15",
+          "subject": "Senam Pagi Kesegaran Jasmani & Rohani Islam (Imtaq)",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Lapangan / Masjid Sekolah"
+        },
+        {
+          "id": "11-TE-fri-2",
+          "day": "Jumat",
+          "period": 2,
+          "time": "08.15 - 10.00",
+          "subject": "Konseling Karir, Penelusuran Minat & Bimbingan PKL",
+          "teacherId": "t-umum-7",
+          "teacherName": "Siti Aminah, S.Pd., Kons.",
+          "teacherCode": "SA",
+          "roomOrLab": "Ruang Bimbingan Konseling"
+        },
+        {
+          "id": "11-TE-fri-3",
+          "day": "Jumat",
+          "period": 3,
+          "time": "10.00 - 11.30",
+          "subject": "Evaluasi Pembelajaran Mingguan & Pemeliharaan Lab 5R",
+          "teacherId": "t-te-2",
+          "teacherName": "Zulfikar, S.T.",
+          "teacherCode": "ZF",
+          "roomOrLab": "Lab Elektronika Dasar"
+        }
+      ]
+    },
+    {
+      "majorId": "te",
+      "majorCode": "TE",
+      "majorName": "Teknik Elektronika",
+      "grade": "12",
+      "className": "XII TE 1",
+      "homeroomTeacher": {
+        "name": "Sri Wahyuni, M.Pd.",
+        "nip": "19821109 200801 2 011"
+      },
+      "totalStudents": 30,
+      "classroom": "Gedung D - R.304",
+      "schedules": [
+        {
+          "id": "12-TE-mon-1",
+          "day": "Senin",
+          "period": 1,
+          "time": "07.15 - 08.00",
+          "subject": "Upacara Bendera & Apel Kedisiplinan Taruna",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Utama"
+        },
+        {
+          "id": "12-TE-mon-2",
+          "day": "Senin",
+          "period": 2,
+          "time": "08.00 - 09.30",
+          "subject": "Matematika Terapan Kejuruan",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-TE-mon-3",
+          "day": "Senin",
+          "period": 3,
+          "time": "09.45 - 11.45",
+          "subject": "Praktik Kejuruan Produktif Inti",
+          "teacherId": "t-te-1",
+          "teacherName": "Ir. Ahmad Syafi’i, S.T.",
+          "teacherCode": "AS",
+          "roomOrLab": "Lab Otomasi Industri & PLC"
+        },
+        {
+          "id": "12-TE-mon-4",
+          "day": "Senin",
+          "period": 4,
+          "time": "12.30 - 15.00",
+          "subject": "Praktik Laboratorium / Bengkel Keahlian TE",
+          "teacherId": "t-te-1",
+          "teacherName": "Ir. Ahmad Syafi’i, S.T.",
+          "teacherCode": "AS",
+          "roomOrLab": "Lab Otomasi Industri & PLC"
+        },
+        {
+          "id": "12-TE-tue-1",
+          "day": "Selasa",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Matematika Terapan Vokasi",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-TE-tue-2",
+          "day": "Selasa",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Projek Kreatif & Kewirausahaan (PKK)",
+          "teacherId": "t-te-2",
+          "teacherName": "Zulfikar, S.T.",
+          "teacherCode": "ZF",
+          "roomOrLab": "Lab Elektronika Dasar"
+        },
+        {
+          "id": "12-TE-tue-3",
+          "day": "Selasa",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Bahasa Inggris Vokasi (Technical English)",
+          "teacherId": "t-umum-4",
+          "teacherName": "David Sihombing, S.Pd., M.Hum.",
+          "teacherCode": "DS",
+          "roomOrLab": "Lab Bahasa & Multimedia"
+        },
+        {
+          "id": "12-TE-wed-1",
+          "day": "Rabu",
+          "period": 1,
+          "time": "07.15 - 09.45",
+          "subject": "Teknik Mekatronika, PLC & Mikrokontroler IoT",
+          "teacherId": "t-te-1",
+          "teacherName": "Ir. Ahmad Syafi’i, S.T.",
+          "teacherCode": "AS",
+          "roomOrLab": "Lab Otomasi Industri & PLC"
+        },
+        {
+          "id": "12-TE-wed-2",
+          "day": "Rabu",
+          "period": 2,
+          "time": "10.00 - 12.00",
+          "subject": "Bahasa Indonesia & Komunikasi Teknis",
+          "teacherId": "t-umum-1",
+          "teacherName": "Dra. Hj. Nuraini, M.Pd.",
+          "teacherCode": "NR",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-TE-wed-3",
+          "day": "Rabu",
+          "period": 3,
+          "time": "12.45 - 15.00",
+          "subject": "Uji Kompetensi Keahlian (UKK) & Standar LSP",
+          "teacherId": "t-te-2",
+          "teacherName": "Zulfikar, S.T.",
+          "teacherCode": "ZF",
+          "roomOrLab": "Lab Elektronika Dasar"
+        },
+        {
+          "id": "12-TE-thu-1",
+          "day": "Kamis",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Pendidikan Jasmani, Olahraga & Kesehatan (PJOK)",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Olahraga & Senam"
+        },
+        {
+          "id": "12-TE-thu-2",
+          "day": "Kamis",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pendidikan Pancasila & Kewarganegaraan (PPKn)",
+          "teacherId": "t-umum-6",
+          "teacherName": "Yuli Hastuti, S.Pd.",
+          "teacherCode": "YH",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-TE-thu-3",
+          "day": "Kamis",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Projek Penguatan Profil Pelajar Pancasila (P5) / TEFA",
+          "teacherId": "t-te-1",
+          "teacherName": "Ir. Ahmad Syafi’i, S.T.",
+          "teacherCode": "AS",
+          "roomOrLab": "Workshop Teaching Factory"
+        },
+        {
+          "id": "12-TE-fri-1",
+          "day": "Jumat",
+          "period": 1,
+          "time": "07.15 - 08.15",
+          "subject": "Senam Pagi Kesegaran Jasmani & Rohani Islam (Imtaq)",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Lapangan / Masjid Sekolah"
+        },
+        {
+          "id": "12-TE-fri-2",
+          "day": "Jumat",
+          "period": 2,
+          "time": "08.15 - 10.00",
+          "subject": "Konseling Karir, Penelusuran Minat & Bimbingan PKL",
+          "teacherId": "t-umum-7",
+          "teacherName": "Siti Aminah, S.Pd., Kons.",
+          "teacherCode": "SA",
+          "roomOrLab": "Ruang Bimbingan Konseling"
+        },
+        {
+          "id": "12-TE-fri-3",
+          "day": "Jumat",
+          "period": 3,
+          "time": "10.00 - 11.30",
+          "subject": "Evaluasi Pembelajaran Mingguan & Pemeliharaan Lab 5R",
+          "teacherId": "t-te-2",
+          "teacherName": "Zulfikar, S.T.",
+          "teacherCode": "ZF",
+          "roomOrLab": "Lab Elektronika Dasar"
+        }
+      ]
+    },
+    {
+      "majorId": "tlog",
+      "majorCode": "TLOG",
+      "majorName": "Teknik Logistik",
+      "grade": "10",
+      "className": "X TLOG 1",
+      "homeroomTeacher": {
+        "name": "Faisal Akbar, S.T.",
+        "nip": "19930514 201903 1 004"
+      },
+      "totalStudents": 30,
+      "classroom": "Gedung E - R.105",
+      "schedules": [
+        {
+          "id": "10-TLOG-mon-1",
+          "day": "Senin",
+          "period": 1,
+          "time": "07.15 - 08.00",
+          "subject": "Upacara Bendera & Apel Kedisiplinan Taruna",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Utama"
+        },
+        {
+          "id": "10-TLOG-mon-2",
+          "day": "Senin",
+          "period": 2,
+          "time": "08.00 - 09.30",
+          "subject": "Pendidikan Agama & Budi Pekerti",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-TLOG-mon-3",
+          "day": "Senin",
+          "period": 3,
+          "time": "09.45 - 11.45",
+          "subject": "Dasar Program Keahlian TLOG",
+          "teacherId": "t-tlog-1",
+          "teacherName": "Dewi Anggraini, S.E.",
+          "teacherCode": "DA",
+          "roomOrLab": "Ruang Praktik Pergudangan"
+        },
+        {
+          "id": "10-TLOG-mon-4",
+          "day": "Senin",
+          "period": 4,
+          "time": "12.30 - 15.00",
+          "subject": "Praktik Laboratorium / Bengkel Keahlian TLOG",
+          "teacherId": "t-tlog-1",
+          "teacherName": "Dewi Anggraini, S.E.",
+          "teacherCode": "DA",
+          "roomOrLab": "Ruang Praktik Pergudangan"
+        },
+        {
+          "id": "10-TLOG-tue-1",
+          "day": "Selasa",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Matematika Terapan Vokasi",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-TLOG-tue-2",
+          "day": "Selasa",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Dokumentasi Ekspedisi Kargo & Material Handling",
+          "teacherId": "t-tlog-2",
+          "teacherName": "Faisal Akbar, S.T.",
+          "teacherCode": "FA",
+          "roomOrLab": "Hub Logistik Sekolah"
+        },
+        {
+          "id": "10-TLOG-tue-3",
+          "day": "Selasa",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Bahasa Inggris Vokasi (Technical English)",
+          "teacherId": "t-umum-4",
+          "teacherName": "David Sihombing, S.Pd., M.Hum.",
+          "teacherCode": "DS",
+          "roomOrLab": "Lab Bahasa & Multimedia"
+        },
+        {
+          "id": "10-TLOG-wed-1",
+          "day": "Rabu",
+          "period": 1,
+          "time": "07.15 - 09.45",
+          "subject": "Informatika & Literasi Digital",
+          "teacherId": "t-tlog-1",
+          "teacherName": "Dewi Anggraini, S.E.",
+          "teacherCode": "DA",
+          "roomOrLab": "Ruang Praktik Pergudangan"
+        },
+        {
+          "id": "10-TLOG-wed-2",
+          "day": "Rabu",
+          "period": 2,
+          "time": "10.00 - 12.00",
+          "subject": "Bahasa Indonesia & Komunikasi Teknis",
+          "teacherId": "t-umum-1",
+          "teacherName": "Dra. Hj. Nuraini, M.Pd.",
+          "teacherCode": "NR",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-TLOG-wed-3",
+          "day": "Rabu",
+          "period": 3,
+          "time": "12.45 - 15.00",
+          "subject": "Praktik Kejuruan Lanjutan",
+          "teacherId": "t-tlog-2",
+          "teacherName": "Faisal Akbar, S.T.",
+          "teacherCode": "FA",
+          "roomOrLab": "Hub Logistik Sekolah"
+        },
+        {
+          "id": "10-TLOG-thu-1",
+          "day": "Kamis",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Pendidikan Jasmani, Olahraga & Kesehatan (PJOK)",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Olahraga & Senam"
+        },
+        {
+          "id": "10-TLOG-thu-2",
+          "day": "Kamis",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pendidikan Pancasila & Kewarganegaraan (PPKn)",
+          "teacherId": "t-umum-6",
+          "teacherName": "Yuli Hastuti, S.Pd.",
+          "teacherCode": "YH",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-TLOG-thu-3",
+          "day": "Kamis",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Projek Penguatan Profil Pelajar Pancasila (P5) / TEFA",
+          "teacherId": "t-tlog-1",
+          "teacherName": "Dewi Anggraini, S.E.",
+          "teacherCode": "DA",
+          "roomOrLab": "Workshop Teaching Factory"
+        },
+        {
+          "id": "10-TLOG-fri-1",
+          "day": "Jumat",
+          "period": 1,
+          "time": "07.15 - 08.15",
+          "subject": "Senam Pagi Kesegaran Jasmani & Rohani Islam (Imtaq)",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Lapangan / Masjid Sekolah"
+        },
+        {
+          "id": "10-TLOG-fri-2",
+          "day": "Jumat",
+          "period": 2,
+          "time": "08.15 - 10.00",
+          "subject": "Konseling Karir, Penelusuran Minat & Bimbingan PKL",
+          "teacherId": "t-umum-7",
+          "teacherName": "Siti Aminah, S.Pd., Kons.",
+          "teacherCode": "SA",
+          "roomOrLab": "Ruang Bimbingan Konseling"
+        },
+        {
+          "id": "10-TLOG-fri-3",
+          "day": "Jumat",
+          "period": 3,
+          "time": "10.00 - 11.30",
+          "subject": "Evaluasi Pembelajaran Mingguan & Pemeliharaan Lab 5R",
+          "teacherId": "t-tlog-2",
+          "teacherName": "Faisal Akbar, S.T.",
+          "teacherCode": "FA",
+          "roomOrLab": "Hub Logistik Sekolah"
+        }
+      ]
+    },
+    {
+      "majorId": "tlog",
+      "majorCode": "TLOG",
+      "majorName": "Teknik Logistik",
+      "grade": "11",
+      "className": "XI TLOG 1",
+      "homeroomTeacher": {
+        "name": "Dewi Anggraini, S.E.",
+        "nip": "19860822 201001 2 004"
+      },
+      "totalStudents": 30,
+      "classroom": "Gedung E - R.205",
+      "schedules": [
+        {
+          "id": "11-TLOG-mon-1",
+          "day": "Senin",
+          "period": 1,
+          "time": "07.15 - 08.00",
+          "subject": "Upacara Bendera & Apel Kedisiplinan Taruna",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Utama"
+        },
+        {
+          "id": "11-TLOG-mon-2",
+          "day": "Senin",
+          "period": 2,
+          "time": "08.00 - 09.30",
+          "subject": "Matematika Terapan Kejuruan",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-TLOG-mon-3",
+          "day": "Senin",
+          "period": 3,
+          "time": "09.45 - 11.45",
+          "subject": "Praktik Kejuruan Produktif Inti",
+          "teacherId": "t-tlog-1",
+          "teacherName": "Dewi Anggraini, S.E.",
+          "teacherCode": "DA",
+          "roomOrLab": "Ruang Praktik Pergudangan"
+        },
+        {
+          "id": "11-TLOG-mon-4",
+          "day": "Senin",
+          "period": 4,
+          "time": "12.30 - 15.00",
+          "subject": "Praktik Laboratorium / Bengkel Keahlian TLOG",
+          "teacherId": "t-tlog-1",
+          "teacherName": "Dewi Anggraini, S.E.",
+          "teacherCode": "DA",
+          "roomOrLab": "Ruang Praktik Pergudangan"
+        },
+        {
+          "id": "11-TLOG-tue-1",
+          "day": "Selasa",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Matematika Terapan Vokasi",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-TLOG-tue-2",
+          "day": "Selasa",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Dokumentasi Ekspedisi Kargo & Material Handling",
+          "teacherId": "t-tlog-2",
+          "teacherName": "Faisal Akbar, S.T.",
+          "teacherCode": "FA",
+          "roomOrLab": "Hub Logistik Sekolah"
+        },
+        {
+          "id": "11-TLOG-tue-3",
+          "day": "Selasa",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Bahasa Inggris Vokasi (Technical English)",
+          "teacherId": "t-umum-4",
+          "teacherName": "David Sihombing, S.Pd., M.Hum.",
+          "teacherCode": "DS",
+          "roomOrLab": "Lab Bahasa & Multimedia"
+        },
+        {
+          "id": "11-TLOG-wed-1",
+          "day": "Rabu",
+          "period": 1,
+          "time": "07.15 - 09.45",
+          "subject": "Manajemen Pergudangan (WMS) & Pengendalian Stok",
+          "teacherId": "t-tlog-1",
+          "teacherName": "Dewi Anggraini, S.E.",
+          "teacherCode": "DA",
+          "roomOrLab": "Ruang Praktik Pergudangan"
+        },
+        {
+          "id": "11-TLOG-wed-2",
+          "day": "Rabu",
+          "period": 2,
+          "time": "10.00 - 12.00",
+          "subject": "Bahasa Indonesia & Komunikasi Teknis",
+          "teacherId": "t-umum-1",
+          "teacherName": "Dra. Hj. Nuraini, M.Pd.",
+          "teacherCode": "NR",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-TLOG-wed-3",
+          "day": "Rabu",
+          "period": 3,
+          "time": "12.45 - 15.00",
+          "subject": "Praktik Kejuruan Lanjutan",
+          "teacherId": "t-tlog-2",
+          "teacherName": "Faisal Akbar, S.T.",
+          "teacherCode": "FA",
+          "roomOrLab": "Hub Logistik Sekolah"
+        },
+        {
+          "id": "11-TLOG-thu-1",
+          "day": "Kamis",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Pendidikan Jasmani, Olahraga & Kesehatan (PJOK)",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Olahraga & Senam"
+        },
+        {
+          "id": "11-TLOG-thu-2",
+          "day": "Kamis",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pendidikan Pancasila & Kewarganegaraan (PPKn)",
+          "teacherId": "t-umum-6",
+          "teacherName": "Yuli Hastuti, S.Pd.",
+          "teacherCode": "YH",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-TLOG-thu-3",
+          "day": "Kamis",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Projek Penguatan Profil Pelajar Pancasila (P5) / TEFA",
+          "teacherId": "t-tlog-1",
+          "teacherName": "Dewi Anggraini, S.E.",
+          "teacherCode": "DA",
+          "roomOrLab": "Workshop Teaching Factory"
+        },
+        {
+          "id": "11-TLOG-fri-1",
+          "day": "Jumat",
+          "period": 1,
+          "time": "07.15 - 08.15",
+          "subject": "Senam Pagi Kesegaran Jasmani & Rohani Islam (Imtaq)",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Lapangan / Masjid Sekolah"
+        },
+        {
+          "id": "11-TLOG-fri-2",
+          "day": "Jumat",
+          "period": 2,
+          "time": "08.15 - 10.00",
+          "subject": "Konseling Karir, Penelusuran Minat & Bimbingan PKL",
+          "teacherId": "t-umum-7",
+          "teacherName": "Siti Aminah, S.Pd., Kons.",
+          "teacherCode": "SA",
+          "roomOrLab": "Ruang Bimbingan Konseling"
+        },
+        {
+          "id": "11-TLOG-fri-3",
+          "day": "Jumat",
+          "period": 3,
+          "time": "10.00 - 11.30",
+          "subject": "Evaluasi Pembelajaran Mingguan & Pemeliharaan Lab 5R",
+          "teacherId": "t-tlog-2",
+          "teacherName": "Faisal Akbar, S.T.",
+          "teacherCode": "FA",
+          "roomOrLab": "Hub Logistik Sekolah"
+        }
+      ]
+    },
+    {
+      "majorId": "tlog",
+      "majorCode": "TLOG",
+      "majorName": "Teknik Logistik",
+      "grade": "12",
+      "className": "XII TLOG 1",
+      "homeroomTeacher": {
+        "name": "Yuli Hastuti, S.Pd.",
+        "nip": "19870814 201101 2 012"
+      },
+      "totalStudents": 28,
+      "classroom": "Gedung E - R.305",
+      "schedules": [
+        {
+          "id": "12-TLOG-mon-1",
+          "day": "Senin",
+          "period": 1,
+          "time": "07.15 - 08.00",
+          "subject": "Upacara Bendera & Apel Kedisiplinan Taruna",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Utama"
+        },
+        {
+          "id": "12-TLOG-mon-2",
+          "day": "Senin",
+          "period": 2,
+          "time": "08.00 - 09.30",
+          "subject": "Matematika Terapan Kejuruan",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-TLOG-mon-3",
+          "day": "Senin",
+          "period": 3,
+          "time": "09.45 - 11.45",
+          "subject": "Praktik Kejuruan Produktif Inti",
+          "teacherId": "t-tlog-1",
+          "teacherName": "Dewi Anggraini, S.E.",
+          "teacherCode": "DA",
+          "roomOrLab": "Ruang Praktik Pergudangan"
+        },
+        {
+          "id": "12-TLOG-mon-4",
+          "day": "Senin",
+          "period": 4,
+          "time": "12.30 - 15.00",
+          "subject": "Praktik Laboratorium / Bengkel Keahlian TLOG",
+          "teacherId": "t-tlog-1",
+          "teacherName": "Dewi Anggraini, S.E.",
+          "teacherCode": "DA",
+          "roomOrLab": "Ruang Praktik Pergudangan"
+        },
+        {
+          "id": "12-TLOG-tue-1",
+          "day": "Selasa",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Matematika Terapan Vokasi",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-TLOG-tue-2",
+          "day": "Selasa",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Projek Kreatif & Kewirausahaan (PKK)",
+          "teacherId": "t-tlog-2",
+          "teacherName": "Faisal Akbar, S.T.",
+          "teacherCode": "FA",
+          "roomOrLab": "Hub Logistik Sekolah"
+        },
+        {
+          "id": "12-TLOG-tue-3",
+          "day": "Selasa",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Bahasa Inggris Vokasi (Technical English)",
+          "teacherId": "t-umum-4",
+          "teacherName": "David Sihombing, S.Pd., M.Hum.",
+          "teacherCode": "DS",
+          "roomOrLab": "Lab Bahasa & Multimedia"
+        },
+        {
+          "id": "12-TLOG-wed-1",
+          "day": "Rabu",
+          "period": 1,
+          "time": "07.15 - 09.45",
+          "subject": "Manajemen Pergudangan (WMS) & Pengendalian Stok",
+          "teacherId": "t-tlog-1",
+          "teacherName": "Dewi Anggraini, S.E.",
+          "teacherCode": "DA",
+          "roomOrLab": "Ruang Praktik Pergudangan"
+        },
+        {
+          "id": "12-TLOG-wed-2",
+          "day": "Rabu",
+          "period": 2,
+          "time": "10.00 - 12.00",
+          "subject": "Bahasa Indonesia & Komunikasi Teknis",
+          "teacherId": "t-umum-1",
+          "teacherName": "Dra. Hj. Nuraini, M.Pd.",
+          "teacherCode": "NR",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-TLOG-wed-3",
+          "day": "Rabu",
+          "period": 3,
+          "time": "12.45 - 15.00",
+          "subject": "Uji Kompetensi Keahlian (UKK) & Standar LSP",
+          "teacherId": "t-tlog-2",
+          "teacherName": "Faisal Akbar, S.T.",
+          "teacherCode": "FA",
+          "roomOrLab": "Hub Logistik Sekolah"
+        },
+        {
+          "id": "12-TLOG-thu-1",
+          "day": "Kamis",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Pendidikan Jasmani, Olahraga & Kesehatan (PJOK)",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Olahraga & Senam"
+        },
+        {
+          "id": "12-TLOG-thu-2",
+          "day": "Kamis",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pendidikan Pancasila & Kewarganegaraan (PPKn)",
+          "teacherId": "t-umum-6",
+          "teacherName": "Yuli Hastuti, S.Pd.",
+          "teacherCode": "YH",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-TLOG-thu-3",
+          "day": "Kamis",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Projek Penguatan Profil Pelajar Pancasila (P5) / TEFA",
+          "teacherId": "t-tlog-1",
+          "teacherName": "Dewi Anggraini, S.E.",
+          "teacherCode": "DA",
+          "roomOrLab": "Workshop Teaching Factory"
+        },
+        {
+          "id": "12-TLOG-fri-1",
+          "day": "Jumat",
+          "period": 1,
+          "time": "07.15 - 08.15",
+          "subject": "Senam Pagi Kesegaran Jasmani & Rohani Islam (Imtaq)",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Lapangan / Masjid Sekolah"
+        },
+        {
+          "id": "12-TLOG-fri-2",
+          "day": "Jumat",
+          "period": 2,
+          "time": "08.15 - 10.00",
+          "subject": "Konseling Karir, Penelusuran Minat & Bimbingan PKL",
+          "teacherId": "t-umum-7",
+          "teacherName": "Siti Aminah, S.Pd., Kons.",
+          "teacherCode": "SA",
+          "roomOrLab": "Ruang Bimbingan Konseling"
+        },
+        {
+          "id": "12-TLOG-fri-3",
+          "day": "Jumat",
+          "period": 3,
+          "time": "10.00 - 11.30",
+          "subject": "Evaluasi Pembelajaran Mingguan & Pemeliharaan Lab 5R",
+          "teacherId": "t-tlog-2",
+          "teacherName": "Faisal Akbar, S.T.",
+          "teacherCode": "FA",
+          "roomOrLab": "Hub Logistik Sekolah"
+        }
+      ]
+    },
+    {
+      "majorId": "bp",
+      "majorCode": "BP",
+      "majorName": "Broadcasting & Perfilman",
+      "grade": "10",
+      "className": "X BP 1",
+      "homeroomTeacher": {
+        "name": "Nurul Hidayah, S.I.Kom.",
+        "nip": "19940716 202012 2 008"
+      },
+      "totalStudents": 32,
+      "classroom": "Gedung F - Studio 1",
+      "schedules": [
+        {
+          "id": "10-BP-mon-1",
+          "day": "Senin",
+          "period": 1,
+          "time": "07.15 - 08.00",
+          "subject": "Upacara Bendera & Apel Kedisiplinan Taruna",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Utama"
+        },
+        {
+          "id": "10-BP-mon-2",
+          "day": "Senin",
+          "period": 2,
+          "time": "08.00 - 09.30",
+          "subject": "Pendidikan Agama & Budi Pekerti",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-BP-mon-3",
+          "day": "Senin",
+          "period": 3,
+          "time": "09.45 - 11.45",
+          "subject": "Dasar Program Keahlian BP",
+          "teacherId": "t-bp-1",
+          "teacherName": "Bagus Pradana, S.Sn.",
+          "teacherCode": "BP",
+          "roomOrLab": "Studio Green Screen TV"
+        },
+        {
+          "id": "10-BP-mon-4",
+          "day": "Senin",
+          "period": 4,
+          "time": "12.30 - 15.00",
+          "subject": "Praktik Laboratorium / Bengkel Keahlian BP",
+          "teacherId": "t-bp-1",
+          "teacherName": "Bagus Pradana, S.Sn.",
+          "teacherCode": "BP",
+          "roomOrLab": "Studio Green Screen TV"
+        },
+        {
+          "id": "10-BP-tue-1",
+          "day": "Selasa",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Matematika Terapan Vokasi",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-BP-tue-2",
+          "day": "Selasa",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Penyuntingan Audio Video & Tata Suara (Audio Mixing)",
+          "teacherId": "t-bp-2",
+          "teacherName": "Nurul Hidayah, S.I.Kom.",
+          "teacherCode": "NH",
+          "roomOrLab": "Lab Editing Premiere & DaVinci"
+        },
+        {
+          "id": "10-BP-tue-3",
+          "day": "Selasa",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Bahasa Inggris Vokasi (Technical English)",
+          "teacherId": "t-umum-4",
+          "teacherName": "David Sihombing, S.Pd., M.Hum.",
+          "teacherCode": "DS",
+          "roomOrLab": "Lab Bahasa & Multimedia"
+        },
+        {
+          "id": "10-BP-wed-1",
+          "day": "Rabu",
+          "period": 1,
+          "time": "07.15 - 09.45",
+          "subject": "Informatika & Literasi Digital",
+          "teacherId": "t-bp-1",
+          "teacherName": "Bagus Pradana, S.Sn.",
+          "teacherCode": "BP",
+          "roomOrLab": "Studio Green Screen TV"
+        },
+        {
+          "id": "10-BP-wed-2",
+          "day": "Rabu",
+          "period": 2,
+          "time": "10.00 - 12.00",
+          "subject": "Bahasa Indonesia & Komunikasi Teknis",
+          "teacherId": "t-umum-1",
+          "teacherName": "Dra. Hj. Nuraini, M.Pd.",
+          "teacherCode": "NR",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-BP-wed-3",
+          "day": "Rabu",
+          "period": 3,
+          "time": "12.45 - 15.00",
+          "subject": "Praktik Kejuruan Lanjutan",
+          "teacherId": "t-bp-2",
+          "teacherName": "Nurul Hidayah, S.I.Kom.",
+          "teacherCode": "NH",
+          "roomOrLab": "Lab Editing Premiere & DaVinci"
+        },
+        {
+          "id": "10-BP-thu-1",
+          "day": "Kamis",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Pendidikan Jasmani, Olahraga & Kesehatan (PJOK)",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Olahraga & Senam"
+        },
+        {
+          "id": "10-BP-thu-2",
+          "day": "Kamis",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pendidikan Pancasila & Kewarganegaraan (PPKn)",
+          "teacherId": "t-umum-6",
+          "teacherName": "Yuli Hastuti, S.Pd.",
+          "teacherCode": "YH",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "10-BP-thu-3",
+          "day": "Kamis",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Projek Penguatan Profil Pelajar Pancasila (P5) / TEFA",
+          "teacherId": "t-bp-1",
+          "teacherName": "Bagus Pradana, S.Sn.",
+          "teacherCode": "BP",
+          "roomOrLab": "Workshop Teaching Factory"
+        },
+        {
+          "id": "10-BP-fri-1",
+          "day": "Jumat",
+          "period": 1,
+          "time": "07.15 - 08.15",
+          "subject": "Senam Pagi Kesegaran Jasmani & Rohani Islam (Imtaq)",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Lapangan / Masjid Sekolah"
+        },
+        {
+          "id": "10-BP-fri-2",
+          "day": "Jumat",
+          "period": 2,
+          "time": "08.15 - 10.00",
+          "subject": "Konseling Karir, Penelusuran Minat & Bimbingan PKL",
+          "teacherId": "t-umum-7",
+          "teacherName": "Siti Aminah, S.Pd., Kons.",
+          "teacherCode": "SA",
+          "roomOrLab": "Ruang Bimbingan Konseling"
+        },
+        {
+          "id": "10-BP-fri-3",
+          "day": "Jumat",
+          "period": 3,
+          "time": "10.00 - 11.30",
+          "subject": "Evaluasi Pembelajaran Mingguan & Pemeliharaan Lab 5R",
+          "teacherId": "t-bp-2",
+          "teacherName": "Nurul Hidayah, S.I.Kom.",
+          "teacherCode": "NH",
+          "roomOrLab": "Lab Editing Premiere & DaVinci"
+        }
+      ]
+    },
+    {
+      "majorId": "bp",
+      "majorCode": "BP",
+      "majorName": "Broadcasting & Perfilman",
+      "grade": "11",
+      "className": "XI BP 1",
+      "homeroomTeacher": {
+        "name": "Bagus Pradana, S.Sn.",
+        "nip": "19930829 201903 1 007"
+      },
+      "totalStudents": 30,
+      "classroom": "Gedung F - Studio 2",
+      "schedules": [
+        {
+          "id": "11-BP-mon-1",
+          "day": "Senin",
+          "period": 1,
+          "time": "07.15 - 08.00",
+          "subject": "Upacara Bendera & Apel Kedisiplinan Taruna",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Utama"
+        },
+        {
+          "id": "11-BP-mon-2",
+          "day": "Senin",
+          "period": 2,
+          "time": "08.00 - 09.30",
+          "subject": "Matematika Terapan Kejuruan",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-BP-mon-3",
+          "day": "Senin",
+          "period": 3,
+          "time": "09.45 - 11.45",
+          "subject": "Praktik Kejuruan Produktif Inti",
+          "teacherId": "t-bp-1",
+          "teacherName": "Bagus Pradana, S.Sn.",
+          "teacherCode": "BP",
+          "roomOrLab": "Studio Green Screen TV"
+        },
+        {
+          "id": "11-BP-mon-4",
+          "day": "Senin",
+          "period": 4,
+          "time": "12.30 - 15.00",
+          "subject": "Praktik Laboratorium / Bengkel Keahlian BP",
+          "teacherId": "t-bp-1",
+          "teacherName": "Bagus Pradana, S.Sn.",
+          "teacherCode": "BP",
+          "roomOrLab": "Studio Green Screen TV"
+        },
+        {
+          "id": "11-BP-tue-1",
+          "day": "Selasa",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Matematika Terapan Vokasi",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-BP-tue-2",
+          "day": "Selasa",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Penyuntingan Audio Video & Tata Suara (Audio Mixing)",
+          "teacherId": "t-bp-2",
+          "teacherName": "Nurul Hidayah, S.I.Kom.",
+          "teacherCode": "NH",
+          "roomOrLab": "Lab Editing Premiere & DaVinci"
+        },
+        {
+          "id": "11-BP-tue-3",
+          "day": "Selasa",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Bahasa Inggris Vokasi (Technical English)",
+          "teacherId": "t-umum-4",
+          "teacherName": "David Sihombing, S.Pd., M.Hum.",
+          "teacherCode": "DS",
+          "roomOrLab": "Lab Bahasa & Multimedia"
+        },
+        {
+          "id": "11-BP-wed-1",
+          "day": "Rabu",
+          "period": 1,
+          "time": "07.15 - 09.45",
+          "subject": "Sinematografi Multi-Kamera & Penulisan Naskah TV",
+          "teacherId": "t-bp-1",
+          "teacherName": "Bagus Pradana, S.Sn.",
+          "teacherCode": "BP",
+          "roomOrLab": "Studio Green Screen TV"
+        },
+        {
+          "id": "11-BP-wed-2",
+          "day": "Rabu",
+          "period": 2,
+          "time": "10.00 - 12.00",
+          "subject": "Bahasa Indonesia & Komunikasi Teknis",
+          "teacherId": "t-umum-1",
+          "teacherName": "Dra. Hj. Nuraini, M.Pd.",
+          "teacherCode": "NR",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-BP-wed-3",
+          "day": "Rabu",
+          "period": 3,
+          "time": "12.45 - 15.00",
+          "subject": "Praktik Kejuruan Lanjutan",
+          "teacherId": "t-bp-2",
+          "teacherName": "Nurul Hidayah, S.I.Kom.",
+          "teacherCode": "NH",
+          "roomOrLab": "Lab Editing Premiere & DaVinci"
+        },
+        {
+          "id": "11-BP-thu-1",
+          "day": "Kamis",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Pendidikan Jasmani, Olahraga & Kesehatan (PJOK)",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Olahraga & Senam"
+        },
+        {
+          "id": "11-BP-thu-2",
+          "day": "Kamis",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pendidikan Pancasila & Kewarganegaraan (PPKn)",
+          "teacherId": "t-umum-6",
+          "teacherName": "Yuli Hastuti, S.Pd.",
+          "teacherCode": "YH",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "11-BP-thu-3",
+          "day": "Kamis",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Projek Penguatan Profil Pelajar Pancasila (P5) / TEFA",
+          "teacherId": "t-bp-1",
+          "teacherName": "Bagus Pradana, S.Sn.",
+          "teacherCode": "BP",
+          "roomOrLab": "Workshop Teaching Factory"
+        },
+        {
+          "id": "11-BP-fri-1",
+          "day": "Jumat",
+          "period": 1,
+          "time": "07.15 - 08.15",
+          "subject": "Senam Pagi Kesegaran Jasmani & Rohani Islam (Imtaq)",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Lapangan / Masjid Sekolah"
+        },
+        {
+          "id": "11-BP-fri-2",
+          "day": "Jumat",
+          "period": 2,
+          "time": "08.15 - 10.00",
+          "subject": "Konseling Karir, Penelusuran Minat & Bimbingan PKL",
+          "teacherId": "t-umum-7",
+          "teacherName": "Siti Aminah, S.Pd., Kons.",
+          "teacherCode": "SA",
+          "roomOrLab": "Ruang Bimbingan Konseling"
+        },
+        {
+          "id": "11-BP-fri-3",
+          "day": "Jumat",
+          "period": 3,
+          "time": "10.00 - 11.30",
+          "subject": "Evaluasi Pembelajaran Mingguan & Pemeliharaan Lab 5R",
+          "teacherId": "t-bp-2",
+          "teacherName": "Nurul Hidayah, S.I.Kom.",
+          "teacherCode": "NH",
+          "roomOrLab": "Lab Editing Premiere & DaVinci"
+        }
+      ]
+    },
+    {
+      "majorId": "bp",
+      "majorCode": "BP",
+      "majorName": "Broadcasting & Perfilman",
+      "grade": "12",
+      "className": "XII BP 1",
+      "homeroomTeacher": {
+        "name": "Dra. Hj. Nuraini, M.Pd.",
+        "nip": "19750214 200212 2 003"
+      },
+      "totalStudents": 30,
+      "classroom": "Gedung F - Studio 3",
+      "schedules": [
+        {
+          "id": "12-BP-mon-1",
+          "day": "Senin",
+          "period": 1,
+          "time": "07.15 - 08.00",
+          "subject": "Upacara Bendera & Apel Kedisiplinan Taruna",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Utama"
+        },
+        {
+          "id": "12-BP-mon-2",
+          "day": "Senin",
+          "period": 2,
+          "time": "08.00 - 09.30",
+          "subject": "Matematika Terapan Kejuruan",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-BP-mon-3",
+          "day": "Senin",
+          "period": 3,
+          "time": "09.45 - 11.45",
+          "subject": "Praktik Kejuruan Produktif Inti",
+          "teacherId": "t-bp-1",
+          "teacherName": "Bagus Pradana, S.Sn.",
+          "teacherCode": "BP",
+          "roomOrLab": "Studio Green Screen TV"
+        },
+        {
+          "id": "12-BP-mon-4",
+          "day": "Senin",
+          "period": 4,
+          "time": "12.30 - 15.00",
+          "subject": "Praktik Laboratorium / Bengkel Keahlian BP",
+          "teacherId": "t-bp-1",
+          "teacherName": "Bagus Pradana, S.Sn.",
+          "teacherCode": "BP",
+          "roomOrLab": "Studio Green Screen TV"
+        },
+        {
+          "id": "12-BP-tue-1",
+          "day": "Selasa",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Matematika Terapan Vokasi",
+          "teacherId": "t-umum-3",
+          "teacherName": "Sri Wahyuni, M.Pd.",
+          "teacherCode": "SW",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-BP-tue-2",
+          "day": "Selasa",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Projek Kreatif & Kewirausahaan (PKK)",
+          "teacherId": "t-bp-2",
+          "teacherName": "Nurul Hidayah, S.I.Kom.",
+          "teacherCode": "NH",
+          "roomOrLab": "Lab Editing Premiere & DaVinci"
+        },
+        {
+          "id": "12-BP-tue-3",
+          "day": "Selasa",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Bahasa Inggris Vokasi (Technical English)",
+          "teacherId": "t-umum-4",
+          "teacherName": "David Sihombing, S.Pd., M.Hum.",
+          "teacherCode": "DS",
+          "roomOrLab": "Lab Bahasa & Multimedia"
+        },
+        {
+          "id": "12-BP-wed-1",
+          "day": "Rabu",
+          "period": 1,
+          "time": "07.15 - 09.45",
+          "subject": "Sinematografi Multi-Kamera & Penulisan Naskah TV",
+          "teacherId": "t-bp-1",
+          "teacherName": "Bagus Pradana, S.Sn.",
+          "teacherCode": "BP",
+          "roomOrLab": "Studio Green Screen TV"
+        },
+        {
+          "id": "12-BP-wed-2",
+          "day": "Rabu",
+          "period": 2,
+          "time": "10.00 - 12.00",
+          "subject": "Bahasa Indonesia & Komunikasi Teknis",
+          "teacherId": "t-umum-1",
+          "teacherName": "Dra. Hj. Nuraini, M.Pd.",
+          "teacherCode": "NR",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-BP-wed-3",
+          "day": "Rabu",
+          "period": 3,
+          "time": "12.45 - 15.00",
+          "subject": "Uji Kompetensi Keahlian (UKK) & Standar LSP",
+          "teacherId": "t-bp-2",
+          "teacherName": "Nurul Hidayah, S.I.Kom.",
+          "teacherCode": "NH",
+          "roomOrLab": "Lab Editing Premiere & DaVinci"
+        },
+        {
+          "id": "12-BP-thu-1",
+          "day": "Kamis",
+          "period": 1,
+          "time": "07.15 - 09.15",
+          "subject": "Pendidikan Jasmani, Olahraga & Kesehatan (PJOK)",
+          "teacherId": "t-umum-2",
+          "teacherName": "Bambang Irawan, S.Pd.",
+          "teacherCode": "BI",
+          "roomOrLab": "Lapangan Olahraga & Senam"
+        },
+        {
+          "id": "12-BP-thu-2",
+          "day": "Kamis",
+          "period": 2,
+          "time": "09.30 - 11.45",
+          "subject": "Pendidikan Pancasila & Kewarganegaraan (PPKn)",
+          "teacherId": "t-umum-6",
+          "teacherName": "Yuli Hastuti, S.Pd.",
+          "teacherCode": "YH",
+          "roomOrLab": "Ruang Kelas Teori"
+        },
+        {
+          "id": "12-BP-thu-3",
+          "day": "Kamis",
+          "period": 3,
+          "time": "12.30 - 14.30",
+          "subject": "Projek Penguatan Profil Pelajar Pancasila (P5) / TEFA",
+          "teacherId": "t-bp-1",
+          "teacherName": "Bagus Pradana, S.Sn.",
+          "teacherCode": "BP",
+          "roomOrLab": "Workshop Teaching Factory"
+        },
+        {
+          "id": "12-BP-fri-1",
+          "day": "Jumat",
+          "period": 1,
+          "time": "07.15 - 08.15",
+          "subject": "Senam Pagi Kesegaran Jasmani & Rohani Islam (Imtaq)",
+          "teacherId": "t-umum-5",
+          "teacherName": "Ust. Ridwan Lubis, S.Pd.I.",
+          "teacherCode": "RL",
+          "roomOrLab": "Lapangan / Masjid Sekolah"
+        },
+        {
+          "id": "12-BP-fri-2",
+          "day": "Jumat",
+          "period": 2,
+          "time": "08.15 - 10.00",
+          "subject": "Konseling Karir, Penelusuran Minat & Bimbingan PKL",
+          "teacherId": "t-umum-7",
+          "teacherName": "Siti Aminah, S.Pd., Kons.",
+          "teacherCode": "SA",
+          "roomOrLab": "Ruang Bimbingan Konseling"
+        },
+        {
+          "id": "12-BP-fri-3",
+          "day": "Jumat",
+          "period": 3,
+          "time": "10.00 - 11.30",
+          "subject": "Evaluasi Pembelajaran Mingguan & Pemeliharaan Lab 5R",
+          "teacherId": "t-bp-2",
+          "teacherName": "Nurul Hidayah, S.I.Kom.",
+          "teacherCode": "NH",
+          "roomOrLab": "Lab Editing Premiere & DaVinci"
+        }
+      ]
+    }
+  ],
+  "uploadedImages": [
+    {
+      "id": "img-1792136706976-v4b3",
+      "category": "guru",
+      "filename": "guru4.jpg",
+      "title": "guru4.jpg",
+      "alt": "guru4.jpg",
+      "url": "/images/guru/guru4.jpg",
+      "localPath": "public/images/guru/guru4.jpg",
+      "fileSize": "317 KB",
+      "uploadedAt": "2026-10-16T07:45:06.976Z"
+    },
+    {
+      "id": "img-1792129720013-85tj",
+      "category": "berita",
+      "filename": "portrait-of-asian-female-student-2023-11-27-05-24-31-utc_11zon.jpg",
+      "title": "portrait-of-asian-female-student-2023-11-27-05-24-31-utc_11zon.jpg",
+      "alt": "portrait-of-asian-female-student-2023-11-27-05-24-31-utc_11zon.jpg",
+      "url": "/images/berita/portrait-of-asian-female-student-2023-11-27-05-24-31-utc_11zon.jpg",
+      "localPath": "public/images/berita/portrait-of-asian-female-student-2023-11-27-05-24-31-utc_11zon.jpg",
+      "fileSize": "711 KB",
+      "uploadedAt": "2026-10-16T05:48:40.013Z"
+    },
+    {
+      "id": "img-1792128027843-r0y1",
+      "category": "berita",
+      "filename": "ilustrasi-ppdb-foto-wisnu-indra-kusumajpnncom-ijwb9-hkt5.jpg",
+      "title": "ilustrasi-ppdb-foto-wisnu-indra-kusumajpnncom-ijwb9-hkt5.jpg",
+      "alt": "ilustrasi-ppdb-foto-wisnu-indra-kusumajpnncom-ijwb9-hkt5.jpg",
+      "url": "/images/berita/ilustrasi-ppdb-foto-wisnu-indra-kusumajpnncom-ijwb9-hkt5.jpg",
+      "localPath": "public/images/berita/ilustrasi-ppdb-foto-wisnu-indra-kusumajpnncom-ijwb9-hkt5.jpg",
+      "fileSize": "347 KB",
+      "uploadedAt": "2026-10-16T05:20:27.843Z"
+    },
+    {
+      "id": "img-1792127943712-gxdu",
+      "category": "berita",
+      "filename": "bengkel-teaching-factory-baru-smkn.jpg",
+      "title": "bengkel-teaching-factory-baru-smkn.jpg",
+      "alt": "bengkel-teaching-factory-baru-smkn.jpg",
+      "url": "/images/berita/bengkel-teaching-factory-baru-smkn.jpg",
+      "localPath": "public/images/berita/bengkel-teaching-factory-baru-smkn.jpg",
+      "fileSize": "167 KB",
+      "uploadedAt": "2026-10-16T05:19:03.713Z"
+    },
+    {
+      "id": "img-1792122628070-78kk",
+      "category": "berita",
+      "filename": "e705b2eff1abad7f1fa066022d733570.jpg",
+      "title": "e705b2eff1abad7f1fa066022d733570.jpg",
+      "alt": "e705b2eff1abad7f1fa066022d733570.jpg",
+      "url": "/images/berita/e705b2eff1abad7f1fa066022d733570.jpg",
+      "localPath": "public/images/berita/e705b2eff1abad7f1fa066022d733570.jpg",
+      "fileSize": "135 KB",
+      "uploadedAt": "2026-10-16T03:50:28.070Z"
+    },
+    {
+      "id": "img-1792122592692-18hl",
+      "category": "berita",
+      "filename": "to.jpg",
+      "title": "to.jpg",
+      "alt": "to.jpg",
+      "url": "/images/berita/to.jpg",
+      "localPath": "public/images/berita/to.jpg",
+      "fileSize": "176 KB",
+      "uploadedAt": "2026-10-16T03:49:52.693Z"
+    },
+    {
+      "id": "img-1792095847784-udsd",
+      "category": "berita",
+      "filename": "a9563aadfc2133df0cf5fc0c5bdf6fc4.jpg",
+      "title": "a9563aadfc2133df0cf5fc0c5bdf6fc4.jpg",
+      "alt": "a9563aadfc2133df0cf5fc0c5bdf6fc4.jpg",
+      "url": "/images/berita/a9563aadfc2133df0cf5fc0c5bdf6fc4.jpg",
+      "localPath": "public/images/berita/a9563aadfc2133df0cf5fc0c5bdf6fc4.jpg",
+      "fileSize": "140 KB",
+      "uploadedAt": "2026-10-15T20:24:07.785Z"
+    },
+    {
+      "id": "img-1792127879375-s31z",
+      "category": "berita",
+      "filename": "c480ef3b9d1d9b347a75170a33d3423d.jpg",
+      "title": "c480ef3b9d1d9b347a75170a33d3423d.jpg",
+      "alt": "c480ef3b9d1d9b347a75170a33d3423d.jpg",
+      "url": "/images/berita/c480ef3b9d1d9b347a75170a33d3423d.jpg",
+      "localPath": "public/images/berita/c480ef3b9d1d9b347a75170a33d3423d.jpg",
+      "fileSize": "275 KB",
+      "uploadedAt": "2026-10-16T05:17:59.375Z"
+    }
+  ],
+  "gallery": [
+    {
+      "id": "gal-1792128901420",
+      "title": "Praktik Overhaul Mesin Otomotif",
+      "category": "Praktik Kejuruan",
+      "imageUrl": "/images/galeri/praktik/mesin-overhaul.jpg",
+      "date": "16 Oktober 2026",
+      "description": "Siswa kelas XII mempraktikkan overhaul mesin mobil 4 silinder"
+    },
+    {
+      "id": "gal-1792128891806",
+      "title": "Praktik Overhaul Mesin Otomotif",
+      "category": "Praktik Kejuruan",
+      "imageUrl": "/images/galeri/praktik/mesin-overhaul.jpg",
+      "date": "16 Oktober 2026",
+      "description": "Siswa kelas XII mempraktikkan overhaul mesin mobil 4 silinder"
+    }
+  ]
+}

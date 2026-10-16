@@ -1,0 +1,6 @@
+{
+  "name": "SMK Negeri 1 Ujung Batu",
+  "description": "Website Resmi SMK Negeri 1 Ujung Batu, Rokan Hulu, Riau - Terampil, Kompeten, Mandiri, dan Siap Kerja dengan Sistem Informasi Berita & Pengumuman Sekolah",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
