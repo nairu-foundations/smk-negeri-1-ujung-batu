@@ -115,9 +115,11 @@ export interface Extracurricular {
 export interface GalleryPhoto {
   id: string;
   title: string;
-  category: 'Praktik Bengkel/Lab' | 'Kegiatan Siswa' | 'Kunjungan Industri' | 'Guru & Tendik';
+  category: 'Praktik Bengkel/Lab' | 'Kegiatan Siswa' | 'Kunjungan Industri' | 'Guru & Tendik' | string;
   caption: string;
   imageUrl: string;
+  date?: string;
+  description?: string;
 }
 
 export interface FaqItem {

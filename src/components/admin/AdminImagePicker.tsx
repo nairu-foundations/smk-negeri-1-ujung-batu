@@ -71,6 +71,16 @@ export const AdminImagePicker: React.FC<AdminImagePickerProps> = ({
       { filename: 'poster-gelar-karya.jpg', title: 'Poster Gelar Karya Vokasi Siswa' },
       { filename: 'poster-ekskul.jpg', title: 'Poster Ekstrakurikuler & Olahraga' },
     ],
+    galeri: [
+      { filename: 'praktik-overhaul-mesin.jpg', title: 'Praktik Overhaul Bengkel TO' },
+      { filename: 'splicing-fiber-optic-tkj.jpg', title: 'Splicing Fiber Optic Lab TKJ' },
+      { filename: 'studio-green-screen.jpg', title: 'Produksi Siaran di Green Screen' },
+      { filename: 'pkl-mitra-industri.jpg', title: 'Pelepasan Siswa PKL Industri' },
+      { filename: 'upacara-hardiknas.jpg', title: 'Upacara Bendera Hardiknas' },
+      { filename: 'kunjungan-data-center.jpg', title: 'Kunjungan Industri ke Data Center' },
+      { filename: 'pelatihan-guru-kejuruan.jpg', title: 'Pelatihan Up-skilling Guru' },
+      { filename: 'asesi-bnsp-kejuruan.jpg', title: 'Uji Sertifikasi Profesi BNSP' },
+    ],
   };
 
   // Fetch registered uploaded images for this category

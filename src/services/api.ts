@@ -1,4 +1,4 @@
-import { NewsArticle, Announcement, AdminUser, ContactMessage, EmailLog, StaffMember } from '../types';
+import { NewsArticle, Announcement, AdminUser, ContactMessage, EmailLog, StaffMember, GalleryPhoto } from '../types';
 import { initialNewsArticles, initialAnnouncements, staffMembers, galleryPhotos } from '../data/schoolData';
 import {
   MajorClassInfo,
@@ -607,7 +607,7 @@ export const api = {
     if (!res.ok) throw new Error(json.error || 'Gagal menghapus foto dari katalog');
   },
 
-  async getGallery(): Promise<any[]> {
+  async getGallery(): Promise<GalleryPhoto[]> {
     try {
       const res = await fetch('/api/gallery');
       if (res.ok) {
@@ -626,18 +626,25 @@ export const api = {
     return galleryPhotos;
   },
 
-  async addGalleryPhoto(payload: {
+  async createGalleryPhoto(payload: {
     title: string;
     category: string;
     imageUrl: string;
+    caption?: string;
     description?: string;
     date?: string;
-  }): Promise<any> {
+  }): Promise<GalleryPhoto> {
+    const textDesc = (payload.caption || payload.description || `Dokumentasi foto ${payload.title}`).trim();
+    const bodyPayload = {
+      ...payload,
+      caption: textDesc,
+      description: textDesc,
+    };
     try {
       const res = await fetch('/api/gallery', {
         method: 'POST',
         headers: getHeaders(true),
-        body: JSON.stringify(payload),
+        body: JSON.stringify(bodyPayload),
       });
       if (res.ok) {
         const json = await res.json();
@@ -647,9 +654,12 @@ export const api = {
 
     // Fallback local
     const current = await this.getGallery();
-    const newItem = {
+    const newItem: GalleryPhoto = {
       id: `gal-local-${Date.now()}`,
-      ...payload,
+      title: payload.title,
+      category: payload.category as any,
+      imageUrl: payload.imageUrl,
+      caption: textDesc,
       date: payload.date || new Date().toLocaleDateString('id-ID'),
     };
     const updated = [newItem, ...current];
@@ -657,5 +667,62 @@ export const api = {
       localStorage.setItem(GALLERY_KEY, JSON.stringify(updated));
     } catch {}
     return newItem;
+  },
+
+  async updateGalleryPhoto(id: string, payload: Partial<GalleryPhoto>): Promise<GalleryPhoto> {
+    const textDesc = payload.caption !== undefined ? payload.caption : payload.description;
+    const bodyPayload = {
+      ...payload,
+      ...(textDesc !== undefined ? { caption: textDesc, description: textDesc } : {}),
+    };
+    try {
+      const res = await fetch(`/api/gallery/${id}`, {
+        method: 'PUT',
+        headers: getHeaders(true),
+        body: JSON.stringify(bodyPayload),
+      });
+      if (res.ok) {
+        const json = await res.json();
+        return json.data;
+      }
+    } catch {}
+
+    // Fallback local
+    const current = await this.getGallery();
+    const updated = current.map((p) => (p.id === id ? { ...p, ...bodyPayload } : p));
+    try {
+      localStorage.setItem(GALLERY_KEY, JSON.stringify(updated));
+    } catch {}
+    const target = updated.find((p) => p.id === id);
+    if (!target) throw new Error('Foto tidak ditemukan');
+    return target;
+  },
+
+  async deleteGalleryPhoto(id: string): Promise<void> {
+    try {
+      const res = await fetch(`/api/gallery/${id}`, {
+        method: 'DELETE',
+        headers: getHeaders(true),
+      });
+      if (res.ok) return;
+    } catch {}
+
+    // Fallback local
+    const current = await this.getGallery();
+    const updated = current.filter((p) => p.id !== id);
+    try {
+      localStorage.setItem(GALLERY_KEY, JSON.stringify(updated));
+    } catch {}
+  },
+
+  async addGalleryPhoto(payload: {
+    title: string;
+    category: string;
+    imageUrl: string;
+    description?: string;
+    caption?: string;
+    date?: string;
+  }): Promise<GalleryPhoto> {
+    return this.createGalleryPhoto(payload);
   },
 };

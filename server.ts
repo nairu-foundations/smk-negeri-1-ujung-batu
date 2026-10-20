@@ -293,6 +293,81 @@ const defaultInitialStaff = [
   },
 ];
 
+const defaultInitialGallery = [
+  {
+    id: 'gal-1',
+    title: 'Praktik Overhaul Mesin Otomotif di Bengkel TO',
+    category: 'Praktik Bengkel/Lab',
+    caption: 'Siswa kelas XII mempraktikkan pembongkaran dan perakitan kembali blok silinder mesin mobil berstandar 5R.',
+    description: 'Siswa kelas XII mempraktikkan pembongkaran dan perakitan kembali blok silinder mesin mobil berstandar 5R.',
+    imageUrl: 'https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&q=80&w=800',
+    date: '12 Januari 2026',
+  },
+  {
+    id: 'gal-2',
+    title: 'Konfigurasi Rack Router & Splicing Kabel Optik di Lab TKJ',
+    category: 'Praktik Bengkel/Lab',
+    caption: 'Sesi latihan penyambungan fiber optic menggunakan Fusion Splicer dengan redaman mendekati 0.01 dB.',
+    description: 'Sesi latihan penyambungan fiber optic menggunakan Fusion Splicer dengan redaman mendekati 0.01 dB.',
+    imageUrl: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800',
+    date: '15 Januari 2026',
+  },
+  {
+    id: 'gal-3',
+    title: 'Simulasi Pembuatan Konten Video Iklan di Studio Green Screen',
+    category: 'Praktik Bengkel/Lab',
+    caption: 'Siswa Broadcasting merekam video komersial produk UMKM Rokan Hulu dengan tata lampu studio 3 titik.',
+    description: 'Siswa Broadcasting merekam video komersial produk UMKM Rokan Hulu dengan tata lampu studio 3 titik.',
+    imageUrl: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=800',
+    date: '20 Januari 2026',
+  },
+  {
+    id: 'gal-4',
+    title: 'Penerjunan Siswa PKL di Bengkel Resmi Mitra Industri',
+    category: 'Kunjungan Industri',
+    caption: 'Guru pembimbing mengantarkan dan menyerahkan peserta didik ke Supervisor Bengkel Mitra di Ujung Batu.',
+    description: 'Guru pembimbing mengantarkan dan menyerahkan peserta didik ke Supervisor Bengkel Mitra di Ujung Batu.',
+    imageUrl: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&q=80&w=800',
+    date: '25 Januari 2026',
+  },
+  {
+    id: 'gal-5',
+    title: 'Upacara Peringatan Hari Pendidikan Nasional di Lapangan Utama',
+    category: 'Kegiatan Siswa',
+    caption: 'Barisan siswa dan dewan guru dengan khidmat mengikuti upacara bendera di lapangan kampus SMKN 1 Ujung Batu.',
+    description: 'Barisan siswa dan dewan guru dengan khidmat mengikuti upacara bendera di lapangan kampus SMKN 1 Ujung Batu.',
+    imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800',
+    date: '2 Mei 2025',
+  },
+  {
+    id: 'gal-6',
+    title: 'Kunjungan Studi Industri ke Data Center Provider di Pekanbaru',
+    category: 'Kunjungan Industri',
+    caption: 'Siswa TKJ mendengarkan pemaparan Network Operation Center (NOC) dari engineer industri.',
+    description: 'Siswa TKJ mendengarkan pemaparan Network Operation Center (NOC) dari engineer industri.',
+    imageUrl: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800',
+    date: '10 Februari 2026',
+  },
+  {
+    id: 'gal-7',
+    title: 'Pelatihan Guru Kejuruan (Up-skilling Industri)',
+    category: 'Guru & Tendik',
+    caption: 'Tenaga pendidik SMKN 1 Ujung Batu mengikuti sertifikasi asesor kompetensi kejuruan tingkat provinsi.',
+    description: 'Tenaga pendidik SMKN 1 Ujung Batu mengikuti sertifikasi asesor kompetensi kejuruan tingkat provinsi.',
+    imageUrl: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800',
+    date: '18 Februari 2026',
+  },
+  {
+    id: 'gal-8',
+    title: 'Pelaksanaan Uji Kompetensi Keahlian (UKK) Bersama Asesor BNSP',
+    category: 'Praktik Bengkel/Lab',
+    caption: 'Pengujian ketat sertifikasi BNSP oleh praktisi industri eksternal untuk melahirkan teknisi bersertifikat.',
+    description: 'Pengujian ketat sertifikasi BNSP oleh praktisi industri eksternal untuk melahirkan teknisi bersertifikat.',
+    imageUrl: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800',
+    date: '5 Maret 2026',
+  },
+];
+
 interface DatabaseSchema {
   users: Array<{
     id: string;
@@ -338,7 +413,7 @@ function loadDatabase(): DatabaseSchema {
       staff: defaultInitialStaff,
       schedules: classesScheduleData,
       uploadedImages: [],
-      gallery: [],
+      gallery: defaultInitialGallery,
       messages: [
         {
           id: 'msg-seed-1',
@@ -388,8 +463,8 @@ function loadDatabase(): DatabaseSchema {
       shouldSave = true;
     }
 
-    if (!parsed.gallery || !Array.isArray(parsed.gallery)) {
-      parsed.gallery = [];
+    if (!parsed.gallery || !Array.isArray(parsed.gallery) || parsed.gallery.length === 0) {
+      parsed.gallery = defaultInitialGallery;
       shouldSave = true;
     }
 
@@ -1404,13 +1479,14 @@ app.get('/api/gallery', (_req: Request, res: Response) => {
   const db = loadDatabase();
   res.json({
     success: true,
+    total: (db.gallery || []).length,
     data: db.gallery || [],
   });
 });
 
 // POST /api/gallery (Add photo to live gallery)
 app.post('/api/gallery', authenticateAdmin, (req: Request, res: Response) => {
-  const { title, category, imageUrl, description, date } = req.body;
+  const { title, category, imageUrl, description, caption, date } = req.body;
   if (!title || !imageUrl) {
     res.status(400).json({ error: 'Judul dan URL foto wajib diisi.' });
     return;
@@ -1419,13 +1495,16 @@ app.post('/api/gallery', authenticateAdmin, (req: Request, res: Response) => {
   const db = loadDatabase();
   if (!db.gallery) db.gallery = [];
 
+  const textDesc = (caption || description || `Dokumentasi foto ${title}`).trim();
   const newPhoto = {
     id: `gal-${Date.now()}`,
     title: String(title).trim(),
     category: category || 'Kegiatan Siswa',
     imageUrl: String(imageUrl).trim(),
+    caption: textDesc,
+    description: textDesc,
     date: date || new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }),
-    description: description || `Dokumentasi foto ${title}`,
+    createdAt: new Date().toISOString(),
   };
 
   db.gallery.unshift(newPhoto);
@@ -1435,6 +1514,44 @@ app.post('/api/gallery', authenticateAdmin, (req: Request, res: Response) => {
     success: true,
     message: `Foto "${newPhoto.title}" berhasil ditambahkan ke galeri publik.`,
     data: newPhoto,
+  });
+});
+
+// PUT /api/gallery/:id (Update photo in live gallery)
+app.put('/api/gallery/:id', authenticateAdmin, (req: Request, res: Response) => {
+  const db = loadDatabase();
+  if (!db.gallery) db.gallery = [];
+
+  const index = db.gallery.findIndex((g: any) => g.id === req.params.id);
+  if (index === -1) {
+    res.status(404).json({ error: 'Foto galeri tidak ditemukan.' });
+    return;
+  }
+
+  const current = db.gallery[index];
+  const { title, category, imageUrl, description, caption, date } = req.body;
+  const textDesc = (caption !== undefined || description !== undefined
+    ? (caption || description)
+    : (current.caption || current.description || '')).trim();
+
+  const updatedPhoto = {
+    ...current,
+    title: title !== undefined ? String(title).trim() : current.title,
+    category: category !== undefined ? category : current.category,
+    imageUrl: imageUrl !== undefined ? String(imageUrl).trim() : current.imageUrl,
+    caption: textDesc,
+    description: textDesc,
+    date: date !== undefined ? date : current.date,
+    updatedAt: new Date().toISOString(),
+  };
+
+  db.gallery[index] = updatedPhoto;
+  saveDatabase(db);
+
+  res.json({
+    success: true,
+    message: `Foto "${updatedPhoto.title}" berhasil diperbarui.`,
+    data: updatedPhoto,
   });
 });
 

@@ -33,14 +33,27 @@ import {
   LayoutGrid,
   Users,
   FolderTree,
-  ArrowLeft,
+  Camera,
+  Save,
+  Maximize2,
 } from 'lucide-react';
 import { api } from '../services/api';
 import { SchoolLogo } from './common/SchoolLogo';
-import { NewsArticle, Announcement, AdminUser, ContactMessage, EmailLog, StaffMember } from '../types';
+import { NewsArticle, Announcement, AdminUser, ContactMessage, EmailLog, StaffMember, GalleryPhoto } from '../types';
 import { PhotoManagerTab } from './admin/PhotoManagerTab';
 import { ScheduleManagerTab } from './admin/ScheduleManagerTab';
 import { AdminImagePicker } from './admin/AdminImagePicker';
+
+export type AdminTab =
+  | 'overview'
+  | 'news'
+  | 'announcements'
+  | 'staff'
+  | 'gallery'
+  | 'email'
+  | 'messages'
+  | 'photos'
+  | 'schedule';
 
 interface AdminDashboardProps {
   currentUser: AdminUser;
@@ -57,13 +70,13 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
   onLogout,
   onNavigateHome,
 }) => {
-  const [activeTab, setActiveTabState] = useState<'news' | 'announcements' | 'staff' | 'email' | 'messages' | 'photos' | 'schedule' | 'overview'>(
+  const [activeTab, setActiveTabState] = useState<AdminTab>(
     (activeTabProp as any) || 'overview'
   );
   const [tabHistory, setTabHistory] = useState<string[]>([(activeTabProp as any) || 'overview']);
 
   const changeTab = (
-    tab: 'news' | 'announcements' | 'staff' | 'email' | 'messages' | 'photos' | 'schedule' | 'overview',
+    tab: AdminTab,
     push = true
   ) => {
     setActiveTabState(tab);
@@ -73,60 +86,22 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
     }
   };
 
-  const setActiveTab = (tab: 'news' | 'announcements' | 'staff' | 'email' | 'messages' | 'photos' | 'schedule' | 'overview') => {
+  const setActiveTab = (tab: AdminTab) => {
     changeTab(tab, true);
   };
 
   useEffect(() => {
-    if (activeTabProp && activeTabProp !== activeTab) {
-      setActiveTabState(activeTabProp as any);
-      setTabHistory((prev) => (prev[prev.length - 1] === activeTabProp ? prev : [...prev, activeTabProp]));
+    const targetTab = (activeTabProp as any) || 'overview';
+    if (targetTab !== activeTab) {
+      setActiveTabState(targetTab);
     }
   }, [activeTabProp]);
-
-  const handleAdminBack = () => {
-    // 1. If any modal is open, close it first
-    if (isNewsModalOpen) {
-      setIsNewsModalOpen(false);
-      return;
-    }
-    if (isStaffModalOpen) {
-      setIsStaffModalOpen(false);
-      return;
-    }
-    if (isAnnouncementModalOpen) {
-      setIsAnnouncementModalOpen(false);
-      return;
-    }
-    if (deleteConfirm) {
-      setDeleteConfirm(null);
-      return;
-    }
-
-    // 2. If tab history has previous tabs, go to the previous tab in admin!
-    if (tabHistory.length > 1) {
-      const updated = [...tabHistory];
-      updated.pop(); // remove current tab
-      const prevTab = updated[updated.length - 1] as any;
-      setTabHistory(updated);
-      setActiveTabState(prevTab);
-      if (onTabChange) onTabChange(prevTab);
-      return;
-    }
-
-    // 3. If currently on a subtab but history is only 1 item, return to overview (dashboard home)
-    if (activeTab !== 'overview') {
-      changeTab('overview', true);
-      return;
-    }
-
-    triggerNotice('success', 'Anda sudah berada di halaman awal Dashboard Admin.');
-  };
 
   // Data states
   const [newsList, setNewsList] = useState<NewsArticle[]>([]);
   const [announcements, setAnnouncements] = useState<Announcement[]>([]);
   const [staffList, setStaffList] = useState<StaffMember[]>([]);
+  const [galleryList, setGalleryList] = useState<GalleryPhoto[]>([]);
   const [messages, setMessages] = useState<ContactMessage[]>([]);
   const [emailLogs, setEmailLogs] = useState<EmailLog[]>([]);
   const [loading, setLoading] = useState(true);
@@ -143,6 +118,11 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
   const [staffStatusFilter, setStaffStatusFilter] = useState('Semua');
   const [staffViewMode, setStaffViewMode] = useState<'grid' | 'table'>('grid');
 
+  // Gallery Search & Filter
+  const [gallerySearch, setGallerySearch] = useState('');
+  const [galleryCategoryFilter, setGalleryCategoryFilter] = useState('Semua');
+  const [galleryViewMode, setGalleryViewMode] = useState<'grid' | 'table'>('grid');
+
   // Modals
   const [isNewsModalOpen, setIsNewsModalOpen] = useState(false);
   const [editingNews, setEditingNews] = useState<NewsArticle | null>(null);
@@ -153,11 +133,39 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
   const [isStaffModalOpen, setIsStaffModalOpen] = useState(false);
   const [editingStaff, setEditingStaff] = useState<StaffMember | null>(null);
 
+  const [isGalleryModalOpen, setIsGalleryModalOpen] = useState(false);
+  const [editingGalleryPhoto, setEditingGalleryPhoto] = useState<GalleryPhoto | null>(null);
+  const [galleryLightboxPhoto, setGalleryLightboxPhoto] = useState<GalleryPhoto | null>(null);
+
   const [deleteConfirm, setDeleteConfirm] = useState<{
-    type: 'news' | 'announcement' | 'staff';
+    type: 'news' | 'announcement' | 'staff' | 'gallery';
     id: string;
     title: string;
   } | null>(null);
+
+  // Handle device go back navigation: if any modal is open when user hits back, close the modal smoothly
+  useEffect(() => {
+    const handlePopStateModal = () => {
+      if (isNewsModalOpen) setIsNewsModalOpen(false);
+      if (isStaffModalOpen) setIsStaffModalOpen(false);
+      if (isAnnouncementModalOpen) setIsAnnouncementModalOpen(false);
+      if (isGalleryModalOpen) setIsGalleryModalOpen(false);
+      if (galleryLightboxPhoto) setGalleryLightboxPhoto(null);
+      if (deleteConfirm) setDeleteConfirm(null);
+    };
+
+    window.addEventListener('popstate', handlePopStateModal);
+    return () => window.removeEventListener('popstate', handlePopStateModal);
+  }, [isNewsModalOpen, isStaffModalOpen, isAnnouncementModalOpen, isGalleryModalOpen, galleryLightboxPhoto, deleteConfirm]);
+
+  // Form states: Gallery
+  const [galleryFormData, setGalleryFormData] = useState({
+    title: '',
+    category: 'Praktik Bengkel/Lab',
+    imageUrl: '',
+    caption: '',
+    date: new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }),
+  });
 
   // Form states: News
   const [newsFormData, setNewsFormData] = useState({
@@ -217,18 +225,20 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
   const loadAllData = async () => {
     setLoading(true);
     try {
-      const [fetchedNews, fetchedAnnouncements, fetchedStaff, fetchedMessages, fetchedEmails] = await Promise.all([
+      const [fetchedNews, fetchedAnnouncements, fetchedStaff, fetchedMessages, fetchedEmails, fetchedGallery] = await Promise.all([
         api.getNews(),
         api.getAnnouncements(),
         api.getStaff(),
         api.getMessages(),
         api.getEmailLogs(),
+        api.getGallery(),
       ]);
       setNewsList(fetchedNews);
       setAnnouncements(fetchedAnnouncements);
       setStaffList(fetchedStaff);
       setMessages(fetchedMessages);
       setEmailLogs(fetchedEmails);
+      setGalleryList(fetchedGallery);
     } catch (err) {
       console.error('Error fetching admin data:', err);
     } finally {
@@ -372,7 +382,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
       role: '',
       category: 'Produktif',
       majorOrSubject: '',
-      photo: '/images/guru/kepala-sekolah.jpg',
+      photo: '',
       phone: '',
       email: '',
       education: 'S1 Pendidikan',
@@ -406,6 +416,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
     }
 
     try {
+      const cleanPhoto = staffFormData.photo.trim() || 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=500';
       if (editingStaff) {
         await api.updateStaff(editingStaff.id, {
           name: staffFormData.name.trim(),
@@ -413,7 +424,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
           role: staffFormData.role.trim(),
           category: staffFormData.category,
           majorOrSubject: staffFormData.majorOrSubject.trim() || '-',
-          photo: staffFormData.photo.trim(),
+          photo: cleanPhoto,
           phone: staffFormData.phone.trim() || undefined,
           email: staffFormData.email.trim() || undefined,
           education: staffFormData.education.trim() || undefined,
@@ -427,7 +438,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
           role: staffFormData.role.trim(),
           category: staffFormData.category,
           majorOrSubject: staffFormData.majorOrSubject.trim() || '-',
-          photo: staffFormData.photo.trim(),
+          photo: cleanPhoto,
           phone: staffFormData.phone.trim() || undefined,
           email: staffFormData.email.trim() || undefined,
           education: staffFormData.education.trim() || undefined,
@@ -450,6 +461,82 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
       loadAllData();
     } catch (err: any) {
       triggerNotice('error', err.message || 'Gagal menghapus data GTK');
+    }
+  };
+
+  // ==========================================
+  // GALLERY (DOKUMENTASI FOTO) HANDLERS
+  // ==========================================
+  const handleOpenAddGallery = () => {
+    setEditingGalleryPhoto(null);
+    setGalleryFormData({
+      title: '',
+      category: 'Praktik Bengkel/Lab',
+      imageUrl: '',
+      caption: '',
+      date: new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }),
+    });
+    setIsGalleryModalOpen(true);
+  };
+
+  const handleOpenEditGallery = (photo: GalleryPhoto) => {
+    setEditingGalleryPhoto(photo);
+    setGalleryFormData({
+      title: photo.title,
+      category: photo.category,
+      imageUrl: photo.imageUrl,
+      caption: photo.caption || (photo as any).description || '',
+      date: (photo as any).date || new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }),
+    });
+    setIsGalleryModalOpen(true);
+  };
+
+  const handleSaveGallery = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!galleryFormData.title.trim()) {
+      triggerNotice('error', 'Judul foto dokumentasi wajib diisi.');
+      return;
+    }
+    if (!galleryFormData.imageUrl.trim()) {
+      triggerNotice('error', 'Pilih atau unggah file foto dokumentasi terlebih dahulu.');
+      return;
+    }
+
+    try {
+      if (editingGalleryPhoto) {
+        await api.updateGalleryPhoto(editingGalleryPhoto.id, {
+          title: galleryFormData.title.trim(),
+          category: galleryFormData.category,
+          imageUrl: galleryFormData.imageUrl.trim(),
+          caption: galleryFormData.caption.trim(),
+          date: galleryFormData.date.trim(),
+        });
+        triggerNotice('success', `Foto dokumentasi "${galleryFormData.title}" berhasil diperbarui!`);
+      } else {
+        await api.createGalleryPhoto({
+          title: galleryFormData.title.trim(),
+          category: galleryFormData.category,
+          imageUrl: galleryFormData.imageUrl.trim(),
+          caption: galleryFormData.caption.trim(),
+          date: galleryFormData.date.trim(),
+        });
+        triggerNotice('success', `Foto dokumentasi "${galleryFormData.title}" berhasil ditambahkan ke galeri!`);
+      }
+      setIsGalleryModalOpen(false);
+      loadAllData();
+    } catch (err: any) {
+      triggerNotice('error', err.message || 'Gagal menyimpan foto dokumentasi');
+    }
+  };
+
+  const handleDeleteGallery = async (id: string) => {
+    try {
+      await api.deleteGalleryPhoto(id);
+      triggerNotice('success', 'Foto dokumentasi berhasil dihapus dari galeri.');
+      setDeleteConfirm(null);
+      loadAllData();
+    } catch (err: any) {
+      triggerNotice('error', err.message || 'Gagal menghapus foto dokumentasi');
     }
   };
 
@@ -503,6 +590,18 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
     return matchCat && matchStatus && matchQuery;
   });
 
+  const filteredGallery = galleryList.filter((item) => {
+    const matchCat =
+      galleryCategoryFilter === 'Semua' || item.category === galleryCategoryFilter;
+    const q = gallerySearch.toLowerCase().trim();
+    const matchQuery =
+      !q ||
+      item.title.toLowerCase().includes(q) ||
+      (item.caption || (item as any).description || '').toLowerCase().includes(q) ||
+      (item.category && item.category.toLowerCase().includes(q));
+    return matchCat && matchQuery;
+  });
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans">
       {/* Top Admin Navigation Header */}
@@ -524,16 +623,6 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
           {/* User Profile & Actions */}
           <div className="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
-            {/* Tombol Navigasi Kembali di Panel Admin */}
-            <button
-              onClick={handleAdminBack}
-              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-bold transition-all cursor-pointer shadow-xs active:scale-95"
-              title="Kembali ke halaman atau tab sebelumnya di panel admin"
-            >
-              <ArrowLeft className="w-3.5 h-3.5 text-slate-950" />
-              <span>Kembali</span>
-            </button>
-
             <div className="hidden md:flex flex-col text-right pr-1">
               <span className="text-xs font-semibold text-white">{currentUser.name}</span>
               <span className="text-[10px] text-white/60">{currentUser.email}</span>
@@ -588,17 +677,9 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
       {/* Main Body Content */}
       <main className="max-w-[1300px] mx-auto px-3 sm:px-6 py-4 sm:py-8 flex-1 w-full space-y-4 sm:space-y-6">
-        {/* Admin Navigation Breadcrumb & Back Action Bar */}
+        {/* Admin Navigation Breadcrumb Bar */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 bg-white px-4 py-3 rounded-2xl border border-slate-200 shadow-2xs">
           <div className="flex items-center gap-2 flex-wrap">
-            <button
-              onClick={handleAdminBack}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-[#003087] hover:text-white text-[#003087] text-xs font-bold transition-all cursor-pointer border border-slate-200/90 active:scale-95 group"
-            >
-              <ArrowLeft className="w-3.5 h-3.5 text-[#FFB800] group-hover:text-[#FFB800]" />
-              <span>Kembali ke Halaman Sebelumnya</span>
-            </button>
-            <span className="text-slate-300">/</span>
             <span className="text-xs text-slate-500 font-medium">Halaman Aktif:</span>
             <span className="px-2.5 py-1 rounded-lg bg-blue-50 text-[#003087] font-bold text-xs border border-blue-100/70">
               {activeTab === 'overview'
@@ -609,6 +690,8 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                 ? '📢 Kelola Pengumuman'
                 : activeTab === 'staff'
                 ? '👨‍🏫 Guru & Tenaga Kependidikan'
+                : activeTab === 'gallery'
+                ? '📸 Galeri & Dokumentasi Foto'
                 : activeTab === 'email'
                 ? '✉️ Notifikasi Email'
                 : activeTab === 'messages'
@@ -638,6 +721,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                 <option value="news">📰 Kelola Berita ({newsList.length})</option>
                 <option value="announcements">📢 Pengumuman ({announcements.length})</option>
                 <option value="staff">👨‍🏫 Guru & Tendik ({staffList.length})</option>
+                <option value="gallery">📸 Galeri Foto ({galleryList.length})</option>
                 <option value="email">✉️ Notifikasi Email ({emailLogs.length})</option>
                 <option value="messages">💬 Pesan Masuk ({messages.length})</option>
                 <option value="photos">📁 Direktori Foto</option>
@@ -723,6 +807,23 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
               </button>
 
               <button
+                onClick={() => setActiveTab('gallery')}
+                className={`px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap flex-shrink-0 ${
+                  activeTab === 'gallery'
+                    ? 'bg-[#003087] text-white shadow-xs'
+                    : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
+                }`}
+              >
+                <Camera className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FFB800]" />
+                <span>Galeri Foto</span>
+                <span className={`px-1.5 py-0.2 rounded-full text-[10px] font-bold ${
+                  activeTab === 'gallery' ? 'bg-[#FFB800] text-[#002260]' : 'bg-slate-100 text-slate-700'
+                }`}>
+                  {galleryList.length}
+                </span>
+              </button>
+
+              <button
                 onClick={() => setActiveTab('email')}
                 className={`px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap flex-shrink-0 ${
                   activeTab === 'email'
@@ -800,13 +901,13 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
         {/* ========================================================= */}
         {activeTab === 'overview' && (
           <div className="space-y-6 animate-in fade-in duration-150">
-            {/* Quick Metrics 5 Cards */}
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-2.5 sm:gap-4">
+            {/* Quick Metrics 6 Cards */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-4">
               {/* Card 1: News */}
-              <div className="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-2">
+              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-2">
                 <div className="min-w-0">
-                  <span className="text-[11px] sm:text-xs text-slate-500 font-medium block truncate">Berita Sekolah</span>
-                  <div className="text-xl sm:text-2xl font-extrabold text-[#003087] font-heading mt-0.5">
+                  <span className="text-[11px] sm:text-xs text-slate-500 font-medium block truncate">Berita</span>
+                  <div className="text-lg sm:text-2xl font-extrabold text-[#003087] font-heading mt-0.5">
                     {newsList.length}
                   </div>
                   <button
@@ -816,16 +917,16 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                     Kelola &rarr;
                   </button>
                 </div>
-                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-blue-50 text-[#003087] flex items-center justify-center flex-shrink-0">
-                  <Newspaper className="w-5 h-5 sm:w-6 sm:h-6 text-[#003087]" />
+                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-blue-50 text-[#003087] flex items-center justify-center flex-shrink-0">
+                  <Newspaper className="w-4 h-4 sm:w-5 sm:h-5 text-[#003087]" />
                 </div>
               </div>
 
               {/* Card 2: Announcements */}
-              <div className="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-2">
+              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-2">
                 <div className="min-w-0">
                   <span className="text-[11px] sm:text-xs text-slate-500 font-medium block truncate">Pengumuman</span>
-                  <div className="text-xl sm:text-2xl font-extrabold text-[#003087] font-heading mt-0.5">
+                  <div className="text-lg sm:text-2xl font-extrabold text-[#003087] font-heading mt-0.5">
                     {announcements.length}
                   </div>
                   <button
@@ -835,16 +936,16 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                     Kelola &rarr;
                   </button>
                 </div>
-                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center flex-shrink-0">
-                  <Bell className="w-5 h-5 sm:w-6 sm:h-6 text-amber-600" />
+                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center flex-shrink-0">
+                  <Bell className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600" />
                 </div>
               </div>
 
               {/* Card 3: Guru & Tenaga Kependidikan */}
-              <div className="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-2">
+              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-2">
                 <div className="min-w-0">
                   <span className="text-[11px] sm:text-xs text-slate-500 font-medium block truncate">Guru & GTK</span>
-                  <div className="text-xl sm:text-2xl font-extrabold text-[#003087] font-heading mt-0.5">
+                  <div className="text-lg sm:text-2xl font-extrabold text-[#003087] font-heading mt-0.5">
                     {staffList.length}
                   </div>
                   <button
@@ -854,16 +955,35 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                     Atur &rarr;
                   </button>
                 </div>
-                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center flex-shrink-0">
-                  <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600" />
+                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center flex-shrink-0">
+                  <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600" />
                 </div>
               </div>
 
-              {/* Card 4: Email Endpoint Logs */}
-              <div className="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-2">
+              {/* Card 4: Galeri Foto */}
+              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-2">
+                <div className="min-w-0">
+                  <span className="text-[11px] sm:text-xs text-slate-500 font-medium block truncate">Galeri Foto</span>
+                  <div className="text-lg sm:text-2xl font-extrabold text-[#003087] font-heading mt-0.5">
+                    {galleryList.length}
+                  </div>
+                  <button
+                    onClick={() => setActiveTab('gallery')}
+                    className="text-[10px] sm:text-[11px] text-[#003087] font-semibold hover:underline mt-0.5 block truncate cursor-pointer"
+                  >
+                    Kelola &rarr;
+                  </button>
+                </div>
+                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center flex-shrink-0">
+                  <Camera className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
+                </div>
+              </div>
+
+              {/* Card 5: Email Endpoint Logs */}
+              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-2">
                 <div className="min-w-0">
                   <span className="text-[11px] sm:text-xs text-slate-500 font-medium block truncate">Logs Email</span>
-                  <div className="text-xl sm:text-2xl font-extrabold text-[#003087] font-heading mt-0.5">
+                  <div className="text-lg sm:text-2xl font-extrabold text-[#003087] font-heading mt-0.5">
                     {emailLogs.length}
                   </div>
                   <button
@@ -873,16 +993,16 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                     Riwayat &rarr;
                   </button>
                 </div>
-                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
+                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
                 </div>
               </div>
 
-              {/* Card 5: Visitor Messages */}
-              <div className="col-span-2 sm:col-span-1 p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-2">
+              {/* Card 6: Visitor Messages */}
+              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-2">
                 <div className="min-w-0">
                   <span className="text-[11px] sm:text-xs text-slate-500 font-medium block truncate">Pesan Masuk</span>
-                  <div className="text-xl sm:text-2xl font-extrabold text-[#003087] font-heading mt-0.5">
+                  <div className="text-lg sm:text-2xl font-extrabold text-[#003087] font-heading mt-0.5">
                     {messages.length}
                   </div>
                   <button
@@ -892,8 +1012,8 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                     Kotak masuk &rarr;
                   </button>
                 </div>
-                <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center flex-shrink-0">
-                  <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
+                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center flex-shrink-0">
+                  <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-teal-600" />
                 </div>
               </div>
             </div>
@@ -941,6 +1061,17 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                     </div>
                     <div className="font-bold text-xs text-indigo-900 font-heading">Guru & Tendik</div>
                     <p className="text-[10px] text-slate-500 mt-0.5 leading-snug">Input profil GTK</p>
+                  </button>
+
+                  <button
+                    onClick={handleOpenAddGallery}
+                    className="p-3 rounded-xl border border-emerald-100 bg-emerald-50/60 hover:bg-emerald-50 text-left transition-all cursor-pointer group"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+                      <Camera className="w-4 h-4 text-white" />
+                    </div>
+                    <div className="font-bold text-xs text-emerald-900 font-heading">Foto Galeri</div>
+                    <p className="text-[10px] text-slate-500 mt-0.5 leading-snug">Dokumentasi publik</p>
                   </button>
 
                   <button
@@ -1645,6 +1776,322 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
         )}
 
         {/* ========================================================= */}
+        {/* TAB: KELOLA GALERI DOKUMENTASI FOTO SEKOLAH */}
+        {/* ========================================================= */}
+        {activeTab === 'gallery' && (
+          <div className="space-y-6 animate-in fade-in duration-150">
+            {/* Top Action Header */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-2xl border border-slate-200 shadow-xs">
+              <div>
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-bold uppercase tracking-wider mb-1">
+                  <Camera className="w-3 h-3 text-emerald-600" />
+                  <span>Galeri Publik Website</span>
+                </div>
+                <h3 className="text-lg font-bold text-[#003087] font-heading">
+                  Kelola Galeri & Dokumentasi Foto
+                </h3>
+                <p className="text-xs text-slate-500">
+                  Atur foto dokumentasi praktik bengkel/lab, kegiatan kesiswaan, kunjungan industri, dan kegiatan guru yang tampil di menu Galeri.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2 flex-wrap">
+                <button
+                  onClick={handleOpenAddGallery}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#003087] hover:bg-[#002266] text-white text-xs sm:text-sm font-bold transition-all shadow-xs cursor-pointer active:scale-95"
+                >
+                  <Plus className="w-4 h-4 text-[#FFB800]" />
+                  <span>Tambah Foto Dokumentasi</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Quick Gallery Statistics Chips */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+              <div className="p-3 bg-white rounded-xl border border-slate-200 shadow-2xs">
+                <div className="text-[10px] text-slate-400 font-bold uppercase">Total Dokumentasi</div>
+                <div className="text-xl font-bold text-[#003087] font-heading mt-0.5">{galleryList.length}</div>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-slate-200 shadow-2xs">
+                <div className="text-[10px] text-slate-400 font-bold uppercase">Praktik Lab/Bengkel</div>
+                <div className="text-xl font-bold text-blue-600 font-heading mt-0.5">
+                  {galleryList.filter((g) => g.category === 'Praktik Bengkel/Lab').length}
+                </div>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-slate-200 shadow-2xs">
+                <div className="text-[10px] text-slate-400 font-bold uppercase">Kegiatan Siswa</div>
+                <div className="text-xl font-bold text-amber-600 font-heading mt-0.5">
+                  {galleryList.filter((g) => g.category === 'Kegiatan Siswa').length}
+                </div>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-slate-200 shadow-2xs">
+                <div className="text-[10px] text-slate-400 font-bold uppercase">Kunjungan Industri</div>
+                <div className="text-xl font-bold text-indigo-600 font-heading mt-0.5">
+                  {galleryList.filter((g) => g.category === 'Kunjungan Industri').length}
+                </div>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-slate-200 shadow-2xs">
+                <div className="text-[10px] text-slate-400 font-bold uppercase">Guru & Tendik</div>
+                <div className="text-xl font-bold text-emerald-600 font-heading mt-0.5">
+                  {galleryList.filter((g) => g.category === 'Guru & Tendik').length}
+                </div>
+              </div>
+              <div className="p-3 bg-white rounded-xl border border-slate-200 shadow-2xs">
+                <div className="text-[10px] text-slate-400 font-bold uppercase">Kategori Lainnya</div>
+                <div className="text-xl font-bold text-purple-600 font-heading mt-0.5">
+                  {galleryList.filter((g) => !['Praktik Bengkel/Lab', 'Kegiatan Siswa', 'Kunjungan Industri', 'Guru & Tendik'].includes(g.category)).length}
+                </div>
+              </div>
+            </div>
+
+            {/* Filter and Search Bar */}
+            <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-3">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 flex-1">
+                <div className="relative w-full sm:w-64">
+                  <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                  <input
+                    type="text"
+                    placeholder="Cari judul / keterangan foto..."
+                    value={gallerySearch}
+                    onChange={(e) => setGallerySearch(e.target.value)}
+                    className="w-full pl-8 pr-7 py-1.5 border border-slate-200 rounded-lg text-xs focus:outline-none focus:border-[#003087]"
+                  />
+                  {gallerySearch && (
+                    <button
+                      onClick={() => setGallerySearch('')}
+                      className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 text-xs"
+                    >
+                      &times;
+                    </button>
+                  )}
+                </div>
+
+                <div className="flex flex-wrap items-center gap-1">
+                  {['Semua', 'Praktik Bengkel/Lab', 'Kegiatan Siswa', 'Kunjungan Industri', 'Guru & Tendik', 'Teaching Factory (TEFA)', 'Prestasi & Lomba'].map((cat) => (
+                    <button
+                      key={cat}
+                      onClick={() => setGalleryCategoryFilter(cat)}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                        galleryCategoryFilter === cat
+                          ? 'bg-[#003087] text-white'
+                          : 'bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200'
+                      }`}
+                    >
+                      {cat}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2 self-end md:self-auto">
+                <div className="flex items-center border border-slate-200 rounded-lg p-0.5 bg-slate-50">
+                  <button
+                    onClick={() => setGalleryViewMode('grid')}
+                    className={`p-1.5 rounded-md text-xs cursor-pointer ${
+                      galleryViewMode === 'grid'
+                        ? 'bg-white shadow-2xs text-[#003087] font-semibold'
+                        : 'text-slate-500 hover:text-slate-800'
+                    }`}
+                    title="Tampilan Grid Kartu"
+                  >
+                    <LayoutGrid className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={() => setGalleryViewMode('table')}
+                    className={`p-1.5 rounded-md text-xs cursor-pointer ${
+                      galleryViewMode === 'table'
+                        ? 'bg-white shadow-2xs text-[#003087] font-semibold'
+                        : 'text-slate-500 hover:text-slate-800'
+                    }`}
+                    title="Tampilan Tabel Data"
+                  >
+                    <TableIcon className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* List / Table Render */}
+            {filteredGallery.length === 0 ? (
+              <div className="text-center py-16 bg-white rounded-2xl border border-slate-200 p-8 shadow-xs">
+                <Camera className="w-12 h-12 text-slate-300 mx-auto mb-3" />
+                <h4 className="text-base font-bold text-slate-800 font-heading">
+                  Tidak Ada Foto Galeri yang Sesuai
+                </h4>
+                <p className="text-xs text-slate-500 max-w-sm mx-auto mt-1 mb-4">
+                  Kriteria pencarian atau filter kategori yang dipilih belum memiliki data yang cocok.
+                </p>
+                <button
+                  onClick={handleOpenAddGallery}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#003087] text-white text-xs font-semibold hover:bg-[#002266] cursor-pointer"
+                >
+                  <Plus className="w-4 h-4 text-[#FFB800]" />
+                  <span>Tambah Foto Dokumentasi Baru</span>
+                </button>
+              </div>
+            ) : galleryViewMode === 'grid' ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                {filteredGallery.map((photo) => (
+                  <div
+                    key={photo.id}
+                    className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between group"
+                  >
+                    <div className="relative h-48 bg-slate-100 overflow-hidden">
+                      <img
+                        src={photo.imageUrl}
+                        alt={photo.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src =
+                            'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800';
+                        }}
+                      />
+                      <span className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-[#003087]/90 text-white backdrop-blur-xs shadow-2xs">
+                        {photo.category}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => setGalleryLightboxPhoto(photo)}
+                        className="absolute top-2.5 right-2.5 w-7 h-7 rounded-lg bg-black/50 hover:bg-black/70 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer shadow-xs"
+                        title="Lihat ukuran penuh"
+                      >
+                        <Maximize2 className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+
+                    <div className="p-4 flex-1 flex flex-col justify-between space-y-3">
+                      <div className="space-y-1.5">
+                        <div className="flex items-center gap-1.5 text-[10px] text-slate-400 font-medium">
+                          <Calendar className="w-3 h-3 text-slate-400" />
+                          <span>{photo.date || 'Dokumentasi Sekolah'}</span>
+                        </div>
+                        <h4 className="font-bold text-slate-900 text-sm line-clamp-2 font-heading group-hover:text-[#003087] transition-colors">
+                          {photo.title}
+                        </h4>
+                        <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                          {photo.caption || (photo as any).description || 'Dokumentasi kegiatan SMK Negeri 1 Ujung Batu.'}
+                        </p>
+                      </div>
+
+                      <div className="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+                        <button
+                          onClick={() => setGalleryLightboxPhoto(photo)}
+                          className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-600 hover:text-[#003087] cursor-pointer"
+                        >
+                          <Eye className="w-3.5 h-3.5" />
+                          <span>Pratinjau</span>
+                        </button>
+
+                        <div className="flex items-center gap-1.5">
+                          <button
+                            onClick={() => handleOpenEditGallery(photo)}
+                            className="p-1.5 rounded-lg bg-blue-50 hover:bg-[#003087] hover:text-white text-[#003087] transition-colors cursor-pointer"
+                            title="Edit foto"
+                          >
+                            <Edit2 className="w-3.5 h-3.5" />
+                          </button>
+                          <button
+                            onClick={() =>
+                              setDeleteConfirm({
+                                type: 'gallery',
+                                id: photo.id,
+                                title: photo.title,
+                              })
+                            }
+                            className="p-1.5 rounded-lg bg-rose-50 hover:bg-rose-600 hover:text-white text-rose-600 transition-colors cursor-pointer"
+                            title="Hapus foto"
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left text-xs">
+                    <thead className="bg-slate-50 border-b border-slate-200 text-slate-600 font-bold uppercase tracking-wider text-[10px]">
+                      <tr>
+                        <th className="p-3.5 sm:p-4">Foto</th>
+                        <th className="p-3.5 sm:p-4">Judul & Keterangan</th>
+                        <th className="p-3.5 sm:p-4">Kategori</th>
+                        <th className="p-3.5 sm:p-4">Tanggal</th>
+                        <th className="p-3.5 sm:p-4 text-right">Aksi</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100">
+                      {filteredGallery.map((photo) => (
+                        <tr key={photo.id} className="hover:bg-slate-50/80 transition-colors">
+                          <td className="p-3 sm:p-4 w-20">
+                            <div
+                              onClick={() => setGalleryLightboxPhoto(photo)}
+                              className="w-16 h-12 rounded-lg bg-slate-100 overflow-hidden border border-slate-200 cursor-pointer hover:opacity-90 transition-opacity"
+                            >
+                              <img
+                                src={photo.imageUrl}
+                                alt={photo.title}
+                                className="w-full h-full object-cover"
+                                onError={(e) => {
+                                  (e.target as HTMLImageElement).src =
+                                    'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=400';
+                                }}
+                              />
+                            </div>
+                          </td>
+                          <td className="p-3 sm:p-4 max-w-sm">
+                            <div className="font-bold text-slate-800 text-xs sm:text-sm font-heading">
+                              {photo.title}
+                            </div>
+                            <div className="text-[11px] text-slate-500 line-clamp-1 mt-0.5">
+                              {photo.caption || (photo as any).description}
+                            </div>
+                          </td>
+                          <td className="p-3 sm:p-4">
+                            <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#003087]/10 text-[#003087]">
+                              {photo.category}
+                            </span>
+                          </td>
+                          <td className="p-3 sm:p-4 text-slate-500 text-[11px] whitespace-nowrap">
+                            {photo.date || '-'}
+                          </td>
+                          <td className="p-3 sm:p-4 text-right">
+                            <div className="flex items-center justify-end gap-1.5">
+                              <button
+                                onClick={() => handleOpenEditGallery(photo)}
+                                className="p-1.5 rounded-lg bg-blue-50 hover:bg-[#003087] hover:text-white text-[#003087] transition-colors cursor-pointer"
+                                title="Edit foto"
+                              >
+                                <Edit2 className="w-3.5 h-3.5" />
+                              </button>
+                              <button
+                                onClick={() =>
+                                  setDeleteConfirm({
+                                    type: 'gallery',
+                                    id: photo.id,
+                                    title: photo.title,
+                                  })
+                                }
+                                className="p-1.5 rounded-lg bg-rose-50 hover:bg-rose-600 hover:text-white text-rose-600 transition-colors cursor-pointer"
+                                title="Hapus foto"
+                              >
+                                <Trash2 className="w-3.5 h-3.5" />
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* ========================================================= */}
         {/* TAB 3: KIRIM EMAIL ENDPOINT */}
         {/* ========================================================= */}
         {activeTab === 'email' && (
@@ -2111,11 +2558,12 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
       {/* MODAL: ADD / EDIT GURU & TENAGA KEPENDIDIKAN (GTK) */}
       {/* ========================================================= */}
       {isStaffModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
-          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 space-y-6 shadow-2xl animate-in zoom-in-95 duration-150 my-8">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 md:p-6 overflow-hidden">
+          <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] flex flex-col shadow-2xl animate-in zoom-in-95 duration-150 overflow-hidden">
+            {/* PINNED HEADER */}
+            <div className="px-5 py-4 sm:px-6 sm:py-5 border-b border-slate-100 flex items-center justify-between shrink-0 bg-white">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center font-bold shrink-0">
                   <GraduationCap className="w-5 h-5 text-indigo-600" />
                 </div>
                 <div>
@@ -2128,6 +2576,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                 </div>
               </div>
               <button
+                type="button"
                 onClick={() => setIsStaffModalOpen(false)}
                 className="text-slate-400 hover:text-slate-600 p-2 rounded-xl hover:bg-slate-100 cursor-pointer transition-all"
                 title="Tutup formulir"
@@ -2136,7 +2585,8 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
               </button>
             </div>
 
-            <form onSubmit={handleSaveStaff} className="space-y-5 text-xs">
+            {/* SCROLLABLE BODY */}
+            <form id="staff-modal-form" onSubmit={handleSaveStaff} className="p-5 sm:p-6 space-y-5 text-xs overflow-y-auto flex-1 overscroll-contain">
               {/* SECTION 1: IDENTITAS PENDIDIK & KEPEGAWAIAN */}
               <div className="bg-slate-50/70 p-4 rounded-2xl border border-slate-200/90 space-y-3">
                 <div className="flex items-center gap-2 text-slate-800 font-bold text-xs uppercase tracking-wider pb-1 border-b border-slate-200">
@@ -2319,13 +2769,13 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                 </div>
               </div>
 
-              {/* SECTION 4: FOTO RESMI GTK (STRUKTUR PUBLIC/IMAGES/GURU TANPA PRESET) */}
+              {/* SECTION 4: FOTO RESMI GTK */}
               <div>
                 <AdminImagePicker
                   category="guru"
                   value={staffFormData.photo}
                   onChange={(url) => setStaffFormData({ ...staffFormData, photo: url })}
-                  label="Foto Resmi Profil Guru / Tendik"
+                  label="Foto Profil Guru / Tendik"
                   helpText="Upload file pas foto dari perangkat langsung ke public/images/guru/ atau pilih dari katalog folder sekolah."
                   aspectRatio="portrait"
                 />
@@ -2339,16 +2789,23 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                 </div>
 
                 <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-2xs flex items-center gap-3.5">
-                  <div className="w-16 h-20 rounded-xl bg-slate-100 overflow-hidden border border-slate-200 flex-shrink-0 shadow-2xs">
-                    <img
-                      src={staffFormData.photo || '/images/guru/kepala-sekolah.jpg'}
-                      alt={staffFormData.name || 'Guru'}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).src =
-                          'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=500';
-                      }}
-                    />
+                  <div className="w-16 h-20 rounded-xl bg-slate-100 overflow-hidden border border-slate-200 flex-shrink-0 shadow-2xs flex items-center justify-center">
+                    {staffFormData.photo ? (
+                      <img
+                        src={staffFormData.photo}
+                        alt={staffFormData.name || 'Guru'}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src =
+                            'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=500';
+                        }}
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-slate-50 flex flex-col items-center justify-center text-slate-300">
+                        <User className="w-7 h-7 text-slate-300" />
+                        <span className="text-[9px] text-slate-400 mt-0.5">Pas Foto</span>
+                      </div>
+                    )}
                   </div>
 
                   <div className="min-w-0 flex-1 space-y-1">
@@ -2381,26 +2838,261 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                   </div>
                 </div>
               </div>
+            </form>
 
-              {/* MODAL FOOTER BUTTONS */}
-              <div className="pt-3 flex flex-col-reverse sm:flex-row items-center justify-end gap-2.5 border-t border-slate-200">
-                <button
-                  type="button"
-                  onClick={() => setIsStaffModalOpen(false)}
-                  className="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-slate-300 hover:bg-slate-100 text-slate-700 font-bold transition-all cursor-pointer flex items-center justify-center gap-1.5"
-                >
-                  <ArrowLeft className="w-3.5 h-3.5" />
-                  <span>Batal / Kembali</span>
-                </button>
-                <button
-                  type="submit"
-                  className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-[#003087] hover:bg-[#002266] text-white font-extrabold transition-all shadow-md cursor-pointer flex items-center justify-center gap-2 font-heading active:scale-[0.98]"
-                >
-                  <Check className="w-4 h-4 text-[#FFB800]" />
-                  <span>{editingStaff ? 'Simpan Perubahan GTK' : 'Simpan & Daftarkan GTK'}</span>
-                </button>
+            {/* PINNED FOOTER */}
+            <div className="px-5 py-3.5 sm:px-6 border-t border-slate-100 flex flex-col-reverse sm:flex-row items-center justify-end gap-2.5 shrink-0 bg-slate-50">
+              <button
+                type="button"
+                onClick={() => setIsStaffModalOpen(false)}
+                className="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-slate-300 hover:bg-slate-100 text-slate-700 font-bold transition-all cursor-pointer flex items-center justify-center gap-1.5"
+              >
+                <X className="w-4 h-4" />
+                <span>Batal</span>
+              </button>
+              <button
+                type="submit"
+                form="staff-modal-form"
+                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-[#003087] hover:bg-[#002266] text-white font-extrabold transition-all shadow-md cursor-pointer flex items-center justify-center gap-2 font-heading active:scale-[0.98]"
+              >
+                <Check className="w-4 h-4 text-[#FFB800]" />
+                <span>{editingStaff ? 'Simpan Perubahan GTK' : 'Simpan & Daftarkan GTK'}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ========================================================= */}
+      {/* MODAL: TAMBAH / EDIT FOTO DOKUMENTASI GALERI */}
+      {/* ========================================================= */}
+      {isGalleryModalOpen && (
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 md:p-6 overflow-hidden">
+          <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] flex flex-col shadow-2xl animate-in zoom-in-95 duration-150 overflow-hidden">
+            {/* PINNED HEADER */}
+            <div className="px-5 py-4 sm:px-6 sm:py-5 border-b border-slate-100 flex items-center justify-between shrink-0 bg-white">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold shrink-0">
+                  <Camera className="w-5 h-5 text-emerald-600" />
+                </div>
+                <div>
+                  <h3 className="text-base sm:text-lg font-bold text-[#003087] font-heading">
+                    {editingGalleryPhoto ? 'Edit Foto Dokumentasi Galeri' : 'Tambah Foto Dokumentasi Galeri'}
+                  </h3>
+                  <p className="text-xs text-slate-500">
+                    Foto akan otomatis tampil di menu Galeri publik dan halaman dokumentasi sekolah.
+                  </p>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsGalleryModalOpen(false)}
+                className="text-slate-400 hover:text-slate-600 p-2 rounded-xl hover:bg-slate-100 cursor-pointer transition-all"
+                title="Tutup formulir"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* SCROLLABLE FORM BODY */}
+            <form id="gallery-modal-form" onSubmit={handleSaveGallery} className="p-5 sm:p-6 space-y-5 text-xs overflow-y-auto flex-1 overscroll-contain">
+              {/* FIELD 1: JUDUL DOKUMENTASI */}
+              <div>
+                <label className="block font-semibold text-slate-700 mb-1">
+                  Judul Foto Dokumentasi *
+                </label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Contoh: Praktik Pengelasan SMAW di Bengkel Teknik Otomotif"
+                  value={galleryFormData.title}
+                  onChange={(e) =>
+                    setGalleryFormData({ ...galleryFormData, title: e.target.value })
+                  }
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:border-[#003087] focus:ring-1 focus:ring-[#003087]/20 bg-white font-medium"
+                />
+              </div>
+
+              {/* FIELD 2 & 3: KATEGORI & TANGGAL */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                <div>
+                  <label className="block font-semibold text-slate-700 mb-1">
+                    Kategori Galeri *
+                  </label>
+                  <select
+                    value={galleryFormData.category}
+                    onChange={(e) =>
+                      setGalleryFormData({ ...galleryFormData, category: e.target.value })
+                    }
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:border-[#003087] bg-white font-medium"
+                  >
+                    <option value="Praktik Bengkel/Lab">Praktik Bengkel/Lab</option>
+                    <option value="Kegiatan Siswa">Kegiatan Siswa</option>
+                    <option value="Kunjungan Industri">Kunjungan Industri</option>
+                    <option value="Guru & Tendik">Guru & Tendik</option>
+                    <option value="Teaching Factory (TEFA)">Teaching Factory (TEFA)</option>
+                    <option value="Prestasi & Lomba">Prestasi & Lomba</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block font-semibold text-slate-700 mb-1">
+                    Tanggal Kegiatan
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Contoh: 15 Maret 2026"
+                    value={galleryFormData.date}
+                    onChange={(e) =>
+                      setGalleryFormData({ ...galleryFormData, date: e.target.value })
+                    }
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:border-[#003087] bg-white"
+                  />
+                </div>
+              </div>
+
+              {/* FIELD 4: DESKRIPSI / CAPTION */}
+              <div>
+                <label className="block font-semibold text-slate-700 mb-1">
+                  Keterangan Singkat / Caption Dokumentasi
+                </label>
+                <textarea
+                  rows={3}
+                  placeholder="Ceritakan ringkasan aktivitas, fasilitas yang digunakan, atau konteks foto..."
+                  value={galleryFormData.caption}
+                  onChange={(e) =>
+                    setGalleryFormData({ ...galleryFormData, caption: e.target.value })
+                  }
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:border-[#003087] bg-white leading-relaxed"
+                />
+              </div>
+
+              {/* FIELD 5: FOTO IMAGE PICKER */}
+              <div>
+                <AdminImagePicker
+                  category="galeri"
+                  value={galleryFormData.imageUrl}
+                  onChange={(url) => setGalleryFormData({ ...galleryFormData, imageUrl: url })}
+                  label="Pilih / Unggah Foto Dokumentasi"
+                  helpText="Unggah file foto langsung ke struktur public/images/galeri/ atau pilih dari katalog folder sekolah."
+                  aspectRatio="video"
+                />
+              </div>
+
+              {/* FIELD 6: LIVE PREVIEW KARTU GALERI */}
+              <div className="p-4 bg-emerald-50/60 rounded-2xl border border-emerald-100 space-y-2">
+                <div className="flex items-center justify-between text-[11px] text-emerald-800 font-bold">
+                  <span>Pratinjau Tampilan di Menu Galeri:</span>
+                  <span className="text-[10px] font-normal text-slate-500">Live Preview</span>
+                </div>
+
+                <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-2xs max-w-sm">
+                  <div className="relative h-40 bg-slate-100 overflow-hidden">
+                    {galleryFormData.imageUrl ? (
+                      <img
+                        src={galleryFormData.imageUrl}
+                        alt={galleryFormData.title || 'Galeri'}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src =
+                            'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=600';
+                        }}
+                      />
+                    ) : (
+                      <div className="w-full h-full flex flex-col items-center justify-center text-slate-300 bg-slate-50">
+                        <Camera className="w-8 h-8 text-slate-300" />
+                        <span className="text-[10px] text-slate-400 mt-1">Belum Memilih Foto</span>
+                      </div>
+                    )}
+                    <span className="absolute top-2 left-2 px-2 py-0.5 rounded text-[10px] font-bold bg-[#003087]/90 text-white">
+                      {galleryFormData.category}
+                    </span>
+                  </div>
+
+                  <div className="p-3 space-y-1">
+                    <h5 className="font-bold text-slate-900 text-xs truncate font-heading">
+                      {galleryFormData.title || 'Judul Foto Dokumentasi'}
+                    </h5>
+                    <p className="text-[11px] text-slate-500 line-clamp-2 leading-relaxed">
+                      {galleryFormData.caption || 'Keterangan dokumentasi kegiatan SMKN 1 Ujung Batu...'}
+                    </p>
+                  </div>
+                </div>
               </div>
             </form>
+
+            {/* PINNED FOOTER */}
+            <div className="px-5 py-3.5 sm:px-6 border-t border-slate-100 flex flex-col-reverse sm:flex-row items-center justify-end gap-2.5 shrink-0 bg-slate-50">
+              <button
+                type="button"
+                onClick={() => setIsGalleryModalOpen(false)}
+                className="w-full sm:w-auto px-5 py-2.5 rounded-xl border border-slate-300 hover:bg-slate-100 text-slate-700 font-bold transition-all cursor-pointer flex items-center justify-center gap-1.5"
+              >
+                <X className="w-4 h-4" />
+                <span>Batal</span>
+              </button>
+              <button
+                type="submit"
+                form="gallery-modal-form"
+                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-[#003087] hover:bg-[#002266] text-white font-extrabold transition-all shadow-md cursor-pointer flex items-center justify-center gap-2 font-heading active:scale-[0.98]"
+              >
+                <Save className="w-4 h-4 text-[#FFB800]" />
+                <span>{editingGalleryPhoto ? 'Simpan Perubahan' : 'Terbitkan ke Galeri'}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ========================================================= */}
+      {/* MODAL: LIGHTBOX ZOOM GALERI */}
+      {/* ========================================================= */}
+      {galleryLightboxPhoto && (
+        <div
+          onClick={() => setGalleryLightboxPhoto(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative max-w-4xl w-full bg-slate-900 text-white rounded-2xl overflow-hidden shadow-2xl border border-white/10"
+          >
+            <button
+              onClick={() => setGalleryLightboxPhoto(null)}
+              className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center cursor-pointer transition-all"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="max-h-[70vh] bg-black flex items-center justify-center overflow-hidden">
+              <img
+                src={galleryLightboxPhoto.imageUrl}
+                alt={galleryLightboxPhoto.title}
+                className="w-full h-full max-h-[70vh] object-contain"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src =
+                    'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1200';
+                }}
+              />
+            </div>
+
+            <div className="p-5 sm:p-6 bg-slate-900 border-t border-white/10 space-y-2">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#FFB800] text-[#002260]">
+                  {galleryLightboxPhoto.category}
+                </span>
+                {galleryLightboxPhoto.date && (
+                  <span className="text-xs text-slate-400">
+                    {galleryLightboxPhoto.date}
+                  </span>
+                )}
+              </div>
+              <h3 className="text-base sm:text-lg font-bold text-white font-heading">
+                {galleryLightboxPhoto.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                {galleryLightboxPhoto.caption || (galleryLightboxPhoto as any).description}
+              </p>
+            </div>
           </div>
         </div>
       )}
@@ -2410,7 +3102,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
       {/* ========================================================= */}
       {deleteConfirm && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-sm w-full p-6 space-y-4 shadow-2xl text-center">
+          <div className="bg-white rounded-2xl max-w-sm w-full p-6 space-y-4 shadow-2xl text-center animate-in zoom-in-95 duration-150">
             <div className="w-12 h-12 rounded-full bg-rose-100 text-rose-600 mx-auto flex items-center justify-center">
               <Trash2 className="w-6 h-6" />
             </div>
@@ -2423,8 +3115,10 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                 ? 'berita'
                 : deleteConfirm.type === 'announcement'
                 ? 'pengumuman'
-                : 'data guru / tendik'}{' '}
-              <strong className="text-slate-800">"{deleteConfirm.title}"</strong>? Data akan dihapus secara permanen dari database kepegawaian.
+                : deleteConfirm.type === 'staff'
+                ? 'data guru / tendik'
+                : 'foto dokumentasi galeri'}{' '}
+              <strong className="text-slate-800">"{deleteConfirm.title}"</strong>? Data akan dihapus secara permanen dari sistem.
             </p>
             <div className="flex gap-2 pt-2">
               <button
@@ -2439,8 +3133,10 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                     handleDeleteNews(deleteConfirm.id);
                   } else if (deleteConfirm.type === 'announcement') {
                     handleDeleteAnnouncement(deleteConfirm.id);
-                  } else {
+                  } else if (deleteConfirm.type === 'staff') {
                     handleDeleteStaff(deleteConfirm.id);
+                  } else if (deleteConfirm.type === 'gallery') {
+                    handleDeleteGallery(deleteConfirm.id);
                   }
                 }}
                 className="flex-1 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs cursor-pointer"
