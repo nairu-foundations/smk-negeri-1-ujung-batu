@@ -161,7 +161,7 @@ export const vocationalMajors: VocationalMajor[] = [
     description:
       'Mendidik teknisi otomotif profesional yang menguasai servis berkala mesin bensin & diesel, sistem sasis, transmisi manual/otomatis, kelistrikan bodi, AC mobil, dan scanner diagnostik injeksi (EFI Scanner).',
     bannerImage:
-      'public/images/jurusan/TO.jpg',
+      '/images/jurusan/TO.jpg',
     competencies: [
       'Tune Up & Overhaul Mesin Bensin serta Diesel',
       'Troubleshooting Sistem EFI dengan Diagnostic Scanner Modern',
