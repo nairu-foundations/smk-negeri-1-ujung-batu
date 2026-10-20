@@ -3775,9 +3775,9 @@
       "category": "Praktik Bengkel/Lab",
       "caption": "Siswa kelas XII mempraktikkan pembongkaran dan perakitan kembali blok silinder mesin mobil berstandar 5R.",
       "description": "Siswa kelas XII mempraktikkan pembongkaran dan perakitan kembali blok silinder mesin mobil berstandar 5R.",
-      "imageUrl": "images/galeri/industri/templateposter2.jpg",
+      "imageUrl": "/images/galeri/praktik/praktik1.jpg",
       "date": "12 Januari 2026",
-      "updatedAt": "2026-10-20T08:31:38.934Z"
+      "updatedAt": "2026-10-20T09:31:11.478Z"
     },
     {
       "id": "gal-2",
@@ -3803,9 +3803,9 @@
       "category": "Kunjungan Industri",
       "caption": "Guru pembimbing mengantarkan dan menyerahkan peserta didik ke Supervisor Bengkel Mitra di Ujung Batu.",
       "description": "Guru pembimbing mengantarkan dan menyerahkan peserta didik ke Supervisor Bengkel Mitra di Ujung Batu.",
-      "imageUrl": "images/galeri/industri/templateposter2.jpg",
+      "imageUrl": "/images/berita/BKK.jpg",
       "date": "25 Januari 2026",
-      "updatedAt": "2026-10-20T08:32:10.125Z"
+      "updatedAt": "2026-10-20T09:03:28.349Z"
     },
     {
       "id": "gal-5",
@@ -3813,8 +3813,9 @@
       "category": "Kegiatan Siswa",
       "caption": "Barisan siswa dan dewan guru dengan khidmat mengikuti upacara bendera di lapangan kampus SMKN 1 Ujung Batu.",
       "description": "Barisan siswa dan dewan guru dengan khidmat mengikuti upacara bendera di lapangan kampus SMKN 1 Ujung Batu.",
-      "imageUrl": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800",
-      "date": "2 Mei 2025"
+      "imageUrl": "/images/galeri/kegiatan/upacara.jpeg",
+      "date": "2 Mei 2025",
+      "updatedAt": "2026-10-20T09:27:14.050Z"
     },
     {
       "id": "gal-6",
@@ -3822,8 +3823,9 @@
       "category": "Kunjungan Industri",
       "caption": "Siswa TKJ mendengarkan pemaparan Network Operation Center (NOC) dari engineer industri.",
       "description": "Siswa TKJ mendengarkan pemaparan Network Operation Center (NOC) dari engineer industri.",
-      "imageUrl": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800",
-      "date": "10 Februari 2026"
+      "imageUrl": "/images/galeri/industri/kunjunganindustri.jpg",
+      "date": "10 Februari 2026",
+      "updatedAt": "2026-10-20T09:07:09.653Z"
     },
     {
       "id": "gal-7",
@@ -3831,8 +3833,9 @@
       "category": "Guru & Tendik",
       "caption": "Tenaga pendidik SMKN 1 Ujung Batu mengikuti sertifikasi asesor kompetensi kejuruan tingkat provinsi.",
       "description": "Tenaga pendidik SMKN 1 Ujung Batu mengikuti sertifikasi asesor kompetensi kejuruan tingkat provinsi.",
-      "imageUrl": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800",
-      "date": "18 Februari 2026"
+      "imageUrl": "/images/galeri/kegiatan/Pelatihan Guru Kejuruan.jpg",
+      "date": "18 Februari 2026",
+      "updatedAt": "2026-10-20T09:28:07.037Z"
     },
     {
       "id": "gal-8",
@@ -3840,8 +3843,9 @@
       "category": "Praktik Bengkel/Lab",
       "caption": "Pengujian ketat sertifikasi BNSP oleh praktisi industri eksternal untuk melahirkan teknisi bersertifikat.",
       "description": "Pengujian ketat sertifikasi BNSP oleh praktisi industri eksternal untuk melahirkan teknisi bersertifikat.",
-      "imageUrl": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800",
-      "date": "5 Maret 2026"
+      "imageUrl": "/images/galeri/praktik/Pelaksanaan Uji Kompetensi Keahlian (UKK) Bersama Asesor BNSP.jpg",
+      "date": "5 Maret 2026",
+      "updatedAt": "2026-10-20T09:30:18.197Z"
     }
   ]
 }
