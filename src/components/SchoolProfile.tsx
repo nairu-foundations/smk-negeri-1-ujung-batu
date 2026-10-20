@@ -17,7 +17,6 @@ import { api } from '../services/api';
 import { StaffMember } from '../types';
 import { SchoolImage } from './common/SchoolImage';
 import { SchoolLogo } from './common/SchoolLogo';
-import { PosterHeroSection } from './PosterHeroSection';
 
 interface SchoolProfileProps {
   initialTab?: string;
@@ -434,10 +433,6 @@ export const SchoolProfile: React.FC<SchoolProfileProps> = ({ initialTab, onNavi
           </div>
         )}
 
-        {/* HERO SECTION POSTER SEKOLAH & PPDB */}
-        <div className="mb-12">
-          <PosterHeroSection onNavigate={onNavigate} className="rounded-3xl shadow-xl border border-slate-200" />
-        </div>
 
         {/* STATS SECTION */}
         <div className="bg-gradient-to-r from-[#003087] to-[#002260] text-white rounded-2xl p-8 sm:p-12 shadow-md">
