@@ -610,7 +610,7 @@ export const initialNewsArticles: NewsArticle[] = [
       'Prestasi membanggakan diraih kontingen SMK Negeri 1 Ujung Batu pada bidang Automobile Technology dalam ajang LKS SMK tingkat Kabupaten Rokan Hulu.',
     content:
       'Prestasi membanggakan kembali diukir oleh putra daerah. Siswa perwakilan Program Keahlian Teknik Otomotif (TO) SMK Negeri 1 Ujung Batu sukses menyabet Juara 1 dalam Lomba Kompetensi Siswa (LKS) SMK Tingkat Kabupaten Rokan Hulu untuk bidang lomba Automobile Technology. Perlombaan yang berlangsung sengit di Pasir Pengaraian tersebut menguji ketepatan diagnosa EFI, tune up mesin berstandar pabrikan, serta pemecahan masalah electrical fault injection. Dengan perolehan skor 94,8, wakil SMKN 1 Ujung Batu dipastikan mewakili Kabupaten Rokan Hulu ke ajang LKS Tingkat Provinsi Riau mendatang.',
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800',
+    image: '/images/berita/juara1.jpg',
   },
   {
     id: 'news-2',
@@ -623,7 +623,7 @@ export const initialNewsArticles: NewsArticle[] = [
       'Kepala Sekolah bersama perwakilan asosiasi industri resmi melepas ratusan siswa untuk mengasah keahlian kerja nyata selama 6 bulan.',
     content:
       'Sebanyak 180 siswa kelas XI dari 6 kompetensi keahlian resmi dilepas dalam upacara pemberangkatan Praktik Kerja Lapangan (PKL) periode tahun ajaran berjalan. Para siswa akan ditempatkan di 35 Dunia Usaha dan Dunia Industri (DU/DI) yang tersebar di wilayah Rokan Hulu, Kampar, Pekanbaru, hingga Dumai. Sebelum diberangkatkan, seluruh siswa telah menjalani pembekalan intensif terkait etika kerja industri, Keselamatan dan Kesehatan Kerja (K3), serta penandatanganan pakta integritas kedisiplinan.',
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800',
+    image: '/images/hero/belajar2.jpg',
   },
   {
     id: 'news-3',
@@ -636,7 +636,7 @@ export const initialNewsArticles: NewsArticle[] = [
       'Mengenal teknologi server backbone fiber optic dan proses produksi siaran televisi digital secara langsung.',
     content:
       'Rombongan siswa program keahlian TKJ dan Broadcasting dan Perfilman SMKN 1 Ujung Batu melaksanakan Kunjungan Industri (KI) ke fasilitas data center penyedia layanan internet terkemuka dan stasiun penyiaran publik di Kota Pekanbaru. Dalam kunjungan edukatif ini, siswa TKJ diajak melihat arsitektur rack server berskala enterprise, konfigurasi redundant fiber optic, dan sistem pengamanan cybersecurity. Sementara siswa Broadcasting mendalami tata kelola ruang kendali switcher studio siaran langsung.',
-    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800',
+    image: '/images/berita/kunjungan.jpg',
   },
   {
     id: 'news-4',
@@ -649,7 +649,7 @@ export const initialNewsArticles: NewsArticle[] = [
       'Lebih dari 60 alumni dan siswa tingkat akhir mengikuti psikotes dan wawancara kerja langsung di Aula Utama SMKN 1 Ujung Batu.',
     content:
       'Bursa Kerja Khusus (BKK) SMK Negeri 1 Ujung Batu memfasilitasi pelaksanaan walk-in interview dan tes seleksi kerja langsung oleh HRD salah satu perusahaan ritel terkemuka di Sumatera. Dari seleksi tahap pertama yang meliputi tes ketelitian, logika dasar, dan wawancara kompetensi, sebanyak 32 peserta berhasil lolos ke tahap penandatanganan kontrak kerja.',
-    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=800',
+    image: '/images/berita/BKK.jpg',
   },
 ];
 
