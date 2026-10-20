@@ -609,10 +609,13 @@ export const api = {
 
   async getGallery(): Promise<GalleryPhoto[]> {
     try {
-      const res = await fetch('/api/gallery');
+      const res = await fetch(`/api/gallery?t=${Date.now()}`, { cache: 'no-store' });
       if (res.ok) {
         const json = await res.json();
         if (json.data && Array.isArray(json.data) && json.data.length > 0) {
+          try {
+            localStorage.setItem(GALLERY_KEY, JSON.stringify(json.data));
+          } catch {}
           return json.data;
         }
       }
@@ -620,7 +623,10 @@ export const api = {
 
     try {
       const cached = localStorage.getItem(GALLERY_KEY);
-      if (cached) return JSON.parse(cached);
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
     } catch {}
 
     return galleryPhotos;
@@ -648,6 +654,14 @@ export const api = {
       });
       if (res.ok) {
         const json = await res.json();
+        try {
+          const cached = localStorage.getItem(GALLERY_KEY);
+          const current = cached ? JSON.parse(cached) : galleryPhotos;
+          const updated = [json.data, ...current.filter((item: any) => item.id !== json.data.id)];
+          localStorage.setItem(GALLERY_KEY, JSON.stringify(updated));
+          window.dispatchEvent(new Event('storage'));
+          window.dispatchEvent(new CustomEvent('gallery_updated', { detail: updated }));
+        } catch {}
         return json.data;
       }
     } catch {}
@@ -665,6 +679,8 @@ export const api = {
     const updated = [newItem, ...current];
     try {
       localStorage.setItem(GALLERY_KEY, JSON.stringify(updated));
+      window.dispatchEvent(new Event('storage'));
+      window.dispatchEvent(new CustomEvent('gallery_updated', { detail: updated }));
     } catch {}
     return newItem;
   },
@@ -683,6 +699,14 @@ export const api = {
       });
       if (res.ok) {
         const json = await res.json();
+        try {
+          const cached = localStorage.getItem(GALLERY_KEY);
+          const current: GalleryPhoto[] = cached ? JSON.parse(cached) : galleryPhotos;
+          const updated = current.map((p: any) => (p.id === id ? { ...p, ...json.data } : p));
+          localStorage.setItem(GALLERY_KEY, JSON.stringify(updated));
+          window.dispatchEvent(new Event('storage'));
+          window.dispatchEvent(new CustomEvent('gallery_updated', { detail: updated }));
+        } catch {}
         return json.data;
       }
     } catch {}
@@ -692,6 +716,8 @@ export const api = {
     const updated = current.map((p) => (p.id === id ? { ...p, ...bodyPayload } : p));
     try {
       localStorage.setItem(GALLERY_KEY, JSON.stringify(updated));
+      window.dispatchEvent(new Event('storage'));
+      window.dispatchEvent(new CustomEvent('gallery_updated', { detail: updated }));
     } catch {}
     const target = updated.find((p) => p.id === id);
     if (!target) throw new Error('Foto tidak ditemukan');
@@ -704,7 +730,19 @@ export const api = {
         method: 'DELETE',
         headers: getHeaders(true),
       });
-      if (res.ok) return;
+      if (res.ok) {
+        try {
+          const cached = localStorage.getItem(GALLERY_KEY);
+          if (cached) {
+            const current = JSON.parse(cached);
+            const updated = current.filter((p: any) => p.id !== id);
+            localStorage.setItem(GALLERY_KEY, JSON.stringify(updated));
+            window.dispatchEvent(new Event('storage'));
+            window.dispatchEvent(new CustomEvent('gallery_updated', { detail: updated }));
+          }
+        } catch {}
+        return;
+      }
     } catch {}
 
     // Fallback local
@@ -712,6 +750,8 @@ export const api = {
     const updated = current.filter((p) => p.id !== id);
     try {
       localStorage.setItem(GALLERY_KEY, JSON.stringify(updated));
+      window.dispatchEvent(new Event('storage'));
+      window.dispatchEvent(new CustomEvent('gallery_updated', { detail: updated }));
     } catch {}
   },
 

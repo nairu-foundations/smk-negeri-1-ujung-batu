@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { resolvePhotoSource, PhotoCategory, getPhotoUrl } from '../../utils/photoManager';
 import { ImageOff, Loader2 } from 'lucide-react';
 
@@ -53,6 +53,12 @@ export const SchoolImage: React.FC<SchoolImageProps> = ({
   const [currentSrc, setCurrentSrc] = useState<string>(resolvedSrc);
   const [hasError, setHasError] = useState<boolean>(false);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
+
+  useEffect(() => {
+    setCurrentSrc(resolvedSrc);
+    setHasError(false);
+    setIsLoaded(false);
+  }, [resolvedSrc]);
 
   const handleError = () => {
     // Jika path lokal belum ada file fisiknya, otomatis pindah ke fallback online

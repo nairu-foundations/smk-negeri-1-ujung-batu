@@ -32,7 +32,7 @@ import {
   initialAnnouncements,
 } from '../data/schoolData';
 import { api } from '../services/api';
-import { NewsArticle, Announcement, AdminUser } from '../types';
+import { NewsArticle, Announcement, AdminUser, GalleryPhoto } from '../types';
 
 interface HomePageProps {
   currentUser: AdminUser | null;
@@ -42,6 +42,7 @@ interface HomePageProps {
 export const HomePage: React.FC<HomePageProps> = ({ currentUser, onNavigate }) => {
   const [liveNews, setLiveNews] = useState<NewsArticle[]>(initialNewsArticles);
   const [liveAnnouncements, setLiveAnnouncements] = useState<Announcement[]>(initialAnnouncements);
+  const [liveGallery, setLiveGallery] = useState<GalleryPhoto[]>(galleryPhotos);
 
   // Active tab in Kabar Vokasi & Informasi Resmi
   const [infoTab, setInfoTab] = useState<'berita' | 'pengumuman' | 'form'>('berita');
@@ -52,13 +53,26 @@ export const HomePage: React.FC<HomePageProps> = ({ currentUser, onNavigate }) =
   const [selectedAnn, setSelectedAnn] = useState<Announcement | null>(null);
 
   useEffect(() => {
-    // Fetch latest news and announcements from API
+    // Fetch latest news, announcements, and gallery from API
     api.getNews().then((data) => {
       if (data && data.length > 0) setLiveNews(data);
     });
     api.getAnnouncements().then((data) => {
       if (data && data.length > 0) setLiveAnnouncements(data);
     });
+    const fetchGallery = () => {
+      api.getGallery().then((data) => {
+        if (data && data.length > 0) setLiveGallery(data);
+      });
+    };
+    fetchGallery();
+
+    window.addEventListener('focus', fetchGallery);
+    window.addEventListener('storage', fetchGallery);
+    return () => {
+      window.removeEventListener('focus', fetchGallery);
+      window.removeEventListener('storage', fetchGallery);
+    };
   }, []);
 
   const filteredNews = liveNews.filter((item) => {
@@ -553,11 +567,14 @@ export const HomePage: React.FC<HomePageProps> = ({ currentUser, onNavigate }) =
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
             <div>
               <span className="text-xs font-bold text-[#FFB800] uppercase tracking-wider block font-heading">
-                DOKUMENTASI KAMPUS
+                DOKUMENTASI SEKOLAH
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold text-[#003087] font-heading mt-1">
-                Aktivitas Siswa & Suasana Belajar Vokasi
+                Dokumentasi Sekolah
               </h2>
+              <p className="text-xs sm:text-sm text-slate-600 mt-1">
+                Aktivitas Siswa & Suasana Belajar Vokasi SMK Negeri 1 Ujung Batu
+              </p>
             </div>
             <button
               onClick={() => onNavigate('galeri')}
@@ -569,20 +586,24 @@ export const HomePage: React.FC<HomePageProps> = ({ currentUser, onNavigate }) =
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {galleryPhotos.slice(0, 4).map((photo) => (
+            {liveGallery.slice(0, 4).map((photo) => (
               <div
-                key={photo.id}
+                key={`${photo.id}-${photo.imageUrl}`}
                 onClick={() => onNavigate('galeri')}
                 className="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 cursor-pointer shadow-xs"
               >
                 <img
                   src={photo.imageUrl}
-                  alt={photo.caption}
+                  alt={photo.caption || photo.title}
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src =
+                      'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800';
+                  }}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
                   <span className="text-xs font-medium text-white line-clamp-2">
-                    {photo.caption}
+                    {photo.caption || photo.title}
                   </span>
                 </div>
               </div>

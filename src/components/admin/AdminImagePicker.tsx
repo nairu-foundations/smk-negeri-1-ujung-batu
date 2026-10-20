@@ -56,10 +56,14 @@ export const AdminImagePicker: React.FC<AdminImagePickerProps> = ({
       .replace(/-+/g, '-');
     setCustomFilename(cleanName);
 
-    // Read preview
+    // Read preview and immediately apply so the image change is captured by the parent form
     const reader = new FileReader();
     reader.onload = (evt) => {
-      setPreviewDataUrl(evt.target?.result as string);
+      const dataUrl = evt.target?.result as string;
+      setPreviewDataUrl(dataUrl);
+      if (dataUrl) {
+        onChange(dataUrl);
+      }
     };
     reader.readAsDataURL(file);
   };

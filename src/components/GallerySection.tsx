@@ -13,14 +13,45 @@ interface GallerySectionProps {
 export const GallerySection: React.FC<GallerySectionProps> = ({ onNavigate }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('Semua');
   const [lightboxPhoto, setLightboxPhoto] = useState<GalleryPhoto | null>(null);
-  const [livePhotos, setLivePhotos] = useState<GalleryPhoto[]>(galleryPhotos);
+  const [livePhotos, setLivePhotos] = useState<GalleryPhoto[]>(() => {
+    try {
+      const cached = localStorage.getItem('smkn1_gallery_cache');
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch {}
+    return galleryPhotos;
+  });
 
   useEffect(() => {
-    api.getGallery().then((data) => {
-      if (data && data.length > 0) {
-        setLivePhotos(data);
+    let isMounted = true;
+    const fetchGallery = () => {
+      api.getGallery().then((data) => {
+        if (isMounted && data && data.length > 0) {
+          setLivePhotos(data);
+        }
+      });
+    };
+    fetchGallery();
+
+    const handleCustomUpdate = (e: any) => {
+      if (e.detail && Array.isArray(e.detail) && e.detail.length > 0) {
+        setLivePhotos(e.detail);
+      } else {
+        fetchGallery();
       }
-    });
+    };
+
+    window.addEventListener('focus', fetchGallery);
+    window.addEventListener('storage', fetchGallery);
+    window.addEventListener('gallery_updated', handleCustomUpdate);
+    return () => {
+      isMounted = false;
+      window.removeEventListener('focus', fetchGallery);
+      window.removeEventListener('storage', fetchGallery);
+      window.removeEventListener('gallery_updated', handleCustomUpdate);
+    };
   }, []);
 
   const filteredPhotos = livePhotos.filter((item) => {
@@ -62,14 +93,18 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onNavigate }) =>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredPhotos.map((photo: GalleryPhoto) => (
             <div
-              key={photo.id}
+              key={`${photo.id}-${photo.imageUrl}`}
               onClick={() => setLightboxPhoto(photo)}
               className="bg-white rounded-xl overflow-hidden shadow-xs hover:shadow-md border border-slate-200 transition-all group cursor-pointer flex flex-col justify-between"
             >
               <div className="relative h-48 overflow-hidden bg-slate-100">
-                <SchoolImage
+                <img
                   src={photo.imageUrl}
                   alt={photo.title}
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src =
+                      'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800';
+                  }}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <span className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-[#003087]/90 text-white">
@@ -111,9 +146,13 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ onNavigate }) =>
                 <X className="w-5 h-5" />
               </button>
               <div className="max-h-[65vh] bg-black flex items-center justify-center">
-                <SchoolImage
+                <img
                   src={lightboxPhoto.imageUrl}
                   alt={lightboxPhoto.title}
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src =
+                      'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800';
+                  }}
                   className="max-h-[65vh] w-auto max-w-full object-contain"
                 />
               </div>
