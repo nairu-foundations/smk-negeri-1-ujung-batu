@@ -3751,16 +3751,37 @@
       ]
     }
   ],
-  "uploadedImages": [],
+  "uploadedImages": [
+    {
+      "id": "img-1792480555504-i6s8",
+      "category": "galeri",
+      "filename": "templateposter2.jpg",
+      "title": "templateposter2.jpg",
+      "alt": "templateposter2.jpg",
+      "url": "/images/galeri/templateposter2.jpg",
+      "localPath": "public/images/galeri/templateposter2.jpg",
+      "fileSize": "243 KB",
+      "uploadedAt": "2026-10-20T07:15:55.506Z"
+    }
+  ],
   "gallery": [
+    {
+      "id": "gal-1792480555507",
+      "title": "templateposter2.jpg",
+      "category": "Dokumentasi Sekolah",
+      "imageUrl": "/images/galeri/templateposter2.jpg",
+      "date": "20 Oktober 2026",
+      "description": "Foto dokumentasi templateposter2.jpg yang tersimpan di direktori public/images/galeri."
+    },
     {
       "id": "gal-1",
       "title": "Praktik Overhaul Mesin Otomotif di Bengkel TO",
       "category": "Praktik Bengkel/Lab",
       "caption": "Siswa kelas XII mempraktikkan pembongkaran dan perakitan kembali blok silinder mesin mobil berstandar 5R.",
       "description": "Siswa kelas XII mempraktikkan pembongkaran dan perakitan kembali blok silinder mesin mobil berstandar 5R.",
-      "imageUrl": "https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&q=80&w=800",
-      "date": "12 Januari 2026"
+      "imageUrl": "/images/galeri/templateposter2.jpg",
+      "date": "12 Januari 2026",
+      "updatedAt": "2026-10-20T07:16:34.310Z"
     },
     {
       "id": "gal-2",

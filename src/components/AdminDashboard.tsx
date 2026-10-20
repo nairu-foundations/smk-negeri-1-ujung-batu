@@ -604,42 +604,46 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans">
-      {/* Top Admin Navigation Header */}
-      {/* Top Admin Navigation Header */}
-      <header className="bg-[#002260] text-white border-b border-[#001740] sticky top-0 z-40 shadow-sm">
-        <div className="max-w-[1300px] mx-auto px-3 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-2">
+      {/* Top Admin Navigation Header (Light & Minimalist) */}
+      <header className="bg-white text-slate-800 border-b border-slate-200 sticky top-0 z-40 shadow-2xs">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-3">
           {/* Brand & Admin Badge */}
-          <div className="flex items-center gap-2.5 min-w-0">
-            <SchoolLogo className="w-8 h-8 sm:w-9 sm:h-9 object-contain drop-shadow-sm flex-shrink-0" />
+          <div className="flex items-center gap-3 min-w-0">
+            <SchoolLogo className="w-8 h-8 sm:w-9 sm:h-9 object-contain flex-shrink-0" />
             <div className="min-w-0">
-              <span className="font-bold text-xs sm:text-base font-heading text-white block truncate">
-                Panel Admin SMKN 1 Ujung Batu
-              </span>
-              <p className="text-[10px] sm:text-[11px] text-white/60 hidden sm:block truncate">
-                Pengelolaan Berita, Pengumuman & Notifikasi Email
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-sm sm:text-base text-slate-900 truncate font-heading">
+                  SMKN 1 Ujung Batu
+                </span>
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-[#003087] border border-blue-100 hidden sm:inline-block">
+                  Admin Panel
+                </span>
+              </div>
+              <p className="text-[11px] text-slate-500 hidden sm:block truncate">
+                Manajemen Konten & Dokumentasi Sekolah
               </p>
             </div>
           </div>
 
           {/* User Profile & Actions */}
-          <div className="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
-            <div className="hidden md:flex flex-col text-right pr-1">
-              <span className="text-xs font-semibold text-white">{currentUser.name}</span>
-              <span className="text-[10px] text-white/60">{currentUser.email}</span>
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <div className="hidden md:flex flex-col text-right pr-2 border-r border-slate-200">
+              <span className="text-xs font-semibold text-slate-800">{currentUser.name}</span>
+              <span className="text-[10.5px] text-slate-400">{currentUser.email}</span>
             </div>
 
             <button
               onClick={onNavigateHome}
-              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-semibold border border-white/15 transition-all cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-medium transition-all cursor-pointer"
               title="Lihat website sekolah"
             >
-              <ExternalLink className="w-3.5 h-3.5 text-[#FFB800]" />
+              <ExternalLink className="w-3.5 h-3.5 text-slate-500" />
               <span className="hidden sm:inline">Website</span>
             </button>
 
             <button
               onClick={onLogout}
-              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-rose-600/80 hover:bg-rose-600 text-white text-xs font-semibold transition-all cursor-pointer shadow-xs"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200/80 text-xs font-medium transition-all cursor-pointer"
               title="Keluar dari panel admin"
             >
               <LogOut className="w-3.5 h-3.5" />
@@ -676,38 +680,9 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
       )}
 
       {/* Main Body Content */}
-      <main className="max-w-[1300px] mx-auto px-3 sm:px-6 py-4 sm:py-8 flex-1 w-full space-y-4 sm:space-y-6">
-        {/* Admin Navigation Breadcrumb Bar */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 bg-white px-4 py-3 rounded-2xl border border-slate-200 shadow-2xs">
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-xs text-slate-500 font-medium">Halaman Aktif:</span>
-            <span className="px-2.5 py-1 rounded-lg bg-blue-50 text-[#003087] font-bold text-xs border border-blue-100/70">
-              {activeTab === 'overview'
-                ? '📊 Ringkasan & Metrik'
-                : activeTab === 'news'
-                ? '📰 Kelola Berita'
-                : activeTab === 'announcements'
-                ? '📢 Kelola Pengumuman'
-                : activeTab === 'staff'
-                ? '👨‍🏫 Guru & Tenaga Kependidikan'
-                : activeTab === 'gallery'
-                ? '📸 Galeri & Dokumentasi Foto'
-                : activeTab === 'email'
-                ? '✉️ Notifikasi Email'
-                : activeTab === 'messages'
-                ? '💬 Pesan Masuk'
-                : activeTab === 'photos'
-                ? '📁 Direktori Foto'
-                : '📅 Jadwal Pelajaran'}
-            </span>
-          </div>
-
-          <div className="flex items-center gap-2 text-[11px] text-slate-400">
-            <span>Navigasi tersimpan ({tabHistory.length} tab)</span>
-          </div>
-        </div>
+      <main className="max-w-[1300px] mx-auto px-3 sm:px-6 py-4 sm:py-6 flex-1 w-full space-y-4">
         {/* Navigation Tabs Bar */}
-        <div className="space-y-2 border-b border-slate-200 pb-3">
+        <div className="space-y-2 border-b border-slate-200/80 pb-3">
           {/* Quick Select on Mobile (< sm) */}
           <div className="sm:hidden flex items-center gap-2">
             <div className="relative flex-1">
@@ -718,14 +693,14 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                 className="w-full pl-3 pr-8 py-2 rounded-xl border border-slate-300 bg-white font-bold text-xs text-[#003087] shadow-xs focus:ring-2 focus:ring-[#003087] focus:outline-none appearance-none"
               >
                 <option value="overview">📊 Ringkasan & Metrik</option>
-                <option value="news">📰 Kelola Berita ({newsList.length})</option>
+                <option value="news">📰 Berita ({newsList.length})</option>
                 <option value="announcements">📢 Pengumuman ({announcements.length})</option>
                 <option value="staff">👨‍🏫 Guru & Tendik ({staffList.length})</option>
                 <option value="gallery">📸 Galeri Foto ({galleryList.length})</option>
-                <option value="email">✉️ Notifikasi Email ({emailLogs.length})</option>
-                <option value="messages">💬 Pesan Masuk ({messages.length})</option>
-                <option value="photos">📁 Direktori Foto</option>
                 <option value="schedule">📅 Jadwal Pelajaran</option>
+                <option value="messages">💬 Pesan Masuk ({messages.length})</option>
+                <option value="email">✉️ Log Email ({emailLogs.length})</option>
+                <option value="photos">📁 Direktori Foto</option>
               </select>
               <ChevronDown className="w-4 h-4 text-slate-500 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
             </div>
@@ -740,33 +715,33 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
             </button>
           </div>
 
-          {/* Horizontal Pill Bar with Touch Scroll */}
+          {/* Minimalist Horizontal Tab Bar */}
           <div className="flex items-center justify-between gap-3">
-            <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar scroll-smooth w-full sm:w-auto -mx-3 px-3 sm:mx-0 sm:px-0 sm:flex-wrap py-1">
+            <div className="flex items-center gap-1 overflow-x-auto no-scrollbar scroll-smooth w-full sm:w-auto -mx-3 px-3 sm:mx-0 sm:px-0 sm:flex-wrap py-0.5">
               <button
                 onClick={() => setActiveTab('overview')}
-                className={`px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap flex-shrink-0 ${
+                className={`px-3 py-1.5 rounded-lg text-xs transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap flex-shrink-0 ${
                   activeTab === 'overview'
-                    ? 'bg-[#003087] text-white shadow-xs'
-                    : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
+                    ? 'bg-[#003087] text-white shadow-2xs font-semibold'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium'
                 }`}
               >
-                <Layers className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FFB800]" />
+                <Layers className="w-3.5 h-3.5" />
                 <span>Ringkasan</span>
               </button>
 
               <button
                 onClick={() => setActiveTab('news')}
-                className={`px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap flex-shrink-0 ${
+                className={`px-3 py-1.5 rounded-lg text-xs transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap flex-shrink-0 ${
                   activeTab === 'news'
-                    ? 'bg-[#003087] text-white shadow-xs'
-                    : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
+                    ? 'bg-[#003087] text-white shadow-2xs font-semibold'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium'
                 }`}
               >
-                <Newspaper className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FFB800]" />
+                <Newspaper className="w-3.5 h-3.5" />
                 <span>Berita</span>
-                <span className={`px-1.5 py-0.2 rounded-full text-[10px] font-bold ${
-                  activeTab === 'news' ? 'bg-[#FFB800] text-[#002260]' : 'bg-slate-100 text-slate-700'
+                <span className={`px-1.5 py-0.2 rounded-full text-[10px] ${
+                  activeTab === 'news' ? 'bg-white/20 text-white font-bold' : 'bg-slate-100 text-slate-600'
                 }`}>
                   {newsList.length}
                 </span>
@@ -774,16 +749,16 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
               <button
                 onClick={() => setActiveTab('announcements')}
-                className={`px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap flex-shrink-0 ${
+                className={`px-3 py-1.5 rounded-lg text-xs transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap flex-shrink-0 ${
                   activeTab === 'announcements'
-                    ? 'bg-[#003087] text-white shadow-xs'
-                    : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
+                    ? 'bg-[#003087] text-white shadow-2xs font-semibold'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium'
                 }`}
               >
-                <Bell className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FFB800]" />
+                <Bell className="w-3.5 h-3.5" />
                 <span>Pengumuman</span>
-                <span className={`px-1.5 py-0.2 rounded-full text-[10px] font-bold ${
-                  activeTab === 'announcements' ? 'bg-[#FFB800] text-[#002260]' : 'bg-slate-100 text-slate-700'
+                <span className={`px-1.5 py-0.2 rounded-full text-[10px] ${
+                  activeTab === 'announcements' ? 'bg-white/20 text-white font-bold' : 'bg-slate-100 text-slate-600'
                 }`}>
                   {announcements.length}
                 </span>
@@ -791,16 +766,16 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
               <button
                 onClick={() => setActiveTab('staff')}
-                className={`px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap flex-shrink-0 ${
+                className={`px-3 py-1.5 rounded-lg text-xs transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap flex-shrink-0 ${
                   activeTab === 'staff'
-                    ? 'bg-[#003087] text-white shadow-xs'
-                    : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
+                    ? 'bg-[#003087] text-white shadow-2xs font-semibold'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium'
                 }`}
               >
-                <GraduationCap className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FFB800]" />
+                <GraduationCap className="w-3.5 h-3.5" />
                 <span>Guru & GTK</span>
-                <span className={`px-1.5 py-0.2 rounded-full text-[10px] font-bold ${
-                  activeTab === 'staff' ? 'bg-[#FFB800] text-[#002260]' : 'bg-slate-100 text-slate-700'
+                <span className={`px-1.5 py-0.2 rounded-full text-[10px] ${
+                  activeTab === 'staff' ? 'bg-white/20 text-white font-bold' : 'bg-slate-100 text-slate-600'
                 }`}>
                   {staffList.length}
                 </span>
@@ -808,77 +783,77 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
               <button
                 onClick={() => setActiveTab('gallery')}
-                className={`px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap flex-shrink-0 ${
+                className={`px-3 py-1.5 rounded-lg text-xs transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap flex-shrink-0 ${
                   activeTab === 'gallery'
-                    ? 'bg-[#003087] text-white shadow-xs'
-                    : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
+                    ? 'bg-[#003087] text-white shadow-2xs font-semibold'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium'
                 }`}
               >
-                <Camera className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FFB800]" />
+                <Camera className="w-3.5 h-3.5" />
                 <span>Galeri Foto</span>
-                <span className={`px-1.5 py-0.2 rounded-full text-[10px] font-bold ${
-                  activeTab === 'gallery' ? 'bg-[#FFB800] text-[#002260]' : 'bg-slate-100 text-slate-700'
+                <span className={`px-1.5 py-0.2 rounded-full text-[10px] ${
+                  activeTab === 'gallery' ? 'bg-white/20 text-white font-bold' : 'bg-slate-100 text-slate-600'
                 }`}>
                   {galleryList.length}
                 </span>
               </button>
 
               <button
-                onClick={() => setActiveTab('email')}
-                className={`px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap flex-shrink-0 ${
-                  activeTab === 'email'
-                    ? 'bg-[#003087] text-white shadow-xs'
-                    : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
+                onClick={() => setActiveTab('schedule')}
+                className={`px-3 py-1.5 rounded-lg text-xs transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap flex-shrink-0 ${
+                  activeTab === 'schedule'
+                    ? 'bg-[#003087] text-white shadow-2xs font-semibold'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium'
                 }`}
               >
-                <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FFB800]" />
-                <span>Email</span>
-                <span className={`px-1.5 py-0.2 rounded-full text-[10px] font-bold ${
-                  activeTab === 'email' ? 'bg-[#FFB800] text-[#002260]' : 'bg-slate-100 text-slate-700'
-                }`}>
-                  {emailLogs.length}
-                </span>
+                <Calendar className="w-3.5 h-3.5" />
+                <span>Jadwal</span>
               </button>
 
               <button
                 onClick={() => setActiveTab('messages')}
-                className={`px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap flex-shrink-0 ${
+                className={`px-3 py-1.5 rounded-lg text-xs transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap flex-shrink-0 ${
                   activeTab === 'messages'
-                    ? 'bg-[#003087] text-white shadow-xs'
-                    : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
+                    ? 'bg-[#003087] text-white shadow-2xs font-semibold'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium'
                 }`}
               >
-                <MessageSquare className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FFB800]" />
+                <MessageSquare className="w-3.5 h-3.5" />
                 <span>Pesan</span>
-                <span className={`px-1.5 py-0.2 rounded-full text-[10px] font-bold ${
-                  activeTab === 'messages' ? 'bg-[#FFB800] text-[#002260]' : 'bg-slate-100 text-slate-700'
+                <span className={`px-1.5 py-0.2 rounded-full text-[10px] ${
+                  activeTab === 'messages' ? 'bg-white/20 text-white font-bold' : 'bg-slate-100 text-slate-600'
                 }`}>
                   {messages.length}
                 </span>
               </button>
 
               <button
-                onClick={() => setActiveTab('photos')}
-                className={`px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap flex-shrink-0 ${
-                  activeTab === 'photos'
-                    ? 'bg-[#003087] text-white shadow-xs'
-                    : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
+                onClick={() => setActiveTab('email')}
+                className={`px-3 py-1.5 rounded-lg text-xs transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap flex-shrink-0 ${
+                  activeTab === 'email'
+                    ? 'bg-[#003087] text-white shadow-2xs font-semibold'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium'
                 }`}
               >
-                <FolderTree className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FFB800]" />
-                <span>Foto</span>
+                <Mail className="w-3.5 h-3.5" />
+                <span>Log Email</span>
+                <span className={`px-1.5 py-0.2 rounded-full text-[10px] ${
+                  activeTab === 'email' ? 'bg-white/20 text-white font-bold' : 'bg-slate-100 text-slate-600'
+                }`}>
+                  {emailLogs.length}
+                </span>
               </button>
 
               <button
-                onClick={() => setActiveTab('schedule')}
-                className={`px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap flex-shrink-0 ${
-                  activeTab === 'schedule'
-                    ? 'bg-[#003087] text-white shadow-xs'
-                    : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
+                onClick={() => setActiveTab('photos')}
+                className={`px-3 py-1.5 rounded-lg text-xs transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap flex-shrink-0 ${
+                  activeTab === 'photos'
+                    ? 'bg-[#003087] text-white shadow-2xs font-semibold'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 font-medium'
                 }`}
               >
-                <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FFB800]" />
-                <span>Jadwal</span>
+                <FolderTree className="w-3.5 h-3.5" />
+                <span>Direktori Foto</span>
               </button>
             </div>
 
@@ -886,7 +861,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
               <button
                 onClick={loadAllData}
                 disabled={loading}
-                className="p-2 rounded-lg bg-white border border-slate-200 hover:bg-slate-50 text-slate-600 transition-all cursor-pointer flex items-center gap-1.5 text-xs shadow-xs"
+                className="px-2.5 py-1.5 rounded-lg bg-white border border-slate-200 hover:bg-slate-50 text-slate-600 transition-all cursor-pointer flex items-center gap-1.5 text-xs shadow-2xs"
                 title="Perbarui data"
               >
                 <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin text-[#003087]' : ''}`} />
@@ -901,210 +876,199 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
         {/* ========================================================= */}
         {activeTab === 'overview' && (
           <div className="space-y-6 animate-in fade-in duration-150">
-            {/* Quick Metrics 6 Cards */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-4">
+            {/* Quick Metrics 6 Cards (Light & Minimalist) */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
               {/* Card 1: News */}
-              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-2">
+              <div className="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs hover:border-slate-300 transition-all flex items-center justify-between gap-2.5">
                 <div className="min-w-0">
-                  <span className="text-[11px] sm:text-xs text-slate-500 font-medium block truncate">Berita</span>
-                  <div className="text-lg sm:text-2xl font-extrabold text-[#003087] font-heading mt-0.5">
+                  <span className="text-[11px] text-slate-500 font-medium block truncate">Berita Terbit</span>
+                  <div className="text-xl font-bold text-slate-900 font-heading mt-0.5">
                     {newsList.length}
                   </div>
                   <button
                     onClick={() => setActiveTab('news')}
-                    className="text-[10px] sm:text-[11px] text-[#003087] font-semibold hover:underline mt-0.5 block truncate cursor-pointer"
+                    className="text-[10px] text-[#003087] font-semibold hover:underline mt-0.5 block truncate cursor-pointer"
                   >
-                    Kelola &rarr;
+                    Buka berita &rarr;
                   </button>
                 </div>
-                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-blue-50 text-[#003087] flex items-center justify-center flex-shrink-0">
-                  <Newspaper className="w-4 h-4 sm:w-5 sm:h-5 text-[#003087]" />
+                <div className="w-8 h-8 rounded-lg bg-blue-50 text-[#003087] flex items-center justify-center shrink-0">
+                  <Newspaper className="w-4 h-4" />
                 </div>
               </div>
 
               {/* Card 2: Announcements */}
-              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-2">
+              <div className="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs hover:border-slate-300 transition-all flex items-center justify-between gap-2.5">
                 <div className="min-w-0">
-                  <span className="text-[11px] sm:text-xs text-slate-500 font-medium block truncate">Pengumuman</span>
-                  <div className="text-lg sm:text-2xl font-extrabold text-[#003087] font-heading mt-0.5">
+                  <span className="text-[11px] text-slate-500 font-medium block truncate">Pengumuman</span>
+                  <div className="text-xl font-bold text-slate-900 font-heading mt-0.5">
                     {announcements.length}
                   </div>
                   <button
                     onClick={() => setActiveTab('announcements')}
-                    className="text-[10px] sm:text-[11px] text-[#003087] font-semibold hover:underline mt-0.5 block truncate cursor-pointer"
+                    className="text-[10px] text-[#003087] font-semibold hover:underline mt-0.5 block truncate cursor-pointer"
                   >
-                    Kelola &rarr;
+                    Buka agenda &rarr;
                   </button>
                 </div>
-                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center flex-shrink-0">
-                  <Bell className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600" />
+                <div className="w-8 h-8 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center shrink-0">
+                  <Bell className="w-4 h-4" />
                 </div>
               </div>
 
               {/* Card 3: Guru & Tenaga Kependidikan */}
-              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-2">
+              <div className="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs hover:border-slate-300 transition-all flex items-center justify-between gap-2.5">
                 <div className="min-w-0">
-                  <span className="text-[11px] sm:text-xs text-slate-500 font-medium block truncate">Guru & GTK</span>
-                  <div className="text-lg sm:text-2xl font-extrabold text-[#003087] font-heading mt-0.5">
+                  <span className="text-[11px] text-slate-500 font-medium block truncate">Guru & GTK</span>
+                  <div className="text-xl font-bold text-slate-900 font-heading mt-0.5">
                     {staffList.length}
                   </div>
                   <button
                     onClick={() => setActiveTab('staff')}
-                    className="text-[10px] sm:text-[11px] text-[#003087] font-semibold hover:underline mt-0.5 block truncate cursor-pointer"
+                    className="text-[10px] text-[#003087] font-semibold hover:underline mt-0.5 block truncate cursor-pointer"
                   >
-                    Atur &rarr;
+                    Atur GTK &rarr;
                   </button>
                 </div>
-                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center flex-shrink-0">
-                  <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600" />
+                <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-700 flex items-center justify-center shrink-0">
+                  <GraduationCap className="w-4 h-4" />
                 </div>
               </div>
 
               {/* Card 4: Galeri Foto */}
-              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-2">
+              <div className="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs hover:border-slate-300 transition-all flex items-center justify-between gap-2.5">
                 <div className="min-w-0">
-                  <span className="text-[11px] sm:text-xs text-slate-500 font-medium block truncate">Galeri Foto</span>
-                  <div className="text-lg sm:text-2xl font-extrabold text-[#003087] font-heading mt-0.5">
+                  <span className="text-[11px] text-slate-500 font-medium block truncate">Galeri Foto</span>
+                  <div className="text-xl font-bold text-slate-900 font-heading mt-0.5">
                     {galleryList.length}
                   </div>
                   <button
                     onClick={() => setActiveTab('gallery')}
-                    className="text-[10px] sm:text-[11px] text-[#003087] font-semibold hover:underline mt-0.5 block truncate cursor-pointer"
+                    className="text-[10px] text-[#003087] font-semibold hover:underline mt-0.5 block truncate cursor-pointer"
                   >
-                    Kelola &rarr;
+                    Atur foto &rarr;
                   </button>
                 </div>
-                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center flex-shrink-0">
-                  <Camera className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
+                <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
+                  <Camera className="w-4 h-4" />
                 </div>
               </div>
 
-              {/* Card 5: Email Endpoint Logs */}
-              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-2">
+              {/* Card 5: Email Logs */}
+              <div className="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs hover:border-slate-300 transition-all flex items-center justify-between gap-2.5">
                 <div className="min-w-0">
-                  <span className="text-[11px] sm:text-xs text-slate-500 font-medium block truncate">Logs Email</span>
-                  <div className="text-lg sm:text-2xl font-extrabold text-[#003087] font-heading mt-0.5">
+                  <span className="text-[11px] text-slate-500 font-medium block truncate">Log Email</span>
+                  <div className="text-xl font-bold text-slate-900 font-heading mt-0.5">
                     {emailLogs.length}
                   </div>
                   <button
                     onClick={() => setActiveTab('email')}
-                    className="text-[10px] sm:text-[11px] text-[#003087] font-semibold hover:underline mt-0.5 block truncate cursor-pointer"
+                    className="text-[10px] text-[#003087] font-semibold hover:underline mt-0.5 block truncate cursor-pointer"
                   >
                     Riwayat &rarr;
                   </button>
                 </div>
-                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
+                <div className="w-8 h-8 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center shrink-0">
+                  <Mail className="w-4 h-4" />
                 </div>
               </div>
 
               {/* Card 6: Visitor Messages */}
-              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-2">
+              <div className="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs hover:border-slate-300 transition-all flex items-center justify-between gap-2.5">
                 <div className="min-w-0">
-                  <span className="text-[11px] sm:text-xs text-slate-500 font-medium block truncate">Pesan Masuk</span>
-                  <div className="text-lg sm:text-2xl font-extrabold text-[#003087] font-heading mt-0.5">
+                  <span className="text-[11px] text-slate-500 font-medium block truncate">Pesan Masuk</span>
+                  <div className="text-xl font-bold text-slate-900 font-heading mt-0.5">
                     {messages.length}
                   </div>
                   <button
                     onClick={() => setActiveTab('messages')}
-                    className="text-[10px] sm:text-[11px] text-[#003087] font-semibold hover:underline mt-0.5 block truncate cursor-pointer"
+                    className="text-[10px] text-[#003087] font-semibold hover:underline mt-0.5 block truncate cursor-pointer"
                   >
                     Kotak masuk &rarr;
                   </button>
                 </div>
-                <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center flex-shrink-0">
-                  <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-teal-600" />
+                <div className="w-8 h-8 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center shrink-0">
+                  <MessageSquare className="w-4 h-4" />
                 </div>
               </div>
             </div>
 
             {/* Quick Actions & System Info Banner */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
               {/* Quick Actions */}
-              <div className="lg:col-span-8 bg-white border border-slate-200 rounded-2xl p-6 shadow-xs space-y-4">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-base font-bold text-[#003087] font-heading">
+              <div className="lg:col-span-8 bg-white border border-slate-200 rounded-xl p-5 shadow-2xs space-y-3.5">
+                <div className="flex items-center justify-between border-b border-slate-100 pb-2.5">
+                  <h3 className="text-sm font-bold text-slate-900 font-heading">
                     Aksi Cepat Pengelolaan
                   </h3>
-                  <span className="text-xs text-slate-400">Pintasan tugas administrator</span>
+                  <span className="text-xs text-slate-400">Pintasan utama</span>
                 </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
                   <button
                     onClick={handleOpenAddNews}
-                    className="p-3 rounded-xl border border-blue-100 bg-blue-50/60 hover:bg-blue-50 text-left transition-all cursor-pointer group"
+                    className="p-3 rounded-xl border border-slate-200/80 bg-white hover:bg-slate-50 hover:border-slate-300 text-left transition-all cursor-pointer group"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#003087] text-white flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
-                      <Plus className="w-4 h-4 text-[#FFB800]" />
+                    <div className="w-7 h-7 rounded-lg bg-blue-50 text-[#003087] flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+                      <Plus className="w-4 h-4" />
                     </div>
-                    <div className="font-bold text-xs text-[#003087] font-heading">Tambah Berita</div>
-                    <p className="text-[10px] text-slate-500 mt-0.5 leading-snug">Rilis kabar prestasi</p>
+                    <div className="font-semibold text-xs text-slate-800">Tambah Berita</div>
+                    <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">Rilis artikel baru</p>
                   </button>
 
                   <button
                     onClick={handleOpenAddAnnouncement}
-                    className="p-3 rounded-xl border border-amber-100 bg-amber-50/60 hover:bg-amber-50 text-left transition-all cursor-pointer group"
+                    className="p-3 rounded-xl border border-slate-200/80 bg-white hover:bg-slate-50 hover:border-slate-300 text-left transition-all cursor-pointer group"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-amber-600 text-white flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+                    <div className="w-7 h-7 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
                       <Plus className="w-4 h-4" />
                     </div>
-                    <div className="font-bold text-xs text-amber-900 font-heading">Pengumuman</div>
-                    <p className="text-[10px] text-slate-500 mt-0.5 leading-snug">Edaran sekolah</p>
+                    <div className="font-semibold text-xs text-slate-800">Pengumuman</div>
+                    <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">Edaran resmi</p>
                   </button>
 
                   <button
                     onClick={handleOpenAddStaff}
-                    className="p-3 rounded-xl border border-indigo-100 bg-indigo-50/60 hover:bg-indigo-50 text-left transition-all cursor-pointer group"
+                    className="p-3 rounded-xl border border-slate-200/80 bg-white hover:bg-slate-50 hover:border-slate-300 text-left transition-all cursor-pointer group"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+                    <div className="w-7 h-7 rounded-lg bg-indigo-50 text-indigo-700 flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
                       <Plus className="w-4 h-4" />
                     </div>
-                    <div className="font-bold text-xs text-indigo-900 font-heading">Guru & Tendik</div>
-                    <p className="text-[10px] text-slate-500 mt-0.5 leading-snug">Input profil GTK</p>
+                    <div className="font-semibold text-xs text-slate-800">Guru & GTK</div>
+                    <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">Input profil GTK</p>
                   </button>
 
                   <button
                     onClick={handleOpenAddGallery}
-                    className="p-3 rounded-xl border border-emerald-100 bg-emerald-50/60 hover:bg-emerald-50 text-left transition-all cursor-pointer group"
+                    className="p-3 rounded-xl border border-slate-200/80 bg-white hover:bg-slate-50 hover:border-slate-300 text-left transition-all cursor-pointer group"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
-                      <Camera className="w-4 h-4 text-white" />
+                    <div className="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+                      <Camera className="w-4 h-4" />
                     </div>
-                    <div className="font-bold text-xs text-emerald-900 font-heading">Foto Galeri</div>
-                    <p className="text-[10px] text-slate-500 mt-0.5 leading-snug">Dokumentasi publik</p>
+                    <div className="font-semibold text-xs text-slate-800">Foto Galeri</div>
+                    <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">Dokumentasi</p>
                   </button>
 
                   <button
                     onClick={() => setActiveTab('schedule')}
-                    className="p-3 rounded-xl border border-blue-100 bg-sky-50/70 hover:bg-sky-100/70 text-left transition-all cursor-pointer group"
+                    className="p-3 rounded-xl border border-slate-200/80 bg-white hover:bg-slate-50 hover:border-slate-300 text-left transition-all cursor-pointer group"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-blue-700 text-white flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
-                      <Calendar className="w-4 h-4 text-[#FFB800]" />
+                    <div className="w-7 h-7 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+                      <Calendar className="w-4 h-4" />
                     </div>
-                    <div className="font-bold text-xs text-blue-900 font-heading">Jadwal Kelas</div>
-                    <p className="text-[10px] text-slate-500 mt-0.5 leading-snug">Ubah jam & guru</p>
-                  </button>
-
-                  <button
-                    onClick={() => setActiveTab('photos')}
-                    className="p-3 rounded-xl border border-teal-100 bg-teal-50/60 hover:bg-teal-50 text-left transition-all cursor-pointer group"
-                  >
-                    <div className="w-8 h-8 rounded-lg bg-teal-700 text-white flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
-                      <FolderTree className="w-4 h-4 text-[#FFB800]" />
-                    </div>
-                    <div className="font-bold text-xs text-teal-900 font-heading">Struktur Foto</div>
-                    <p className="text-[10px] text-slate-500 mt-0.5 leading-snug">Unggah & salin path</p>
+                    <div className="font-semibold text-xs text-slate-800">Jadwal Kelas</div>
+                    <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">Atur jam mapel</p>
                   </button>
 
                   <button
                     onClick={() => setActiveTab('email')}
-                    className="p-3 rounded-xl border border-purple-100 bg-purple-50/60 hover:bg-purple-50 text-left transition-all cursor-pointer group"
+                    className="p-3 rounded-xl border border-slate-200/80 bg-white hover:bg-slate-50 hover:border-slate-300 text-left transition-all cursor-pointer group"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-purple-700 text-white flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
-                      <Send className="w-4 h-4 text-white" />
+                    <div className="w-7 h-7 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+                      <Send className="w-4 h-4" />
                     </div>
-                    <div className="font-bold text-xs text-purple-900 font-heading">Notifikasi Email</div>
-                    <p className="text-[10px] text-slate-500 mt-0.5 leading-snug">Tes endpoint email</p>
+                    <div className="font-semibold text-xs text-slate-800">Notif Email</div>
+                    <p className="text-[10px] text-slate-400 mt-0.5 leading-snug">Tes endpoint</p>
                   </button>
                 </div>
 
@@ -1208,17 +1172,17 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
         {activeTab === 'news' && (
           <div className="space-y-6 animate-in fade-in duration-150">
             {/* Header & Controls */}
-            <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
-              <div className="flex flex-col sm:flex-row items-center gap-3 flex-1">
+            <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200/90 shadow-2xs flex flex-col md:flex-row md:items-center justify-between gap-3">
+              <div className="flex flex-col sm:flex-row items-center gap-2.5 flex-1">
                 {/* Search */}
-                <div className="relative w-full sm:w-72">
-                  <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                <div className="relative w-full sm:w-64">
+                  <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
                   <input
                     type="text"
                     placeholder="Cari berita sekolah..."
                     value={newsSearch}
                     onChange={(e) => setNewsSearch(e.target.value)}
-                    className="w-full pl-9 pr-3 py-2 text-xs rounded-xl border border-slate-300 focus:outline-none focus:border-[#003087] bg-white"
+                    className="w-full pl-8 pr-3 py-1.5 text-xs rounded-lg border border-slate-200 focus:outline-none focus:border-[#003087] bg-white"
                   />
                 </div>
 
@@ -1226,7 +1190,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                 <select
                   value={newsCategoryFilter}
                   onChange={(e) => setNewsCategoryFilter(e.target.value)}
-                  className="w-full sm:w-auto px-3 py-2 text-xs rounded-xl border border-slate-300 focus:outline-none focus:border-[#003087] bg-white font-medium"
+                  className="w-full sm:w-auto px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 focus:outline-none focus:border-[#003087] bg-white font-medium text-slate-700"
                 >
                   <option value="Semua">Semua Kategori</option>
                   <option value="LKS & Prestasi">LKS & Prestasi</option>
@@ -1239,9 +1203,9 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
               {/* Add News Button */}
               <button
                 onClick={handleOpenAddNews}
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#003087] hover:bg-[#002260] text-white text-xs sm:text-sm font-bold transition-all shadow-xs cursor-pointer w-full sm:w-auto flex-shrink-0"
+                className="inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#003087] hover:bg-[#002260] text-white text-xs font-semibold transition-all shadow-2xs cursor-pointer w-full sm:w-auto flex-shrink-0"
               >
-                <Plus className="w-4 h-4 text-[#FFB800]" />
+                <Plus className="w-3.5 h-3.5 text-[#FFB800]" />
                 <span>Tambah Berita Baru</span>
               </button>
             </div>
@@ -1430,31 +1394,23 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
         {activeTab === 'staff' && (
           <div className="space-y-6 animate-in fade-in duration-150">
             {/* Header Toolbar */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-6 rounded-2xl border border-slate-200 shadow-xs">
-              <div className="space-y-1">
-                <div className="flex items-center gap-2">
-                  <span className="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-indigo-50 text-indigo-700 border border-indigo-200">
-                    Pangkalan Data Kepegawaian
-                  </span>
-                  <span className="text-xs text-slate-400 font-mono">
-                    Total: {staffList.length} Personel
-                  </span>
-                </div>
-                <h3 className="text-lg font-bold text-[#003087] font-heading">
-                  Kelola Guru & Tenaga Kependidikan (GTK)
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-4 sm:p-5 rounded-xl border border-slate-200/90 shadow-2xs">
+              <div>
+                <h3 className="text-base font-bold text-slate-900 font-heading">
+                  Direktori Guru & Tenaga Kependidikan
                 </h3>
-                <p className="text-xs text-slate-500">
-                  Atur daftar profil guru pengampu, ketua program keahlian, guru normatif/adaptif, serta staf administrasi dan teknisi sekolah.
+                <p className="text-xs text-slate-500 mt-0.5">
+                  Total {staffList.length} guru & staf administrasi terdaftar
                 </p>
               </div>
 
-              <div className="flex items-center gap-2 flex-wrap">
+              <div className="flex items-center gap-2">
                 <button
                   onClick={handleOpenAddStaff}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#003087] hover:bg-[#002266] text-white text-xs sm:text-sm font-bold transition-all shadow-xs cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#003087] hover:bg-[#002260] text-white text-xs font-semibold transition-all shadow-2xs cursor-pointer"
                 >
-                  <Plus className="w-4 h-4 text-[#FFB800]" />
-                  <span>Tambah Guru / Tendik</span>
+                  <Plus className="w-3.5 h-3.5 text-[#FFB800]" />
+                  <span>Tambah Guru / GTK</span>
                 </button>
               </div>
             </div>
@@ -1781,26 +1737,22 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
         {activeTab === 'gallery' && (
           <div className="space-y-6 animate-in fade-in duration-150">
             {/* Top Action Header */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-2xl border border-slate-200 shadow-xs">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-4 sm:p-5 rounded-xl border border-slate-200/90 shadow-2xs">
               <div>
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-bold uppercase tracking-wider mb-1">
-                  <Camera className="w-3 h-3 text-emerald-600" />
-                  <span>Galeri Publik Website</span>
-                </div>
-                <h3 className="text-lg font-bold text-[#003087] font-heading">
-                  Kelola Galeri & Dokumentasi Foto
+                <h3 className="text-base font-bold text-slate-900 font-heading">
+                  Galeri & Dokumentasi Foto
                 </h3>
-                <p className="text-xs text-slate-500">
-                  Atur foto dokumentasi praktik bengkel/lab, kegiatan kesiswaan, kunjungan industri, dan kegiatan guru yang tampil di menu Galeri.
+                <p className="text-xs text-slate-500 mt-0.5">
+                  Total {galleryList.length} foto dokumentasi dipublikasikan di website
                 </p>
               </div>
 
-              <div className="flex items-center gap-2 flex-wrap">
+              <div className="flex items-center gap-2">
                 <button
                   onClick={handleOpenAddGallery}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#003087] hover:bg-[#002266] text-white text-xs sm:text-sm font-bold transition-all shadow-xs cursor-pointer active:scale-95"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#003087] hover:bg-[#002260] text-white text-xs font-semibold transition-all shadow-2xs cursor-pointer"
                 >
-                  <Plus className="w-4 h-4 text-[#FFB800]" />
+                  <Plus className="w-3.5 h-3.5 text-[#FFB800]" />
                   <span>Tambah Foto Dokumentasi</span>
                 </button>
               </div>
@@ -2375,7 +2327,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                   value={newsFormData.image}
                   onChange={(url) => setNewsFormData({ ...newsFormData, image: url })}
                   label="Gambar Cover Berita"
-                  helpText="Upload file gambar dari perangkat langsung ke public/images/berita/ atau pilih dari struktur direktori."
+                  helpText="Unggah gambar sampul berita dari perangkat Anda atau masukkan tautan URL."
                   aspectRatio="video"
                 />
               </div>
@@ -2776,7 +2728,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                   value={staffFormData.photo}
                   onChange={(url) => setStaffFormData({ ...staffFormData, photo: url })}
                   label="Foto Profil Guru / Tendik"
-                  helpText="Upload file pas foto dari perangkat langsung ke public/images/guru/ atau pilih dari katalog folder sekolah."
+                  helpText="Unggah pas foto GTK langsung dari perangkat Anda atau masukkan tautan URL."
                   aspectRatio="portrait"
                 />
               </div>
@@ -2974,7 +2926,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                   value={galleryFormData.imageUrl}
                   onChange={(url) => setGalleryFormData({ ...galleryFormData, imageUrl: url })}
                   label="Pilih / Unggah Foto Dokumentasi"
-                  helpText="Unggah file foto langsung ke struktur public/images/galeri/ atau pilih dari katalog folder sekolah."
+                  helpText="Unggah foto dokumentasi kegiatan langsung dari perangkat Anda atau masukkan tautan URL."
                   aspectRatio="video"
                 />
               </div>
